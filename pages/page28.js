@@ -1,26 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {StyleSheet, View, Text, Image, TextInput, ScrollView} from 'react-native';
-import RedButton from './components/redButton';
+import {StyleSheet, View, Text, Image, TextInput, ScrollView, TouchableOpacity} from 'react-native';
+import RedButton from '../components/redButton';
+import {useState} from 'react';
 
-class Page28 extends React.Component {
-
-  render() {
+const Page28 = ({navigation}) => {
     return (
       <>
           <View style = {styles.closeContainer}>
-          <Image style = {styles.closeImage} source = {require('./images/close-circle.png')}/>
+            <TouchableOpacity onPress={() => {
+              navigation.navigate('first');
+            }}>
+          <Image style = {styles.closeImage} source = {require('../images/close-circle.png')}/>
+          </TouchableOpacity>
         </View>
           <ScrollView style = {styles.container} >
         <View >
-        <Image style = {styles.image} source = {require('./images/target.png')}/>
+        <Image style = {styles.image} source = {require('../images/target.png')}/>
         <Text style = {styles.text}>
         Your Personal Kegel Plan is Ready!       
          </Text>
@@ -34,7 +29,7 @@ class Page28 extends React.Component {
               improves by  
               <Text style = {styles.yuzde}> 82%</Text>
               </Text>
-             <Image style = {styles.chartImage} source = {require('./images/chart1.png')}/>
+             <Image style = {styles.chartImage} source = {require('../images/chart1.png')}/>
              </UIView>
            <UIView style = {styles.bolum}>  
             <Text style = {styles.performance}>
@@ -45,7 +40,7 @@ class Page28 extends React.Component {
             egzersizleri ise ana odaklanmanıza yardımcı olur. Kegelman, Kegel ve nefes egzersizleri ile anda sağlıklı kalmana 
             yardımcı olacak.
             </Text>
-            <Image style = {styles.yesilImage} source = {require('./images/yesil.png')}/>
+            <Image style = {styles.yesilImage} source = {require('../images/yesil.png')}/>
             </UIView>
 
             <UIView style = {styles.bolum}>
@@ -56,7 +51,7 @@ class Page28 extends React.Component {
             Stres seviyenin yüksek olduğunu belirttin. Cinsellikte stresli olman performans düşüklüğüne sebep olacaktır. 
             Stresini azaltmak için nefes egzersizlerimizle yanındayız.
             </Text>
-            <Image style = {styles.kirmiziImage} source = {require('./images/stres.png')}/>
+            <Image style = {styles.kirmiziImage} source = {require('../images/stres.png')}/>
             </UIView>
 
             <UIView style = {styles.bolum}>
@@ -68,8 +63,8 @@ class Page28 extends React.Component {
              Kegelman içerisindeki postlarda hormonlar hakkında daha fazla bilgi bulabilirsin.
             </Text>
             <View style = {styles.saatStyle}>
-            <Image source = {require('./images/saatyesil.png')}/>
-            <Image source = {require('./images/saatkirmizi.png')}/>
+            <Image source = {require('../images/saatyesil.png')}/>
+            <Image source = {require('../images/saatkirmizi.png')}/>
             </View>
             </UIView>
 
@@ -83,12 +78,17 @@ class Page28 extends React.Component {
             Bu sebeple penisin daha iyi kanlanmasına ve daha sert ereksiyon sağlamana yardımcı olur. Sana hazırladığım mat egzersizlerini hemen yapmaya başlayabilirsin. 
             İlerlemeni gün gün takip edebileceksin.
             </Text>
-            <Image  source = {require('./images/adam.png')}/>
+            <Image  source = {require('../images/adam.png')}/>
+          
             </UIView>
-            
+
+            <TouchableOpacity>
             <RedButton style={styles.redButton}>
             <Text style = {styles.buttonText}>GET YOUR PROGRAM</Text>
             </RedButton>
+            </TouchableOpacity>
+            
+          
             
          
 
@@ -96,7 +96,7 @@ class Page28 extends React.Component {
         </> 
     );
   }
-}
+
 
 const UIView = ({children}) => {
   return <View style={styles.bolum}>{children}</View>;
@@ -108,9 +108,10 @@ const styles = StyleSheet.create({
   container: {
    
     backgroundColor: '#191924',
-    paddingTop: 70,
+    flex: 1,
     paddingLeft: 40,
     paddingRight: 40, 
+   
 
     
   },
@@ -239,11 +240,12 @@ const styles = StyleSheet.create({
           shadowRadius: 2,
           elevation: 2,
           paddingBottom: 20,
-          paddingTop: 80,
+          marginTop: 20,
+          paddingTop: 20,
           },
           
           adambolum: {
-            paddingBottom: 200,
+            paddingBottom: 300,
           },
 
 });
