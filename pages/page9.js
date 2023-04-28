@@ -68,6 +68,9 @@ const Page9 = ({navigation}) => {
       return (
         <View style={styles.koyuButton}>
           <TouchableOpacity
+
+customStyle={}
+
               style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 350,
               height: 50,
               borderRadius: 8,

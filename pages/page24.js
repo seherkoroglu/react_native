@@ -29,7 +29,7 @@ const Page24 = ({navigation}) => {
             </TouchableOpacity>
         </View>
 
-       
+      
     
      </>
         
