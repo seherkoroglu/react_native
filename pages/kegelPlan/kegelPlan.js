@@ -5,6 +5,8 @@ import {useState} from 'react';
 import styles from '.../pages/kegelPlan/styles';
 
 const KegelPlan = ({navigation}) => {
+
+const renderProgressBar = () => {
     return (
       <>
           <View style = {styles.closeContainer}>
@@ -14,6 +16,12 @@ const KegelPlan = ({navigation}) => {
           <Image style = {styles.closeImage} source = {require('../images/close-circle.png')}/>
           </TouchableOpacity>
         </View>
+      </>
+    );
+  };
+          
+          const renderContent = () => {
+            return (
           <ScrollView style = {styles.container} >
         <View >
         <Image style = {styles.image} source = {require('../images/target.png')}/>
@@ -23,7 +31,6 @@ const KegelPlan = ({navigation}) => {
          </View>
           
             <UIView style = {styles.bolum}>
-             
               <Text style = {styles.bolumText}>
               The sexual stamina of people
                who do kegel exercises
@@ -88,15 +95,19 @@ const KegelPlan = ({navigation}) => {
             <Text style = {styles.buttonText}>GET YOUR PROGRAM</Text>
             </RedButton>
             </TouchableOpacity>
-            
-          
-            
-         
-
         </ScrollView>
-        </> 
+
     );
-  }
+  };
+
+  return (
+    <>
+      {renderProgressBar()}
+      {renderContent()}
+    </>
+  );
+};
+
 
 
 const UIView = ({children}) => {
