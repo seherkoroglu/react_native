@@ -13,7 +13,7 @@ const Page27 = ({navigation}) => {
     return (
       
       <View style= {{
-        flex: 2,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#191924',
