@@ -1,87 +1,74 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    container: {
-      paddingLeft: 20,
-      flex: 1,
-      backgroundColor: '#191924',
-      paddingTop: 100,
-      paddingBottom: 16,
-    },
-  
-    textStyle: {
-      backgroundColor: '#191924',
-      color: 'white',
-      fontSize: 13,
-      fontWeight: 'bold',
-      paddingLeft: 290,
-      paddingBottom: 30,
-      
-    },
-  
-    haveYouEverStyle: {
-      backgroundColor: '#191924',
-      color: 'white',
-      fontSize: 20,
-      fontWeight: 'bold',
-     textAlign: 'center',
-      alignItems: 'center',
-      padding: 30,
-      
-     },
-     koyuButtonContainer: {
-      backgroundColor: '#191924',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      alignContent: 'flex-start',
-      flexDirection: 'row',
-      paddingBottom: 1500,
-      paddingLeft: 10,
-      paddingRight: 10,
-     
-    
-    },
-  
-  
-    koyuButon: {
-      backgroundColor: '#222331',
-      width: 180,
-      height: 73,
-      borderRadius: 9,
-      justifyContent: 'center',
-      alignItems: 'center',
-     
-    },
-  
-    haveYouEverTextStyle: {
-      color: 'white',
-      fontSize: 13,
-      fontWeight: 'bold',
-      AlignItems: 'center',
-      justifyContent: 'center',
-      alignContent: 'center',
-      
-    },
-  
-    backContainer: {
-      backgroundColor: '#191924',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      paddingTop: 5,
-  
-    
-  
-      },
-  
-    backImage: {
-      width: 25,
-      height: 25,
-      marginLeft: 20,
-      marginBottom: 10,
-      justifyContent: 'flex-start',
-    },
-  
-  });
+  container: {
+    paddingLeft: 20,
+    backgroundColor: '#191924',
+    paddingTop: 100,
+    paddingBottom: 16,
+  },
+  textStyle: {
+    backgroundColor: '#191924',
+    color: 'white',
+    fontSize: screenWidth * 0.04,
+    fontWeight: 'bold',
+    paddingLeft: screenWidth * 0.75,
+    paddingBottom: screenHeight * 0.015,
+  },
+  haveYouEverStyle: {
+    backgroundColor: '#191924',
+    color: 'white',
+    fontSize: screenWidth * 0.06,
+    fontWeight: 'bold',
+    lineHeight: screenWidth * 0.09,
+    paddingHorizontal: screenWidth * 0.1,
+    textAlign: 'center',
+    paddingBottom: screenWidth * 0.04,
+    paddingTop: screenWidth * 0.1,
+  },
+  koyuButtonContainer: {
+    backgroundColor: '#191924',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    flexDirection: 'row',
+    paddingBottom: screenHeight * 0.5,
+    paddingLeft: screenWidth * 0.02,
+    paddingRight: screenWidth * 0.02,
+  },
+  koyuButon: {
+    backgroundColor: '#222331',
+    width: screenWidth * 0.46,
+    height: screenHeight * 0.09,
+    borderRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: screenWidth * 0.01,
+  },
+  haveYouEverTextStyle: {
+    color: 'white',
+    fontSize: screenWidth * 0.04,
+    fontWeight: 'bold',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  backContainer: {
+    backgroundColor: '#191924',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  backImage: {
+    width: screenWidth * 0.06,
+    height: screenWidth * 0.06,
+    marginLeft: screenWidth * 0.04,
+    marginBottom: screenHeight * 0.01,
+    justifyContent: 'flex-start',
+  },
+});
 
 export default styles;

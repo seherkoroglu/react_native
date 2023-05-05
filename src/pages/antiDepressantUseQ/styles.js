@@ -1,85 +1,77 @@
 import { StyleSheet } from 'react-native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 const styles = StyleSheet.create({
-    container: {
-      paddingLeft: 20,
-      flex: 1,
-      backgroundColor: '#191924',
-      paddingTop: 100,
-      paddingBottom: 16,
-    },
+  container: {
+    paddingLeft: wp('5%'),
+    backgroundColor: '#191924',
+    paddingTop: hp('10%'),
+    paddingBottom: hp('1%'),
+  },
+
+  textStyle: {
+    backgroundColor: '#191924',
+    color: 'white',
+    fontSize: wp('3.5%'),
+    fontWeight: 'bold',
+    paddingLeft: wp('70%'),
+    paddingBottom: hp('3%'),
+  },
+
+  doYouUseStyle: {
+    backgroundColor: '#191924',
+    color: 'white',
+    fontSize: wp('6%'),
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignItems: 'center',
+    padding: hp('5%'),
+  },
+
+  koyuButtonContainer: {
+    backgroundColor: '#191924',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    flexDirection: 'row',
+    paddingBottom: hp('60%'),
+    paddingLeft: wp('3%'),
+    paddingRight: wp('5%'),
+  },
+
+  koyuButon: {
+    backgroundColor: '#222331',
+    width: wp('45%'),
+    height: hp('9%'),
+    borderRadius: wp('2%'),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  doYouUseTextStyle: {
+    color: 'white',
+    fontSize: wp('3.5%'),
+    fontWeight: 'bold',
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
   
-    textStyle: {
-      backgroundColor: '#191924',
-      color: 'white',
-      fontSize: 13,
-      fontWeight: 'bold',
-      paddingLeft: 290,
-      paddingBottom: 30,
-      
-    },
-  
-    doYouUseStyle: {
-      backgroundColor: '#191924',
-      color: 'white',
-      fontSize: 20,
-      fontWeight: 'bold',
-     textAlign: 'center',
-      alignItems: 'center',
-      padding: 30,
-      
-     },
-  
-     koyuButtonContainer: {
-      backgroundColor: '#191924',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      alignContent: 'flex-start',
-      flexDirection: 'row',
-      paddingBottom: 1500,
-      paddingLeft: 10,
-      paddingRight: 10,
-     
-    
-    },
-  
-  
-    koyuButon: {
-      backgroundColor: '#222331',
-      width: 180,
-      height: 73,
-      borderRadius: 9,
-      justifyContent: 'center',
-      alignItems: 'center',
-     
-    },
-  
-    doYouUseTextStyle: {
-      color: 'white',
-      fontSize: 13,
-      fontWeight: 'bold',
-      AlignItems: 'center',
-      justifyContent: 'center',
-      alignContent: 'center',
-      
-    },
-    backContainer: {
-      backgroundColor: '#191924',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      paddingTop: 9, 
-     
-  
-      },
-  
-    backImage: {
-      width: 25,
-      height: 25,
-      marginLeft: 20,
-      marginBottom: 10,
-      justifyContent: 'flex-start',
-    },
-  
-  });
+  backContainer: {
+    backgroundColor: '#191924',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    paddingTop: hp('1%'),
+  },
+
+  backImage: {
+    width: wp('7%'),
+    height: hp('3.5%'),
+    marginLeft: wp('5%'),
+    marginBottom: hp('1%'),
+    justifyContent: 'flex-start',
+  },
+});
 
 export default styles;

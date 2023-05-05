@@ -3,6 +3,10 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/orgasmPleasureRateQ/styles.js';
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const OrgasmPleasureRateQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -80,8 +84,8 @@ const OrgasmPleasureRateQ = ({navigation}) => {
   return (
     <View style={styles.koyuButon}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 350,
-      height: 55,
+      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 0.9 * windowWidth,
+      height: 0.07 * windowHeight,
       borderRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',

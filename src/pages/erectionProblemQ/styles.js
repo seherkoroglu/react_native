@@ -1,33 +1,35 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
-      paddingLeft: 20,
-      flex: 1,
+      paddingLeft: width * 0.05,
       backgroundColor: '#191924',
-      paddingTop: 100,
-      paddingBottom: 16,
+      paddingTop: height * 0.1,
+    
+     
     },
   
     textStyle: {
       backgroundColor: '#191924',
       color: 'white',
-      fontSize: 13,
+      fontSize: height * 0.020,
       fontWeight: 'bold',
-      lineHeight: 40,
-      paddingLeft: 290,
-      paddingBottom: 10,
+      lineHeight: height * 0.05,
+      paddingLeft: width * 0.725,
+      paddingBottom: height * 0.01,
       
     },
   
     havingProblemsStyle: {
       backgroundColor: '#191924',
       color: 'white',
-      fontSize: 20,
+      fontSize: height * 0.025,
       fontWeight: 'bold',
-      lineHeight: 35,
-      paddingLeft: 40,
-      paddingRight: 40,
+      lineHeight: height * 0.04,
+      paddingLeft: width * 0.1,
+      paddingRight: width * 0.1,
       textAlign: 'center',
   
      
@@ -37,24 +39,25 @@ const styles = StyleSheet.create({
       backgroundColor: '#191924',
       justifyContent: 'center',
       alignItems: 'center',
-      paddingTop: 100,
+      paddingTop: height * 0.1,
       flexDirection: 'column',
-      paddingBottom: 500,
+      paddingBottom: height * 0.30,
+      
     
     },
     koyuButon: {
       backgroundColor: '#222331',
-      width: 350,
-      height: 55,
-      borderRadius: 8,
+      width: width * 0.8,
+      height: height * 0.07,
+      borderRadius: width * 0.02,
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 20,
+      marginTop: height * 0.02,
     },
   
     havingProblemsTextStyle: {
       color: 'white',
-      fontSize: 13,
+      fontSize: height * 0.020,
       fontWeight: 'bold',
       AlignItems: 'center',
     },
@@ -66,20 +69,21 @@ const styles = StyleSheet.create({
       
      
   
-      },
+    },
   
     backImage: {
-      width: 25,
-      height: 25,
-      marginLeft: 20,
-      marginTop: 15,
+      width: height * 0.03,
+      height: height * 0.03,
+      marginLeft: width * 0.05,
+      marginTop: height * 0.015,
       justifyContent: 'flex-start',
   
      
   
     },
   
-  });
+});
 
-  export default styles;
+export default styles;
+
   

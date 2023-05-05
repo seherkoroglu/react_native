@@ -4,6 +4,12 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/experienceSelectionQ/styles.js';
+import { Dimensions } from 'react-native';
+
+
+const { width, height } = Dimensions.get('window');
+
+
 
 
 const ExperienceSelectionQ = ({navigation}) => {
@@ -91,8 +97,8 @@ const KoyuButon = (props ) => {
   return (
     <View style={styles.koyuButon}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 350,
-      height: 55,
+      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: width * 0.9,
+      height: height * 0.07,
       borderRadius: 8,
       margin: 8,
       justifyContent: 'center',

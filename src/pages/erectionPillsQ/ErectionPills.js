@@ -3,6 +3,10 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/erectionPillsQ/styles.js';
+import {Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const ErectionPills = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -98,7 +102,8 @@ const ErectionPills = ({navigation}) => {
       <View style={styles.koyuButton}>
         <TouchableOpacity
            style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59',
-           borderRadius: 8,
+           width: 0.45 * windowWidth,
+          height: 0.10* windowHeight,
            borderRadius: 9,
            borderColor: '#71727a',
            borderWidth: 1,} : null]}

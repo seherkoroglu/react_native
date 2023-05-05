@@ -3,6 +3,9 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/erectionProblemTimeQ/styles.js';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 
 const ErectionTimeProblemQ = ({navigation}) => {
@@ -87,8 +90,8 @@ const ErectionTimeProblemQ = ({navigation}) => {
       return (
         <View style={styles.koyuButton}>
           <TouchableOpacity
-              style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 350,
-              height: 55,
+              style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
+              height: 0.065 * height,
               borderRadius: 8,
               justifyContent: 'center',
               alignItems: 'center',

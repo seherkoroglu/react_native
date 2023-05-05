@@ -1,5 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image} from 'react-native';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 class Texts extends React.Component {
     render() {
@@ -10,20 +13,16 @@ class Texts extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    
     textStyles: {
-        color: 'white',
-        marginTop: 8,
-        marginBottom: 8,
-        fontWeight: 'bold',
-        lineHeight: 40,
-        fontSize: 18,
-        paddingLeft:40,
-        paddingRight:40,
-        textAlign: 'center',
-
-
+      color: 'white',
+      marginTop: height * 0.001,
+      marginBottom: height * 0.0015,
+      fontWeight: 'bold',
+      lineHeight: height * 0.05,
+      fontSize: width * 0.045,
+      paddingLeft: width * 0.1,
+      paddingRight: width * 0.08,
+      textAlign: 'center',
     },
-});
-
+  });
 export default Texts;

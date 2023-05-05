@@ -11,6 +11,9 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/steroidUseQ/styles.js';
+import {Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 const SteroidUseQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -94,9 +97,9 @@ const SteroidUseQ = ({navigation}) => {
     return (
       <View style={styles.koyuButon}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 180,
-        height: 73,
-        borderRadius: 8,
+        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: width * 0.46,
+        height: height * 0.09,
+        borderRadius: width * 0.02,
         margin: 8,
         justifyContent: 'center',
         alignItems: 'center',

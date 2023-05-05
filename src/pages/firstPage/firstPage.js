@@ -7,6 +7,9 @@ import  {useNavigation} from '@react-navigation/native';
 import Texts from '/Users/main/KMClone/src/components/texts.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import styles from '/Users/main/KMClone/src/pages/firstPage/styles.js';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { Dimensions } from 'react-native';
+
 
 const FirstPage = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -79,7 +82,6 @@ const FirstPage = ({navigation}) => {
 };
 
 
-
   const GreyButton = (props) => {
     const { selected, onSelect } = props;
   
@@ -96,8 +98,8 @@ const FirstPage = ({navigation}) => {
             styles.button,
             selected ? {
               backgroundColor: '#d1262b',
-              width: 340,
-              height: 70,
+              width: wp('86.5%'),
+              height: hp('8%'),
               borderRadius: 10,
               justifyContent: 'center',
               flexDirection: 'row',
@@ -118,9 +120,11 @@ const FirstPage = ({navigation}) => {
 
 const SmallButton = (props) => {
   return (
+    <>
 <View  style={styles.smallButton}>
   {props.children}
 </View>
+</>
 );
 };
 

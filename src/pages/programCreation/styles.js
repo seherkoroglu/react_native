@@ -1,32 +1,29 @@
+import { StyleSheet, Dimensions } from 'react-native';
 
-import { StyleSheet } from 'react-native';
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-    textStyle: {
-      color: '#fff',
-      fontSize: 25,
-      fontWeight: '500',
-      textAlign: 'center',
-     
-    },
-    sonStyle: {
-      color: '#fff',
-      fontSize: 22,
-      fontWeight: '300',
-      textAlign: 'left',
-      paddingBottom: 10,
-     
-    },
-    sonView: {
-      alignItems: 'flex-start',
-      justifyContent: 'flex-start',
-      backgroundColor: '#191924',
-      flexDirection: 'column',
-      paddingBottom: 20,
-      
-      
-    },
-  
-  });
+  textStyle: {
+    color: '#fff',
+    fontSize: width * 0.06, 
+    fontWeight: '500',
+    textAlign: 'center',
+    marginVertical: height * 0.03, 
+  },
+  sonStyle: {
+    color: '#fff',
+    fontSize: width * 0.05,
+    fontWeight: '300',
+    textAlign: 'left',
+    paddingBottom: height * 0.01,
+  },
+  sonView: {
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    backgroundColor: '#191924',
+    flexDirection: 'column',
+    paddingBottom: height * 0.02,
+  },
+});
 
-    export default styles;
+export default styles;

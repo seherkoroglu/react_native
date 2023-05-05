@@ -1,10 +1,10 @@
-
-
 import React from 'react';
 import {StyleSheet, View, Text, Image, TextInpu, TouchableOpacity} from 'react-native';
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/antiDepressantUseQ/styles.js';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
 
 const AntiDepressantUseQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -40,14 +40,17 @@ const AntiDepressantUseQ = ({navigation}) => {
 
   const renderQuestion = () => {
       return (
+        <>
         <View >
         <Text style={styles.doYouUseStyle}>Do you use any anti-depressants? </Text>
       </View>
+      </>
       );
   };
 
 
   const renderOptions = () => {
+    return (
     <View >
     <View style = {styles.koyuButtonContainer}>
    
@@ -64,6 +67,8 @@ const AntiDepressantUseQ = ({navigation}) => {
     </View>
   </View>
   </View>
+
+    );
   };
     
 
@@ -88,9 +93,9 @@ const AntiDepressantUseQ = ({navigation}) => {
     return (
       <View style={styles.koyuButon}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 180,
-        height: 73,
-        borderRadius: 8,
+        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',   width: wp('45%'),
+        height: hp('9%'),
+        borderRadius: wp('2%'),
         margin: 8,
         justifyContent: 'center',
         alignItems: 'center',

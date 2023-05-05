@@ -4,6 +4,10 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sexualDesireQ/styles.js';
 
+import {Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+
 const SexualDesireQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
   const [selected, setSelected] = useState('');
@@ -80,7 +84,7 @@ const SexualDesireQ = ({navigation}) => {
   const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
-        navigation.navigate('ErectionPills');
+        navigation.navigate('erectionPills');
       }, 1500); 
     };
   
@@ -88,8 +92,9 @@ const SexualDesireQ = ({navigation}) => {
       <View style={styles.koyuButton}>
         <TouchableOpacity
            style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59',
+           width: 0.8 * width,
+           height: 0.07 * height,
            borderRadius: 8,
-           borderRadius: 9,
            borderColor: '#71727a',
            borderWidth: 1,} : null]}
           onPress={handlePress}

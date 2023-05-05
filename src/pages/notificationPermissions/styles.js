@@ -1,111 +1,97 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   
-    container: {
-      flex: 1,
-      paddingLeft: 20,
-      backgroundColor: '#191924',
-      paddingTop: 100,
-     
-    },
-    image: {
-      width: 150,
-      height: 210,
-    },
-    imageContainer: {
-      flex: 1,
-     backgroundColor: '#191924',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      
-      paddingBottom: 60,
+  container: {
+    paddingLeft: 0.05 * windowWidth,
+    backgroundColor: '#191924',
+    paddingTop: 0.1 * windowHeight,
+  },
 
-      
-     },
+  image: {
+    width: 0.40 * windowWidth,
+    height: 0.26 * windowHeight,
+  },
+  imageContainer: {
+    flex: 1,
+    backgroundColor: '#191924',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 0.1 * windowHeight,
+  },
 
+  textStyles: {
+    color: 'white',
+    fontSize: 0.05 * windowWidth,
+    fontWeight: 'bold',
+    lineHeight: 0.05 * windowHeight,
+    textAlign: 'center',
+  },
 
-    textStyles: {
-      color: 'white',
-      fontSize: 20,
-      fontWeight: 'bold',
-      lineHeight: 20,
-      textAlign: 'center',
-     },
-    textContainer: {
-      flex: 1,
-      backgroundColor: '#191924',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center', 
-      paddingLeft: 20,
-      paddingRight: 20,
-      paddingBottom: 100,
-      paddingTop: 50,
-     
-      
-    },
-      textStyle: {
-      color: 'white',
-      fontSize: 15,
-      fontWeight: '300',
-      lineHeight: 20,
-      textAlign: 'center',
-      
-     
-    },
-    buttonTextStyle: {
-      color: 'white',
-      alignSelf: 'center',
-      fontSize: 17,
-      fontWeight: 'bold',
-      lineHeight: 40,
-    },
+  textContainer: {
+    flex: 1,
+    backgroundColor: '#191924',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center', 
+    paddingLeft: 0.06 * windowWidth,
+    paddingRight: 0.05 * windowWidth,
+    paddingBottom: 0.13 * windowHeight,
+    paddingTop: 0.1 * windowHeight,
+  },
 
-    maybeLater: {
-      color: 'white',
-      paddingBottom: 60,
-      fontSize: 17,
-      fontWeight: 'bold',
-      lineHeight: 40,
-    },
+  textStyle: {
+    color: 'white',
+    fontSize: 0.05 * windowWidth,
+    fontWeight: '300',
+    lineHeight: 0.04 * windowHeight,
+    textAlign: 'center',
+  },
 
-    buttonAndTextContainer: {
-      flex: 1,
-      backgroundColor: '#191924',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingBottom: 100,
+  buttonTextStyle: {
+    color: 'white',
+    alignSelf: 'center',
+    fontSize: 0.05 * windowWidth,
+    fontWeight: 'bold',
+    lineHeight: 0.08 * windowHeight,
+  },
 
-     
-     
-    },
-    backContainer: {
-      backgroundColor: '#191924',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      paddingRight: 500,
-      paddingBottom: 100,
-    
-  
-      },
-  
-    backImage: {
-      width: 25,
-      height: 25,
-     marginTop: 10,
-     
-      justifyContent: 'flex-start',
+  maybeLater: {
+    color: 'white',
+    paddingBottom: 0.06 * windowHeight,
+    fontSize: 0.05 * windowWidth,
+    fontWeight: 'bold',
+    lineHeight: 0.08 * windowHeight,
+  },
 
-     
-  
-    },
+  buttonAndTextContainer: {
+    flex: 1,
+    backgroundColor: '#191924',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 0.13 * windowHeight,
 
+  },
+  backContainer: {
+    backgroundColor: '#191924',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    paddingRight: 0.15 * windowWidth,
+    paddingBottom: 0.1 * windowHeight,
+  },
 
-
+  backImage: {
+    width: 0.06 * windowWidth,
+    height: 0.06 * windowWidth,
+    marginTop: 0.02 * windowHeight,
+    justifyContent: 'flex-start',
+  },
 });
 
 export default styles;

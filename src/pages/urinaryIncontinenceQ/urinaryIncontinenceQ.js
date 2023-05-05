@@ -11,6 +11,10 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/urinaryIncontinenceQ/styles.js';
+import {Dimensions } from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
 
 const UrinaryIncontinenceQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -94,8 +98,8 @@ const renderQuestion = () => {
     return (
       <View style={styles.koyuButon}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 180,
-        height: 73,
+        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: screenWidth * 0.46,
+        height: screenHeight * 0.09,
         borderRadius: 8,
         margin: 8,
         justifyContent: 'center',

@@ -12,6 +12,9 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/chronicDiseasesQ/styles.js';
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
 
 const ChronicDiseasesQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -96,8 +99,8 @@ const KoyuButon = ({ navigation, children, select, setSelect }) => {
   return (
     <View style={styles.koyuButon}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 350,
-      height: 60,
+      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',    width: width * 0.9,
+      height: height * 0.07,
       borderRadius: 8,
       margin: 5,
       justifyContent: 'center',

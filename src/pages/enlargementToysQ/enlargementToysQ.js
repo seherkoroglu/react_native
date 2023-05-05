@@ -3,6 +3,10 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/enlargementToysQ/styles.js';
+import { Dimensions } from 'react-native';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const EnlargementToysQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -97,8 +101,8 @@ const EnlargementToysQ = ({navigation}) => {
            alignItems: 'center',
            justifyContent: 'center',
            alignContent: 'center',
-           width: 180,
-           height: 73,
+           width: 0.45 * windowWidth,
+           height: 0.095 * windowHeight,
            borderRadius: 9,
            justifyContent: 'center',
            alignItems: 'center',

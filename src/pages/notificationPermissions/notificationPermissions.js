@@ -56,7 +56,7 @@ const NotificationPermissions = ({navigation}) => {
           <Text style = {styles.buttonTextStyle}>Turn On Notifications</Text>
         </RedButton>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('erectionPromlemQ')} >
+        <TouchableOpacity onPress={() => navigation.navigate('erectionProblemQ')} >
         <Text style= {styles.maybeLater}>Maybe later</Text>
         </TouchableOpacity>
       </View>
