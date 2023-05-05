@@ -30,58 +30,58 @@ const renderProgressBar = () => {
          </Text>
          </View>
           
-            <UIView style = {styles.bolum}>
-              <Text style = {styles.bolumText}>
+            <UIView style = {styles.field}>
+              <Text style = {styles.fieldText}>
               The sexual stamina of people
                who do kegel exercises
               improves by  
-              <Text style = {styles.yuzde}> 82%</Text>
+              <Text style = {styles.percentage}> 82%</Text>
               </Text>
              <Image style = {styles.chartImage} source = {require('/Users/main/KMClone/src/images/chart1.png')}/>
              </UIView>
-           <UIView style = {styles.bolum}>  
+           <UIView style = {styles.field}>  
             <Text style = {styles.performance}>
             Performance Score
             </Text>
-            <Text style = {styles.paragraf}>
+            <Text style = {styles.paragraph}>
             Kegel egzersizleri için performans, erekiyon ve boşalma için önemli olan kasları güçlendirmeye yardımcı olur. Nefes
             egzersizleri ise ana odaklanmanıza yardımcı olur. Kegelman, Kegel ve nefes egzersizleri ile anda sağlıklı kalmana 
             yardımcı olacak.
             </Text>
-            <Image style = {styles.yesilImage} source = {require('/Users/main/KMClone/src/images/yesil.png')}/>
+            <Image style = {styles.greenImage} source = {require('/Users/main/KMClone/src/images/yesil.png')}/>
             </UIView>
 
-            <UIView style = {styles.bolum}>
+            <UIView style = {styles.field}>
             <Text style = {styles.performance}>
             Stress Score
             </Text>
-            <Text style = {styles.paragraf}>
+            <Text style = {styles.paragraph}>
             Stres seviyenin yüksek olduğunu belirttin. Cinsellikte stresli olman performans düşüklüğüne sebep olacaktır. 
             Stresini azaltmak için nefes egzersizlerimizle yanındayız.
             </Text>
-            <Image style = {styles.kirmiziImage} source = {require('/Users/main/KMClone/src/images/stres.png')}/>
+            <Image style = {styles.redImage} source = {require('/Users/main/KMClone/src/images/stres.png')}/>
             </UIView>
 
-            <UIView style = {styles.bolum}>
+            <UIView style = {styles.field}>
             <Text style = {styles.performance}>
             Sleep Score
             </Text>
-            <Text style = {styles.paragraf}>
+            <Text style = {styles.paragraph}>
             Uykunun kalitesiz olduğunu belirttin. Günlük düzenli uyku hormonlarının düzenli olarak çalışmasını sağlayacak. Biliyorsun ki cinsel performansın en büyük etkeni hormonlar.
              Kegelman içerisindeki postlarda hormonlar hakkında daha fazla bilgi bulabilirsin.
             </Text>
-            <View style = {styles.saatStyle}>
+            <View style = {styles.clockStyle}>
             <Image source = {require('/Users/main/KMClone/src/images/saatyesil.png')}/>
             <Image source = {require('/Users/main/KMClone/src/images/saatkirmizi.png')}/>
             </View>
             </UIView>
 
 
-            <UIView style = {styles.adambolum}>
+            <UIView style = {styles.manField}>
             <Text style = {styles.performance}>
             General Exercise
             </Text>
-            <Text style = {styles.paragraf}>
+            <Text style = {styles.paragraph}>
             Cinsel performansını arttırmak için egzersiz olmazsa olmaz. Egzersiz kan akım hızını artırır. 
             Bu sebeple penisin daha iyi kanlanmasına ve daha sert ereksiyon sağlamana yardımcı olur. Sana hazırladığım mat egzersizlerini hemen yapmaya başlayabilirsin. 
             İlerlemeni gün gün takip edebileceksin.
@@ -111,7 +111,7 @@ const renderProgressBar = () => {
 
 
 const UIView = ({children}) => {
-  return <View style={styles.bolum}>{children}</View>;
+  return <View style={styles.field}>{children}</View>;
 };
 
 

@@ -56,15 +56,15 @@ const EnlargementToysQ = ({navigation}) => {
     return(
       <View >
      
-      <View style = {styles.koyuButtonContainer}>
-      <KoyuButon navigation= {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+      <View style = {styles.darkButtonContainer}>
+      <DarkButton navigation= {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
         <Text style = {styles.haveYouTriedTextStyle}>No</Text>
-      </KoyuButon>
+      </DarkButton>
       
-      <View style = {styles.koyuButtonContainer}>
-      <KoyuButon  navigation= {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+      <View style = {styles.darkButtonContainer}>
+      <DarkButton  navigation= {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
         <Text style = {styles.haveYouTriedTextStyle}>Yes</Text>
-      </KoyuButon>
+      </DarkButton>
       </View>
       
     </View>
@@ -86,7 +86,7 @@ const EnlargementToysQ = ({navigation}) => {
    
   }
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -95,9 +95,9 @@ const EnlargementToysQ = ({navigation}) => {
     };
   
     return (
-      <View style={styles.koyuButton}>
+      <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',
+           style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',
            alignItems: 'center',
            justifyContent: 'center',
            alignContent: 'center',

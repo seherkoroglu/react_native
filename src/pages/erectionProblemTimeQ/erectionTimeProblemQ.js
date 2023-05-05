@@ -47,17 +47,17 @@ const ErectionTimeProblemQ = ({navigation}) => {
         <Text style={styles.doYouStyle}>When do you have erection or ejaculation problem? </Text>
         </View>
         
-        <KoyuButon navigation={navigation} select={selected === 'Only with a partner'} setSelect={() => setSelected('Only with a partner')}>
+        <DarkButton navigation={navigation} select={selected === 'Only with a partner'} setSelect={() => setSelected('Only with a partner')}>
           <Text style = {styles.doYouTextStyle}>Only with a partner</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation} select={selected === 'With a partner & solo'} setSelect={() => setSelected('With a partner & solo')}>
+        <DarkButton navigation={navigation} select={selected === 'With a partner & solo'} setSelect={() => setSelected('With a partner & solo')}>
           <Text style = {styles.doYouTextStyle}>With a partner & solo</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation} select={selected === 'Only when solo'} setSelect={() => setSelected('Only when solo')}>
+        <DarkButton navigation={navigation} select={selected === 'Only when solo'} setSelect={() => setSelected('Only when solo')}>
           <Text style = {styles.doYouTextStyle}>Only when solo</Text>
-        </KoyuButon>
+        </DarkButton>
       </View>
      </>
         
@@ -79,7 +79,7 @@ const ErectionTimeProblemQ = ({navigation}) => {
 
   
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
       const handlePress = () => {
         setSelect(!select);
         setTimeout(() => {
@@ -88,9 +88,9 @@ const ErectionTimeProblemQ = ({navigation}) => {
       };
     
       return (
-        <View style={styles.koyuButton}>
+        <View style={styles.darkButton}>
           <TouchableOpacity
-              style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
+              style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
               height: 0.065 * height,
               borderRadius: 8,
               justifyContent: 'center',

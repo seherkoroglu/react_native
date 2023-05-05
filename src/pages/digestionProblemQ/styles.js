@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  koyuButtonContainer: {
+  darkButtonContainer: {
     backgroundColor: '#191924',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: windowWidth * 0.03,
   },
 
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: windowWidth * 0.46,
     height: windowHeight * 0.09,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   backImage: {
     width: windowWidth * 0.05,
     height: windowHeight * 0.03,
-    marginLeft: windowWidth * 0.05,
+    marginLeft: windowWidth * 0.02,
     marginBottom: windowHeight * 0.01,
     justifyContent: 'flex-start',
   },

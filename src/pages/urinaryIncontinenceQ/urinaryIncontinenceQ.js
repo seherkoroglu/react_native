@@ -59,17 +59,17 @@ const renderQuestion = () => {
   const renderOptions = () => {
     return (
 <View >
-<View style = {styles.koyuButtonContainer}>
+<View style = {styles.darkButtonContainer}>
 
-<KoyuButon navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+<DarkButton navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
   <Text style = {styles.haveYouEverTextStyle}>No</Text>
-</KoyuButon>
+</DarkButton>
 
-<View style = {styles.koyuButtonContainer}>
+<View style = {styles.darkButtonContainer}>
 
-<KoyuButon navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+<DarkButton navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
   <Text style = {styles.haveYouEverTextStyle}>Yes</Text>
-</KoyuButon>
+</DarkButton>
 
 </View>
 </View>
@@ -88,7 +88,7 @@ const renderQuestion = () => {
   }
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -96,9 +96,9 @@ const renderQuestion = () => {
       }, 1300); 
     };
     return (
-      <View style={styles.koyuButon}>
+      <View style={styles.darkButton}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: screenWidth * 0.46,
+        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: screenWidth * 0.46,
         height: screenHeight * 0.09,
         borderRadius: 8,
         margin: 8,

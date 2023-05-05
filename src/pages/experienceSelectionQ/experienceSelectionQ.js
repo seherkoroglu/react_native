@@ -47,30 +47,30 @@ const renderProgressBar = () => {
         <Text style={styles.doYouStyle}>Select the ones you experience</Text>
         </View>
       
-        <KoyuButon>
+        <DarkButton>
          <Text style = {styles.doYouTextStyle}>I don't enjoy sex/I am more satisfied when I 
 watch porn</Text>
-        </KoyuButon>
+        </DarkButton>
 
       
-        <KoyuButon style ={styles.koyuButon}>
+        <DarkButton style ={styles.darkButton}>
           <Text style = {styles.doYouTextStyle}>I spend money on porn</Text>
-        </KoyuButon>
+        </DarkButton>
 
       
-        <KoyuButon>
+        <DarkButton>
           <Text style = {styles.doYouTextStyle}>I involve in risky behaviours to watch porn (such as at work)</Text>
-        </KoyuButon>
+        </DarkButton>
 
       
-        <KoyuButon>
+        <DarkButton>
           <Text style = {styles.doYouTextStyle}>I feel frustrated after watching but continue to do so</Text>
-        </KoyuButon>
+        </DarkButton>
 
        
-        <KoyuButon>
+        <DarkButton>
           <Text style = {styles.doYouTextStyle}>None</Text>
-        </KoyuButon>
+        </DarkButton>
         
          <View style = {styles.redButtonContainer}>
           <TouchableOpacity onPress={() => navigation.navigate('antiDepressantUseQ')}>
@@ -92,12 +92,12 @@ watch porn</Text>
     );
   }
 
-const KoyuButon = (props ) => {
+const DarkButton = (props ) => {
   const [select, setSelect] = useState(false);
   return (
-    <View style={styles.koyuButon}>
+    <View style={styles.darkButton}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: width * 0.9,
+      style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: width * 0.9,
       height: height * 0.07,
       borderRadius: 8,
       margin: 8,

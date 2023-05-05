@@ -40,19 +40,19 @@ const PornWatchingFrequencyQ = ({navigation}) => {
     return (
       <View style = {styles.buttonContainer}>
         <Text style={styles.doYouStyle}>How often do you watch porn?</Text>
-        <KoyuButon navigation = {navigation} select={selected === 'Min. once each day'} setSelect={() => setSelected('Min. once each day')}>
+        <DarkButton navigation = {navigation} select={selected === 'Min. once each day'} setSelect={() => setSelected('Min. once each day')}>
           <Text style = {styles.doYouTextStyle}>Min. once each day</Text>
-        </KoyuButon >
-        <KoyuButon navigation = {navigation} select={selected === '1 to 6 times in a week'} setSelect={() => setSelected('1 to 6 times in a week')}>
+        </DarkButton >
+        <DarkButton navigation = {navigation} select={selected === '1 to 6 times in a week'} setSelect={() => setSelected('1 to 6 times in a week')}>
           <Text style = {styles.doYouTextStyle}>1 to 6 times in a week</Text>
-        </KoyuButon>
-        <KoyuButon navigation = {navigation} select={selected === 'Once or twice in a month'} setSelect={() => setSelected('Once or twice in a month')}>
+        </DarkButton>
+        <DarkButton navigation = {navigation} select={selected === 'Once or twice in a month'} setSelect={() => setSelected('Once or twice in a month')}>
           <Text style = {styles.doYouTextStyle}>Once or twice in a month</Text>
-        </KoyuButon>       
+        </DarkButton>       
         
-       <KoyuButon navigation = {navigation} select={selected === 'Never'} setSelect={() => setSelected('Never')}>
+       <DarkButton navigation = {navigation} select={selected === 'Never'} setSelect={() => setSelected('Never')}>
           <Text style = {styles.doYouTextStyle}>Never</Text>
-        </KoyuButon>     
+        </DarkButton>     
          </View>
     );
   };
@@ -68,7 +68,7 @@ const PornWatchingFrequencyQ = ({navigation}) => {
   }
   
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -76,9 +76,9 @@ const PornWatchingFrequencyQ = ({navigation}) => {
       }, 1300); 
     };
   return (
-    <View style={styles.koyuButon}>
+    <View style={styles.darkButton}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
+      style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
       height: 0.07 * height,
       borderRadius: 8,
       margin: 8,

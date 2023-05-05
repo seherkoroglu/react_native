@@ -52,17 +52,17 @@ const AntiDepressantUseQ = ({navigation}) => {
   const renderOptions = () => {
     return (
     <View >
-    <View style = {styles.koyuButtonContainer}>
+    <View style = {styles.darkButtonContainer}>
    
-    <KoyuButon navigation ={navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+    <DarkButton navigation ={navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
       <Text style = {styles.doYouUseTextStyle}>No</Text>
-    </KoyuButon>
+    </DarkButton>
     
-    <View style = {styles.koyuButtonContainer}>
+    <View style = {styles.darkButtonContainer}>
    
-    <KoyuButon navigation ={navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+    <DarkButton navigation ={navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
       <Text style = {styles.doYouUseTextStyle}>Yes</Text>
-    </KoyuButon>
+    </DarkButton>
     
     </View>
   </View>
@@ -83,7 +83,7 @@ const AntiDepressantUseQ = ({navigation}) => {
   };
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -91,9 +91,9 @@ const AntiDepressantUseQ = ({navigation}) => {
       }, 1300); 
     };
     return (
-      <View style={styles.koyuButon}>
+      <View style={styles.darkButton}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',   width: wp('45%'),
+        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',   width: wp('45%'),
         height: hp('9%'),
         borderRadius: wp('2%'),
         margin: 8,

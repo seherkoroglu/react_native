@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingTop: height * 0.01,
   },
 
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: 0.9 * width,
     height: 0.07 * height,

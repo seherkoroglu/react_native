@@ -42,17 +42,17 @@ const SelectAgeRange = ({navigation}) => {
     return (
       <View style = {styles.buttonContainer}>
         <Text style={styles.ageStyle}>Select age range</Text>
-        <KoyuButon navigation={navigation} select={selectedAge === '18-30'} setSelect={() => setSelectedAge('18-30')}>
+        <DarkButton navigation={navigation} select={selectedAge === '18-30'} setSelect={() => setSelectedAge('18-30')}>
           <Text style={styles.ageTextStyle}>18-30</Text>
-        </KoyuButon>
+        </DarkButton>
 
-        <KoyuButon navigation={navigation} select={selectedAge === '31-55'} setSelect={() => setSelectedAge('31-55')}>
+        <DarkButton navigation={navigation} select={selectedAge === '31-55'} setSelect={() => setSelectedAge('31-55')}>
           <Text style={styles.ageTextStyle}>31-55</Text>
-        </KoyuButon>
+        </DarkButton>
 
-        <KoyuButon navigation={navigation} select={selectedAge === '55+'} setSelect={() => setSelectedAge('55+')}>
+        <DarkButton navigation={navigation} select={selectedAge === '55+'} setSelect={() => setSelectedAge('55+')}>
           <Text style={styles.ageTextStyle}>55+</Text>
-        </KoyuButon>
+        </DarkButton>
       
       </View>
         
@@ -67,7 +67,7 @@ const SelectAgeRange = ({navigation}) => {
     </>
   );
 };
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
 
     const handlePress = () => {
       setSelect(true);
@@ -77,9 +77,9 @@ const SelectAgeRange = ({navigation}) => {
     };
   
     return (
-      <View style={styles.koyuButton}>
+      <View style={styles.darkButton}>
         <TouchableOpacity
-          style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59'} : null]}
+          style={[styles.darkButton, select ? {backgroundColor: '#4d4f59'} : null]}
           onPress={handlePress}
         >
           {children}

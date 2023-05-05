@@ -48,21 +48,21 @@ const SexualDesireQ = ({navigation}) => {
   const renderOptions = () => {
     return (
       <View style = {styles.buttonContainer}>
-        <KoyuButon navigation={navigation} select={selected === 'Bad'} setSelect={() => setSelected('Bad')}>
+        <DarkButton navigation={navigation} select={selected === 'Bad'} setSelect={() => setSelected('Bad')}>
           <Text style = {styles.havingProblemsTextStyle}>Bad</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation} select={selected === 'Fair'} setSelect={() => setSelected('Fair')}>
+        <DarkButton navigation={navigation} select={selected === 'Fair'} setSelect={() => setSelected('Fair')}>
           <Text style = {styles.havingProblemsTextStyle}>Fair</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation} select={selected === 'Good'} setSelect={() => setSelected('Good')}>
+        <DarkButton navigation={navigation} select={selected === 'Good'} setSelect={() => setSelected('Good')}>
           <Text style = {styles.havingProblemsTextStyle}>Good</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation} select={selected === 'Very Good'} setSelect={() => setSelected('Very Good')}>
+        <DarkButton navigation={navigation} select={selected === 'Very Good'} setSelect={() => setSelected('Very Good')}>
           <Text style = {styles.havingProblemsTextStyle}>Very Good</Text>
-        </KoyuButon>
+        </DarkButton>
       </View>
         
     );
@@ -80,7 +80,7 @@ const SexualDesireQ = ({navigation}) => {
 
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
   const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -89,9 +89,9 @@ const SexualDesireQ = ({navigation}) => {
     };
   
     return (
-      <View style={styles.koyuButton}>
+      <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59',
+           style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: 0.8 * width,
            height: 0.07 * height,
            borderRadius: 8,

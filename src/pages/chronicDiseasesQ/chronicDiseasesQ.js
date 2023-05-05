@@ -52,12 +52,12 @@ const ChronicDiseasesQ = ({navigation}) => {
       <View style = {styles.buttonContainer}>
       <Text style={styles.doYouStyle}>Do you have any chronic diseases?</Text>
      
-      <KoyuButon select={selected === 'No'} setSelect={() => setSelected('No')}>
+      <DarkButton select={selected === 'No'} setSelect={() => setSelected('No')}>
         <Text style = {styles.doYouTextStyle}>No</Text>
-      </KoyuButon>
-      <KoyuButon select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+      </DarkButton>
+      <DarkButton select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
         <Text style = {styles.doYouTextStyle}>Yes</Text>
-      </KoyuButon>
+      </DarkButton>
       <NameInput/>
       <View style = {styles.redButtonContainer}>
       <TouchableOpacity onPress={() => navigation.navigate('researchResults')}>
@@ -95,11 +95,11 @@ const NameInput  = (props) => {
   );
 };
 
-const KoyuButon = ({ navigation, children, select, setSelect }) => {
+const DarkButton = ({ navigation, children, select, setSelect }) => {
   return (
-    <View style={styles.koyuButon}>
+    <View style={styles.darkButton}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',    width: width * 0.9,
+      style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',    width: width * 0.9,
       height: height * 0.07,
       borderRadius: 8,
       margin: 5,

@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
       
       
     },
-    bolum: {
+    field: {
       backgroundColor: '#191a26',
       borderRadius: 20,
       padding: 10,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       paddingBottom: 50,
     },
-    bolumText: {
+    fieldText: {
       color: '#fff',
       fontSize: 20,
       textAlign: 'center',
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
       
       
     },
-    yuzde: {
+    percentage: {
       color: '#26d1a3',
       fontSize: 23,
       paddingLeft: 199,
@@ -92,13 +92,13 @@ const styles = StyleSheet.create({
           marginTop: 20,
           fontWeight: 'bold',
         },
-        yesilImage: {
+        greenImage: {
           width: 200,
           height: 100,
           alignSelf: 'center',
         },
   
-        paragraf: {
+        paragraph: {
           color: '#fff',
           fontSize: 15,
           textAlign: 'center',
@@ -106,13 +106,13 @@ const styles = StyleSheet.create({
           fontWeight: '300',
           marginBottom: 20,
         },
-        kirmiziImage: {
+        redImage: {
           width: 150,
           height: 100,
           alignSelf: 'center',
         },
   
-        saatStyle: {
+        clockStyle: {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'space-around',
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
             paddingTop: 20,
             },
             
-            adambolum: {
+            manField: {
               paddingBottom: 300,
             },
   });

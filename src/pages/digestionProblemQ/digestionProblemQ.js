@@ -11,10 +11,11 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/digestionProblemQ/styles.js';
-import { Dimensions } from 'react-native';
+import {Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
 
 const DigestionProblemQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
@@ -62,16 +63,16 @@ const DigestionProblemQ = ({navigation}) => {
     return (
       <>
    <View >
-<View style = {styles.koyuButtonContainer}>
+<View style = {styles.darkButtonContainer}>
 
-<KoyuButon navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+<DarkButton navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
   <Text style = {styles.haveYouEverTextStyle}>No</Text>
-</KoyuButon>
-<View style = {styles.koyuButtonContainer}>
+</DarkButton>
+<View style = {styles.darkButtonContainer}>
 
-<KoyuButon navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+<DarkButton navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
   <Text style = {styles.haveYouEverTextStyle}>Yes</Text>
-</KoyuButon>
+</DarkButton>
 </View>
 </View>
 </View>
@@ -93,7 +94,7 @@ const DigestionProblemQ = ({navigation}) => {
 
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
        const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -101,9 +102,9 @@ const DigestionProblemQ = ({navigation}) => {
       }, 1300); 
     };
     return (
-      <View style={styles.koyuButon}>
+      <View style={styles.darkButton}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: windowWidth * 0.46,
+        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: windowWidth * 0.46,
         height: windowHeight * 0.09,
         borderRadius: windowWidth * 0.02,
         margin: 8,

@@ -10,14 +10,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: height * 0.03, 
   },
-  sonStyle: {
+  lastStyle: {
     color: '#fff',
     fontSize: width * 0.05,
     fontWeight: '300',
     textAlign: 'left',
     paddingBottom: height * 0.01,
   },
-  sonView: {
+  lastView: {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     backgroundColor: '#191924',

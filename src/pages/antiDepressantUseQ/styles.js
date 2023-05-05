@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     padding: hp('5%'),
   },
 
-  koyuButtonContainer: {
+  darkButtonContainer: {
     backgroundColor: '#191924',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingRight: wp('5%'),
   },
 
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: wp('45%'),
     height: hp('9%'),

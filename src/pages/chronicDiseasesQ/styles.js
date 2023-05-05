@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 
 
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: width * 0.9,
     height: height * 0.07,

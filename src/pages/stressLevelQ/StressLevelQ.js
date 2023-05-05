@@ -45,17 +45,17 @@ const StressLevelQ = ({navigation}) => {
 stress level?</Text>
 </View>
       
-        <KoyuButon navigation = {navigation} select={selected === 'Low'} setSelect={() => setSelected('Low')}>
+        <DarkButton navigation = {navigation} select={selected === 'Low'} setSelect={() => setSelected('Low')}>
           <Text style = {styles.doYouTextStyle}>Low</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation = {navigation} select={selected === 'Medium'} setSelect={() => setSelected('Medium')}>
+        <DarkButton navigation = {navigation} select={selected === 'Medium'} setSelect={() => setSelected('Medium')}>
           <Text style = {styles.doYouTextStyle}>Medium</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation = {navigation} select={selected === 'High'} setSelect={() => setSelected('High')}> 
+        <DarkButton navigation = {navigation} select={selected === 'High'} setSelect={() => setSelected('High')}> 
           <Text style = {styles.doYouTextStyle}>High</Text>
-        </KoyuButon>
+        </DarkButton>
        
       </View>
     );
@@ -69,7 +69,7 @@ stress level?</Text>
     );
   }
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -77,9 +77,9 @@ stress level?</Text>
       }, 1300); 
     };
     return (
-      <View style={styles.koyuButon}>
+      <View style={styles.darkButton}>
       <TouchableOpacity
-        style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59',  width: 0.9 * windowWidth,
+        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',  width: 0.9 * windowWidth,
         height: 0.15 * windowWidth,
         borderRadius: 8,
         margin: 8,

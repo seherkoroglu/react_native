@@ -54,20 +54,20 @@ const ErectionPills = ({navigation}) => {
         return (
           <>
       <View >
-        <View style = {styles.koyuButtonContainer}>
+        <View style = {styles.darkButtonContainer}>
         
-        <KoyuButon navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+        <DarkButton navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
           <Text style = {styles.haveYouEverTextStyle}>No</Text>
-        </KoyuButon>
+        </DarkButton>
        
         
-        <View style = {styles.acikButtonContainer}>
+        <View style = {styles.lightButtonContainer}>
         
           
-        <KoyuButon navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+        <DarkButton navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
           <Text style = {styles.haveYouEverTextStyle}>Yes</Text>
         
-        </KoyuButon>
+        </DarkButton>
        
         </View>
       </View>
@@ -90,7 +90,7 @@ const ErectionPills = ({navigation}) => {
 
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
   const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -99,9 +99,9 @@ const ErectionPills = ({navigation}) => {
     };
   
     return (
-      <View style={styles.koyuButton}>
+      <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59',
+           style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: 0.45 * windowWidth,
           height: 0.10* windowHeight,
            borderRadius: 9,

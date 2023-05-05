@@ -48,18 +48,18 @@ const OrgasmPleasureRateQ = ({navigation}) => {
     return (
         <View style = {styles.buttonContainer} >
         
-        <KoyuButon navigation = {navigation} select={selected === 'No pleasure'} setSelect={() => setSelected('No pleasure')}> 
+        <DarkButton navigation = {navigation} select={selected === 'No pleasure'} setSelect={() => setSelected('No pleasure')}> 
           <Text style = {styles.doYouTextStyle}>No pleasure</Text>
-        </KoyuButon>
+        </DarkButton>
        
         
-        <KoyuButon navigation = {navigation} select={selected === 'Normal'} setSelect={() => setSelected('Normal')}>
+        <DarkButton navigation = {navigation} select={selected === 'Normal'} setSelect={() => setSelected('Normal')}>
           <Text style = {styles.doYouTextStyle}>Normal</Text>
-        </KoyuButon>
+        </DarkButton>
        
-        <KoyuButon navigation = {navigation} select={selected === 'Great pleasure'} setSelect={() => setSelected('Great pleasure')}>
+        <DarkButton navigation = {navigation} select={selected === 'Great pleasure'} setSelect={() => setSelected('Great pleasure')}>
           <Text style = {styles.doYouTextStyle}>Great pleasure</Text>
-        </KoyuButon>
+        </DarkButton>
       </View>
     );
   };
@@ -74,7 +74,7 @@ const OrgasmPleasureRateQ = ({navigation}) => {
     );
   };
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(!select);
       setTimeout(() => {
@@ -82,9 +82,9 @@ const OrgasmPleasureRateQ = ({navigation}) => {
       }, 1300); 
     };
   return (
-    <View style={styles.koyuButon}>
+    <View style={styles.darkButton}>
     <TouchableOpacity
-      style={[styles.koyuButon, select ? { backgroundColor: '#4d4f59', width: 0.9 * windowWidth,
+      style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * windowWidth,
       height: 0.07 * windowHeight,
       borderRadius: 8,
       justifyContent: 'center',

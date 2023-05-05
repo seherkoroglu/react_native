@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     paddingBottom: 0.60 * height,
   },
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: 0.9 * width,
     height: 0.065 * height,

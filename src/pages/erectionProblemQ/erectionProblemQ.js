@@ -47,22 +47,22 @@ const ErectionProblemQ = ({navigation}) => {
           <View>
         <Text style={styles.havingProblemsStyle}>Having problems getting an erection?</Text>
       </View>
-        <KoyuButon navigation={navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+        <DarkButton navigation={navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
           <Text style = {styles.havingProblemsTextStyle}>No</Text>
-        </KoyuButon>
+        </DarkButton>
      
 
-        <KoyuButon navigation={navigation} select={selected === 'Rarely'} setSelect={() => setSelected('Rarely')}>
+        <DarkButton navigation={navigation} select={selected === 'Rarely'} setSelect={() => setSelected('Rarely')}>
           <Text style = {styles.havingProblemsTextStyle}>Rarely</Text>
-        </KoyuButon>
+        </DarkButton>
         
-        <KoyuButon navigation={navigation}  select={selected === 'Often'} setSelect={() => setSelected('Often')}>
+        <DarkButton navigation={navigation}  select={selected === 'Often'} setSelect={() => setSelected('Often')}>
           <Text style = {styles.havingProblemsTextStyle}>Often</Text>
-        </KoyuButon>
+        </DarkButton>
      
-        <KoyuButon navigation={navigation} select={selected === 'Always'} setSelect={() => setSelected('Always')}>
+        <DarkButton navigation={navigation} select={selected === 'Always'} setSelect={() => setSelected('Always')}>
           <Text style = {styles.havingProblemsTextStyle}>Always</Text>
-        </KoyuButon>
+        </DarkButton>
       </View>
      </>
         
@@ -82,7 +82,7 @@ const ErectionProblemQ = ({navigation}) => {
 
 
 
-  const KoyuButon = ({ navigation, children, select, setSelect }) => {
+  const DarkButton = ({ navigation, children, select, setSelect }) => {
     const handlePress = () => {
       setSelect(true);
       setTimeout(() => {
@@ -91,9 +91,9 @@ const ErectionProblemQ = ({navigation}) => {
     };
   
     return (
-      <View style={styles.koyuButton}>
+      <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.koyuButon, select ? {backgroundColor: '#4d4f59',
+           style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: width * 0.8,
           height: height * 0.07,
           borderRadius: width * 0.02,

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     paddingTop: 0.04 * windowHeight,
   },
 
-  koyuButtonContainer: {
+  darkButtonContainer: {
     backgroundColor: '#191924',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     paddingRight: 0.05* windowWidth,
   },
 
-  acikButtonContainer: {
+  lightButtonContainer: {
     backgroundColor: '#191924',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -57,16 +57,7 @@ const styles = StyleSheet.create({
     paddingBottom: 2 * windowHeight,
   },
 
-  genelContainer: {
-    backgroundColor: '#191924',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    flexDirection: 'row',
-    paddingBottom: 0.3* windowHeight,
-  },
-
-  koyuButon: {
+  darkButton: {
     backgroundColor: '#222331',
     width: 0.45 * windowWidth,
     height: 0.10* windowHeight,

@@ -31,22 +31,22 @@ const ProgramCreation = ({navigation}) => {
           height: 300,
         }}
         autoPlay />
-        <View style = {styles.sonView}>
+        <View style = {styles.lastView}>
         <View style = {{flexDirection: 'row'}}>
         <Image source = {require('/Users/main/KMClone/src/images/redTick.png')} style = {{width: 20, height: 20, marginRight: 5}}/>
-        <Text style = {styles.sonStyle}>Analysis</Text>
+        <Text style = {styles.lastStyle}>Analysis</Text>
         </View>
         <View style = {{flexDirection: 'row'}}>
         <Image source = {require('/Users/main/KMClone/src/images/doneIcon.png')} style = {{width: 20, height: 20, marginRight: 5}}/>
-        <Text style = {styles.sonStyle}>Selecting exercises</Text>
+        <Text style = {styles.lastStyle}>Selecting exercises</Text>
         </View>
         <View style = {{flexDirection: 'row'}}>
         <Image source = {require('/Users/main/KMClone/src/images/doneIcon.png')} style = {{width: 20, height: 20, marginRight: 5}}/>
-        <Text style = {styles.sonStyle}>Planning your workouts</Text>
+        <Text style = {styles.lastStyle}>Planning your workouts</Text>
         </View>
         <View style = {{flexDirection: 'row'}}>
         <Image source = {require('/Users/main/KMClone/src/images/doneIcon.png')} style = {{width: 20, height: 20, marginRight: 5}}/>
-        <Text style = {styles.sonStyle}>DONE!</Text>
+        <Text style = {styles.lastStyle}>DONE!</Text>
         </View>
         </View>
        </View>
