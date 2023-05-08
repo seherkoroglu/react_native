@@ -6,17 +6,16 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: 0.04 * width,
     backgroundColor: '#191924',
-    paddingTop: 0.1 * height,
-    paddingBottom: 0.02 * height,
+    paddingTop: 0.1 * width,
   },
 
   textStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: 0.035 * width,
+    fontSize: 0.040 * width,
     fontWeight: 'bold',
-    paddingLeft: 0.75 * width,
-    paddingBottom: 0.02 * height,
+    paddingLeft: 0.73 * width,
+    paddingBottom: 0.02 * width,
   },
 
   havingProblemsStyle: {
@@ -24,11 +23,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 0.060 * width,
     fontWeight: 'bold',
-    lineHeight: 0.1 * height,
+    lineHeight: 0.1 * width,
     paddingHorizontal: 0.1 * width,
     textAlign: 'center',
-    paddingTop: 0.03 * height,
-    paddingBottom: 0.01 * height,
+    paddingTop: 0.08 * width,
+    paddingBottom: 0.01 * width,
   },
 
   buttonContainer: {
@@ -36,19 +35,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',
-   
+    paddingTop: 0.15 * width,
     flexDirection: 'column',
-    paddingBottom: 0.45 * height,
+    paddingBottom: 3 * width,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: 0.8 * width,
-    height: 0.07 * height,
+    height: 0.12 * width,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 0.02 * height,
+    marginTop: 0.03 * width,
+    marginBottom: 0.01 * width,
   },
 
     havingProblemsTextStyle: {
@@ -63,13 +63,14 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
+      paddingTop: width * 0.01,
+
     },
     backImage: {
-      width: width * 0.05,
-      height: height * 0.025,
-      marginLeft: width * 0.05,
-    
-      marginBottom: height * 0.01,
+      width: width * 0.07,
+      height: width * 0.055,
+      marginLeft: width * 0.04,
+      marginBottom: width * 0.01,
       justifyContent: 'flex-start',
     },
   });

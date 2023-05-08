@@ -94,7 +94,7 @@ const AntiDepressantUseQ = ({navigation}) => {
       <View style={styles.darkButton}>
       <TouchableOpacity
         style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',   width: wp('45%'),
-        height: hp('9%'),
+        height: wp('20%'),
         borderRadius: wp('2%'),
         margin: 8,
         justifyContent: 'center',

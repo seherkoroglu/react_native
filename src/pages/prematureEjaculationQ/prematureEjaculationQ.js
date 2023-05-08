@@ -91,7 +91,7 @@ const PrematureEjaculationQ = ({navigation}) => {
         <View style={styles.darkButton}>
           <TouchableOpacity
               style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',  width: 0.9 * width,
-              height: 0.06 * height,
+              height: 0.13 * width,
               borderRadius: 8,
               justifyContent: 'center',
               alignItems: 'center',

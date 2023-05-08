@@ -8,21 +8,21 @@ const styles = StyleSheet.create({
     fontSize: width * 0.06, 
     fontWeight: '500',
     textAlign: 'center',
-    marginVertical: height * 0.03, 
+    marginVertical: width * 0.03, 
   },
   lastStyle: {
     color: '#fff',
     fontSize: width * 0.05,
     fontWeight: '300',
     textAlign: 'left',
-    paddingBottom: height * 0.01,
+    paddingBottom: width * 0.01,
   },
   lastView: {
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     backgroundColor: '#191924',
     flexDirection: 'column',
-    paddingBottom: height * 0.02,
+    paddingBottom: width * 0.02,
   },
 });
 

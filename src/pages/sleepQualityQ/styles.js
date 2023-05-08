@@ -6,8 +6,7 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: 20,
     backgroundColor: '#191924',
-    paddingTop: height * 0.1,
-    paddingBottom: height * 0.016,
+    paddingTop: width * 0.1,
   },
 
   textStyle: {
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
     fontSize: 0.039 * width,
     fontWeight: 'bold',
     paddingLeft: width * 0.75,
-    paddingBottom: height * 0.05,
+    paddingBottom: width * 0.05,
   },
 
   doYouStyle: {
@@ -24,11 +23,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: width * 0.06,
     fontWeight: 'bold',
-    lineHeight: height * 0.035,
+    lineHeight: width * 0.07,
     paddingLeft: width * 0.1,
     paddingRight: width * 0.1,
     textAlign: 'center',
-    paddingBottom: height * 0.02,
+    paddingBottom: width * 0.04,
   },
 
   buttonContainer: {
@@ -36,19 +35,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',
-    paddingTop: height * 0.1,
+    paddingTop: width * 0.1,
     flexDirection: 'column',
-    paddingBottom: height * 0.6,
+    paddingBottom: width * 1.5,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: 0.9 * width,
-    height: 0.07 * height,
+    height: 0.12 * width,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 0.01* height,
+    margin: 0.01* width,
   },
 
   doYouTextStyle: {
@@ -63,14 +62,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingTop: height * 0.005,
+    paddingTop: width * 0.01,
   },
 
   backImage: {
-    width: width * 0.05,
-    height: height * 0.03,
+    width: width * 0.07,
+    height: width * 0.05,
     marginLeft: width * 0.04,
-    marginBottom: height * 0.01,
+    marginBottom: width * 0.01,
     justifyContent: 'flex-start',
   },
 });

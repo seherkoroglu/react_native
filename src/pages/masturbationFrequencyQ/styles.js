@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: 20,
     backgroundColor: '#191924',
-    paddingTop: height * 0.1,
-    paddingBottom: height * 0.01,
+    paddingTop: width * 0.1,
+
   },
 
   textStyle: {
@@ -21,12 +21,13 @@ const styles = StyleSheet.create({
   doYouStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: width * 0.06,
+    fontSize: width * 0.057,
     fontWeight: 'bold',
-    lineHeight: height * 0.04,
+    lineHeight: width * 0.07,
     paddingLeft: width * 0.1,
     paddingRight: width * 0.1,
-    paddingBottom: height * 0.02,
+    paddingBottom: width * 0.15,
+    paddingTop: width * 0.07,
     alignItems: 'center',
     textAlign: 'center',
   },
@@ -37,13 +38,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    paddingBottom: height * 0.4,
+    paddingBottom: width * 2,
   },
   
   darkButton: {
     backgroundColor: '#222331',
     width: width * 0.9,
-    height: height * 0.065,
+      height: width * 0.12,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -63,11 +64,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingLeft: width * 0.05,
+   paddingTop: width * 0.01,
   },
 
   backImage: {
-    width: width * 0.05,
-    height: height * 0.03,
+    width: width * 0.07,
+    height: width * 0.05,
     justifyContent: 'flex-start',
   },
 
@@ -76,8 +78,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',
-    paddingTop: height * 0.07,
-    paddingBottom: height * 0.01,
+    paddingTop: width * 0.07,
+    paddingBottom: width * 0.01,
   },
 });
 

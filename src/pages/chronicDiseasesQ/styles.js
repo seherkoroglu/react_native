@@ -3,20 +3,18 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 20,
-    flex: 1,
+    paddingLeft: width * 0.05,
     backgroundColor: '#191924',
-    paddingTop: height * 0.1,
-    paddingBottom: 16,
+    paddingTop: width * 0.1,
   },
 
   textStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: width * 0.035,
+    fontSize: width * 0.039,
     fontWeight: 'bold',
     paddingLeft: width * 0.75,
-    paddingBottom: height * 0.05,
+    paddingBottom: width * 0.05,
 
   },
 
@@ -25,7 +23,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: width * 0.05,
     fontWeight: 'bold',
-    lineHeight: height * 0.05,
+    lineHeight: width * 0.05,
     padding: width * 0.05,
     textAlign: 'center',
   },
@@ -35,9 +33,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',
-    paddingTop: height * 0.1,
+    paddingTop: width * 0.1,
     flexDirection: 'column',
-    paddingBottom: height * 0.5,
+    paddingBottom: width * 1,
 
   },
 
@@ -45,7 +43,7 @@ const styles = StyleSheet.create({
   darkButton: {
     backgroundColor: '#222331',
     width: width * 0.9,
-    height: height * 0.07,
+    height: width * 0.12,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
@@ -65,17 +63,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    paddingBottom: height * 0.05,
+    paddingBottom: width * 0.05,
 
   },
   buttonText: {
     color: 'white',
     fontSize: width * 0.05,
     fontWeight: 'bold',
-    lineHeight: height * 0.05,
-    paddingLeft: width * 0.05,
-    paddingRight: width * 0.05,
-    paddingTop: height * 0.01,
+    lineHeight: width * 0.05,
+    textAlign: 'center',
+    paddingTop: width * 0.02,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -106,7 +103,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingTop: height * 0.01,
+    paddingTop: width * 0.01,
 
 
   },
@@ -115,7 +112,7 @@ const styles = StyleSheet.create({
     width: width * 0.06,
     height: width * 0.06,
     marginLeft: width * 0.05,
-    marginBottom: height * 0.02,
+    marginBottom: width * 0.02,
     justifyContent: 'flex-start',
   },
 

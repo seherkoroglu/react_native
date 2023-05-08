@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: 0.05 * windowWidth,
     backgroundColor: '#191924',
-    paddingTop: 0.1 * windowHeight,
-    paddingBottom: 0.01 * windowHeight,
+    paddingTop: 0.1 * windowWidth,
   },
 
   textStyle: {
@@ -28,7 +27,8 @@ const styles = StyleSheet.create({
     paddingLeft: 0.1 * windowWidth,
     paddingRight: 0.1 * windowWidth,
     textAlign: 'center',
-    paddingBottom: 0.04 * windowHeight,
+    paddingBottom: 0.04 * windowWidth,
+    paddingTop: 0.1 * windowWidth,
   },
 
   buttonContainer: {
@@ -37,18 +37,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    paddingTop: 0.06 * windowHeight,
-    paddingBottom: 0.9 * windowHeight,
+    paddingTop: 0.06 * windowWidth,
+    paddingBottom: 1.5 * windowWidth,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: 0.9 * windowWidth,
-    height: 0.07 * windowHeight,
+    height: 0.12 * windowWidth,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 0.01* windowHeight,
+    margin: 0.01* windowWidth,
   },
 
   doYouTextStyle: {
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
       paddingLeft: 0.04 * windowWidth,
-      paddingBottom: 0.08 * windowHeight,
+      paddingBottom: 0.08 * windowWidth,
+      paddingTop: 0.01 * windowWidth,
     },
   
     backImage: {

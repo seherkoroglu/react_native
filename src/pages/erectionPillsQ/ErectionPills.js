@@ -103,7 +103,10 @@ const ErectionPills = ({navigation}) => {
         <TouchableOpacity
            style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: 0.45 * windowWidth,
-          height: 0.10* windowHeight,
+           height: 0.17* windowWidth,
+           borderRadius: 9,
+           justifyContent: 'center',
+           alignItems: 'center',
            borderRadius: 9,
            borderColor: '#71727a',
            borderWidth: 1,} : null]}

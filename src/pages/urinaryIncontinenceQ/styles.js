@@ -5,10 +5,9 @@ const screenHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 20,
+    paddingLeft: screenWidth * 0.05,
     backgroundColor: '#191924',
-    paddingTop: 100,
-    paddingBottom: 16,
+    paddingTop: screenWidth * 0.1,
   },
   textStyle: {
     backgroundColor: '#191924',
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
     fontSize: screenWidth * 0.04,
     fontWeight: 'bold',
     paddingLeft: screenWidth * 0.75,
-    paddingBottom: screenHeight * 0.015,
+    paddingBottom: screenWidth * 0.015,
   },
   haveYouEverStyle: {
     backgroundColor: '#191924',
@@ -35,14 +34,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     alignContent: 'flex-start',
     flexDirection: 'row',
-    paddingBottom: screenHeight * 0.5,
+    paddingBottom: screenWidth * 1,
     paddingLeft: screenWidth * 0.02,
     paddingRight: screenWidth * 0.02,
   },
   darkButton: {
     backgroundColor: '#222331',
     width: screenWidth * 0.46,
-    height: screenHeight * 0.09,
+    height: screenWidth * 0.2,
     borderRadius: 9,
     justifyContent: 'center',
     alignItems: 'center',
@@ -61,12 +60,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    paddingTop: screenWidth * 0.01,
   },
   backImage: {
     width: screenWidth * 0.06,
     height: screenWidth * 0.06,
     marginLeft: screenWidth * 0.04,
-    marginBottom: screenHeight * 0.01,
+    marginBottom: screenWidth * 0.01,
     justifyContent: 'flex-start',
   },
 });

@@ -79,7 +79,7 @@ const PornWatchingFrequencyQ = ({navigation}) => {
     <View style={styles.darkButton}>
     <TouchableOpacity
       style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
-      height: 0.07 * height,
+      height: 0.12 * width,
       borderRadius: 8,
       margin: 8,
       justifyContent: 'center',

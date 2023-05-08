@@ -3,10 +3,9 @@ import { StyleSheet, Dimensions } from 'react-native';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 0.05 * width,
+    paddingLeft: 0.04 * width,
     backgroundColor: '#191924',
-    paddingTop: 0.090 * height,
-    paddingBottom: 0.025 * height,
+    paddingTop: 0.1* width,
   },
 
   textStyle: {
@@ -14,7 +13,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 0.04 * width,
     fontWeight: 'bold',
-    paddingLeft: 0.7 * width,
+    paddingLeft: 0.75 * width,
    
   },
 
@@ -23,34 +22,35 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 0.055 * width,
     fontWeight: 'bold',
-    lineHeight: 0.045 * height,
+    lineHeight: 0.07* width,
     paddingLeft: 0.1 * width,
     paddingRight: 0.1 * width,
     textAlign: 'center',
+    paddingTop: 0.07 * width,
   },
 
   buttonContainer: {
     backgroundColor: '#191924',
     alignItems: 'center',
-    paddingTop: 0.05 * height,
+    paddingTop: 0.05 * width,
     flexDirection: 'column',
-    paddingBottom: 0.5 * height,
+    paddingBottom: 3 * width,
   },
 
   doYouContainer: {
     backgroundColor: '#191924',
     alignItems: 'center',
-    paddingBottom: 0.05 * height,
+    paddingBottom: 0.05 * width,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: 0.9 * width,
-    height: 0.06 * height,
+    height:  0.13 * width,
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 0.01 * height,
+    marginVertical: 0.01 * width,
   },
 
   doYouTextStyle: {
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    paddingBottom: 0.01 * width,
   },
 
   backImage: {

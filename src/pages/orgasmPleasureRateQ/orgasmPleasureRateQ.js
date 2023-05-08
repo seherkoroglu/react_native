@@ -85,7 +85,7 @@ const OrgasmPleasureRateQ = ({navigation}) => {
     <View style={styles.darkButton}>
     <TouchableOpacity
       style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * windowWidth,
-      height: 0.07 * windowHeight,
+      height: 0.12 * windowWidth,
       borderRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',

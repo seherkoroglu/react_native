@@ -5,16 +5,16 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 0.05 * windowWidth,
+    paddingLeft: 0.04 * windowWidth,
     backgroundColor: '#191924',
-    paddingTop: 0.09 * windowHeight,
-    paddingBottom: 0.01 * windowHeight,
+    paddingTop: 0.1 * windowWidth,
+  
   },
 
   textStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: 0.02 * windowHeight,
+    fontSize: 0.04 * windowWidth,
     fontWeight: 'bold',
     paddingLeft: 0.75 * windowWidth,
   },
@@ -22,13 +22,13 @@ const styles = StyleSheet.create({
   haveYouTriedStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: 0.025 * windowHeight,
+    fontSize: 0.05 * windowWidth,
     fontWeight: 'bold',
     paddingLeft: 0.08 * windowWidth,
     paddingRight: 0.08 * windowWidth,
-    paddingBottom: 0.05 * windowHeight,
-    paddingTop: 0.05 * windowHeight,
-    lineHeight: 0.03 * windowHeight,
+    paddingBottom: 0.05 * windowWidth,
+    paddingTop: 0.2 * windowWidth,
+    lineHeight: 0.06 * windowWidth,
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignContent: 'flex-start',
 
     flexDirection: 'row',
-    paddingBottom: 0.9 * windowHeight,
+    paddingBottom: 0.9 * windowWidth,
     paddingLeft: 0.03 * windowWidth,
     paddingRight: 0.02 * windowWidth,
   },
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: 0.02 * windowWidth,
     paddingRight: 0.24 * windowWidth,
-    paddingBottom: 0.1 * windowHeight,
+    paddingBottom: 0.1 * windowWidth,
   },
   genelContainer: {
     backgroundColor: '#191924',
@@ -63,21 +63,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'row',
-    paddingBottom: 0.09* windowHeight,
+    paddingBottom: 0.09* windowWidth,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: 0.45 * windowWidth,
     height: 0.095 * windowHeight,
-    borderRadius: 0.01 * windowHeight,
+    borderRadius: 0.01 * windowWidth,
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   haveYouTriedTextStyle: {
     color: 'white',
-    fontSize: 0.022 * windowHeight,
+    fontSize: 0.040 * windowWidth,
     fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
@@ -88,14 +88,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    paddingTop: 0.01 * windowWidth,
   
   },
 
   backImage: {
-    width: 0.03 * windowHeight,
-    height: 0.03 * windowHeight,
+    width: 0.07 * windowWidth,
+    height: 0.05 * windowWidth,
     marginLeft: 0.04 * windowWidth,
-    marginBottom: 0.02 * windowHeight,
+    marginBottom: 0.02 * windowWidth,
     justifyContent: 'flex-start',
   },
 });

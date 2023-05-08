@@ -98,7 +98,7 @@ const SteroidUseQ = ({navigation}) => {
       <View style={styles.darkButton}>
       <TouchableOpacity
         style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: width * 0.46,
-        height: height * 0.09,
+        height: width * 0.2,
         borderRadius: width * 0.02,
         margin: 8,
         justifyContent: 'center',

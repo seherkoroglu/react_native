@@ -7,8 +7,7 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: windowWidth * 0.05,
     backgroundColor: '#191924',
-    paddingTop: windowHeight * 0.12,
-    paddingBottom: windowHeight * 0.01,
+    paddingTop: windowWidth * 0.1,
   },
 
   textStyle: {
@@ -16,8 +15,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: windowWidth * 0.037,
     fontWeight: 'bold',
-    paddingLeft: windowWidth * 0.75,
-    paddingBottom: windowHeight * 0.02,
+    paddingLeft: windowWidth * 0.76,
+    paddingBottom: windowWidth * 0.02,
   },
 
   haveYouEverStyle: {
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: windowWidth * 0.055,
     fontWeight: 'bold',
-    paddingVertical: windowHeight * 0.04,
+    paddingVertical: windowWidth * 0.04,
     paddingHorizontal: windowWidth * 0.1,
     textAlign: 'center',
   },
@@ -36,22 +35,23 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     alignContent: 'flex-start',
     flexDirection: 'row',
-    paddingBottom: windowHeight * 0.3,
+    paddingBottom: windowWidth * 1,
     paddingHorizontal: windowWidth * 0.03,
   },
 
   darkButton: {
     backgroundColor: '#222331',
     width: windowWidth * 0.46,
-    height: windowHeight * 0.09,
-    borderRadius: windowWidth * 0.02,
+    height: windowWidth * 0.2,
+    borderRadius: 9,
     justifyContent: 'center',
     alignItems: 'center',
+  
   },
 
   haveYouEverTextStyle: {
     color: 'white',
-    fontSize: windowWidth * 0.03,
+    fontSize: windowWidth * 0.04,
     fontWeight: 'bold',
     alignItems: 'center',
     justifyContent: 'center',
@@ -63,13 +63,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    paddingBottom: windowWidth * 0.06,
+    paddingTop: windowWidth * 0.01,
   },
 
   backImage: {
-    width: windowWidth * 0.05,
-    height: windowHeight * 0.03,
-    marginLeft: windowWidth * 0.02,
-    marginBottom: windowHeight * 0.01,
+    width: windowWidth * 0.07,
+    height: windowWidth * 0.05,
+    marginLeft: windowWidth * 0.04,
+    marginBottom: windowWidth * 0.01,
     justifyContent: 'flex-start',
   },
 });

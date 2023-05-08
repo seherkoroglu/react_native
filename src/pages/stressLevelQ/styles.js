@@ -6,8 +6,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: windowWidth * 0.05,
     backgroundColor: '#191924',
-    paddingTop: windowWidth * 0.25,
-    paddingBottom: windowWidth * 0.04,
+    paddingTop: windowWidth * 0.1,
   },
   textStyle: {
     backgroundColor: '#191924',
@@ -33,7 +32,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    paddingBottom: windowWidth * 1,
+    paddingBottom: windowWidth * 1.5,
   },
   darkButton: {
     backgroundColor: '#222331',
@@ -46,7 +45,7 @@ const styles = StyleSheet.create({
   },
   doYouTextStyle: {
     color: 'white',
-    fontSize: windowWidth * 0.032,
+    fontSize: windowWidth * 0.04,
     fontWeight: 'bold',
     alignItems: 'center',
   },

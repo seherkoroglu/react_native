@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         alignSelf: 'center',
         justifyContent: 'center',
-        flexDirection: 'row-reverse',
        
         
     },

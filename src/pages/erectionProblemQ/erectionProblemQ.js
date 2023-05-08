@@ -95,10 +95,12 @@ const ErectionProblemQ = ({navigation}) => {
         <TouchableOpacity
            style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: width * 0.8,
-          height: height * 0.07,
-          borderRadius: width * 0.02,
-           borderColor: '#71727a',
-           borderWidth: 1,} : null]}
+           height: width * 0.137,
+           borderRadius: width * 0.02,
+           justifyContent: 'center',
+           alignItems: 'center',
+           marginTop: width * 0.03,
+           marginBottom: width * 0.01,} : null]}
           onPress={handlePress}
         >
           {children}

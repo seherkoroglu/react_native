@@ -96,7 +96,7 @@ const MasturbationFrequencyQ = ({navigation}) => {
     <View style={styles.darkButton}>
     <TouchableOpacity
       style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: width * 0.9,
-      height: height * 0.065,
+      height: width * 0.12,
       borderRadius: 8,
       justifyContent: 'center',
       alignItems: 'center',

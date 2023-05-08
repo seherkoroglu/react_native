@@ -98,7 +98,7 @@ const DarkButton = (props ) => {
     <View style={styles.darkButton}>
     <TouchableOpacity
       style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: width * 0.9,
-      height: height * 0.07,
+      height: width * 0.12,
       borderRadius: 8,
       margin: 8,
       justifyContent: 'center',

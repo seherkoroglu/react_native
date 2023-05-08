@@ -91,7 +91,7 @@ const ErectionTimeProblemQ = ({navigation}) => {
         <View style={styles.darkButton}>
           <TouchableOpacity
               style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: 0.9 * width,
-              height: 0.065 * height,
+              height: 0.15 * width,
               borderRadius: 8,
               justifyContent: 'center',
               alignItems: 'center',

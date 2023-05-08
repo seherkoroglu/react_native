@@ -5,17 +5,16 @@ const styles = StyleSheet.create({
   container: {
     paddingLeft: wp('5%'),
     backgroundColor: '#191924',
-    paddingTop: hp('10%'),
-    paddingBottom: hp('1%'),
+    paddingTop: wp('10%'),
   },
 
   textStyle: {
     backgroundColor: '#191924',
     color: 'white',
-    fontSize: wp('3.5%'),
+    fontSize: wp('4%'),
     fontWeight: 'bold',
     paddingLeft: wp('70%'),
-    paddingBottom: hp('3%'),
+    paddingBottom: wp('3%'),
   },
 
   doYouUseStyle: {
@@ -25,7 +24,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     alignItems: 'center',
-    padding: hp('5%'),
+    padding: wp('5%'),
+    paddingTop: wp('10%'),
   },
 
   darkButtonContainer: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     alignContent: 'flex-start',
     flexDirection: 'row',
-    paddingBottom: hp('60%'),
+    paddingBottom: wp('90%'),
     paddingLeft: wp('3%'),
     paddingRight: wp('5%'),
   },
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   darkButton: {
     backgroundColor: '#222331',
     width: wp('45%'),
-    height: hp('9%'),
+    height: wp('20%'),
     borderRadius: wp('2%'),
     justifyContent: 'center',
     alignItems: 'center',
@@ -62,14 +62,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingTop: hp('1%'),
+    paddingTop: wp('1%'),
   },
 
   backImage: {
     width: wp('7%'),
-    height: hp('3.5%'),
+    height: wp('5%'),
     marginLeft: wp('5%'),
-    marginBottom: hp('1%'),
+    marginBottom: wp('1%'),
     justifyContent: 'flex-start',
   },
 });

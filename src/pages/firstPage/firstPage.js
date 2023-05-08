@@ -99,7 +99,7 @@ const FirstPage = ({navigation}) => {
             selected ? {
               backgroundColor: '#d1262b',
               width: wp('86.5%'),
-              height: hp('8%'),
+              height: wp('17%'),
               borderRadius: 10,
               justifyContent: 'center',
               flexDirection: 'row',

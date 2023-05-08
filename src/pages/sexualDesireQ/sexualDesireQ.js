@@ -93,10 +93,12 @@ const SexualDesireQ = ({navigation}) => {
         <TouchableOpacity
            style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
            width: 0.8 * width,
-           height: 0.07 * height,
+           height: 0.12 * width,
            borderRadius: 8,
-           borderColor: '#71727a',
-           borderWidth: 1,} : null]}
+           justifyContent: 'center',
+           alignItems: 'center',
+           marginTop: 0.03 * width,
+           marginBottom: 0.01 * width,} : null]}
           onPress={handlePress}
         >
           {children}
