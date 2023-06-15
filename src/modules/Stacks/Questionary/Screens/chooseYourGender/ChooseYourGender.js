@@ -5,6 +5,7 @@ import Goals from "../../../../common/components/goals/Goals";
 import Back from "../../../../common/components/goBackIcon/Back";
 import styles from "./styles";
 import { Dimensions } from "react-native";
+import DevoteToexercise from "../devoteToExercise/DevoteToexercise";
 
 const ChooseYourGender = () => {
   const navigation = useNavigation();
@@ -12,7 +13,7 @@ const ChooseYourGender = () => {
 
   const handleSelect = option => {
     setSelectedGoal(option);
-    navigation.navigate("BodyParts");
+    navigation.navigate("DevoteToexercise");
   };
 
   const data = [
@@ -40,24 +41,28 @@ const ChooseYourGender = () => {
     </View>;
 
   const renderOptions = () =>
-    <View style={[{ paddingBottom: 200 }]}>
+    <View style={[{ paddingBottom: 200 } ]}>
       {data.map(option =>
-        <TouchableOpacity
-          key={option.id}
-          onPress={() => handleSelect(option.id)}
-        >
-          <View style={{ flexDirection: "row" }}>
+        
+        
+             <TouchableOpacity onPress={() => handleSelect(option.id)} style= {{backgorundColor: 'red'}}>
             <Goal
               selected={selectedGoal === option.id}
               onSelect={() => setSelectedGoal(option.id)}
             >
-              <Image style= {{justifyContent: 'flex-start'}} source={option.image} />
-              <Text style = {{textAlign:'center'}}>
+             
+              <Image style={{marginHorizontal: Dimensions.get('window').width*0.04}}source={option.image} />
+        
+            
+              <Text style = {{ fontSize: 15, paddingLeft: Dimensions.get('window').width*0.2}}>
                 {option.label}
               </Text>
+          
             </Goal>
-          </View>
-        </TouchableOpacity>
+            </TouchableOpacity>
+          
+         
+      
       )}
     </View>;
 
@@ -75,7 +80,7 @@ const ChooseYourGender = () => {
   );
 };
 
-const Goal = props => {
+const Goal = (props) => {
   const { selected, onSelect, columnCount } = props;
 
   const handlePress = () => {
@@ -91,18 +96,17 @@ const Goal = props => {
           styles.goal,
           selected
             ? {
-                backgroundColor: "#8ab1ff",
-                width: Dimensions.get('window').width * 0.80,
-                height: Dimensions.get('window').width * 0.15,
-                marginHorizontal: Dimensions.get('window').width * 0.02,
-                marginVertical: Dimensions.get('window').width * 0.02,
-                paddingHorizontal: Dimensions.get('window').width * 0.04,
-                borderRadius: 10,
-                fontSize: 15,
-                lineHeight: 5,
-                borderRadius: 10,
+              backgroundColor: '#8ab1ff',
+              justifyContent: 'flex-start',
+              width: Dimensions.get('window').width * 0.85,
+              height: Dimensions.get('window').width * 0.15,
             
-                textAlign: 'center',
+             marginVertical: Dimensions.get('window').width * 0.02,
+           
+              borderRadius: 10,
+              alignItems: 'center',
+              flexDirection: 'row',
+              textAlign: 'center',
               }
             : null
         ]}
@@ -113,5 +117,6 @@ const Goal = props => {
     </View>
   );
 };
+
 
 export default ChooseYourGender;

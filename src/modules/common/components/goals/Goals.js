@@ -5,7 +5,7 @@ import styles from './styles';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Goals = (props) => {
-    const { selected, onSelect, columnCount  } = props;
+    const { selected, setSelect } = props;
   
     const handlePress = () => {
       if (!selected) {

@@ -5,7 +5,7 @@ import styles from './styles';
 
 const Back = ({navigation}) => {
     return (
-        <View style = {styles.container}>
+        <View style = {{}}>
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Image style = {styles.back}
                 source = {require('../../../../assets/images/back.png')}

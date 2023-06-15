@@ -17,7 +17,12 @@ import BodyTypeScreen from './src/modules/Stacks/Questionary/Screens/bodyTypeScr
 import PostureType from './src/modules/Stacks/Questionary/Screens/postureType/postureType';
 import PhysicalActivity from './src/modules/Stacks/Questionary/Screens/physicalActivity/PhysicalActivity';
 import ChooseYourGender from './src/modules/Stacks/Questionary/Screens/chooseYourGender/ChooseYourGender';
-import BodyParts from './src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts';
+//import BodyParts from './src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts';
+import DevoteToexercise from './src/modules/Stacks/Questionary/Screens/devoteToExercise/DevoteToexercise';
+import DoYouFeelPain from './src/modules/Stacks/Questionary/Screens/doYouFeelPain/DoYouFeelPain';
+import Experiencing from './src/modules/Stacks/Questionary/Screens/experiencing/Experiencing';
+import SpecificDiseases from './src/modules/Stacks/Questionary/Screens/specificDiseases/SpecificDiseases';
+import SeatingType from './src/modules/Stacks/Questionary/Screens/seatingType/SeatingType';
 
 const Stack = createStackNavigator();
 
@@ -45,10 +50,36 @@ const App = () => {
         options={{
           headerShown: false,
         }}/>
-        <Stack.Screen name="BodyParts" component={BodyParts}
+        <Stack.Screen name="DevoteToexercise" component={DevoteToexercise}
         options={{
           headerShown: false,
         }}/>
+
+        <Stack.Screen name="DoYouFeelPain" component={DoYouFeelPain}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="Experiencing" component={Experiencing}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="SpecificDiseases" component={SpecificDiseases}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="SeatingType" component={SeatingType}
+        options={{
+          headerShown: false,
+        }}/>
+
+
+
+
+
+      
 
 
 

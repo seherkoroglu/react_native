@@ -33,12 +33,11 @@ const styles = StyleSheet.create({
 
   goal: {
     backgroundColor: 'white',
-    justifyContent: 'center',
-    width: Dimensions.get('window').width * 0.80,
+    justifyContent: 'flex-start',
+    width: Dimensions.get('window').width * 0.85,
     height: Dimensions.get('window').width * 0.15,
-    marginHorizontal: Dimensions.get('window').width * 0.02,
-    marginVertical: Dimensions.get('window').width * 0.02,
-    paddingHorizontal: Dimensions.get('window').width * 0.04,
+   marginVertical: Dimensions.get('window').width * 0.02,
+ 
     borderRadius: 10,
     alignItems: 'center',
     flexDirection: 'row',
