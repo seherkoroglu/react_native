@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     fontWeight: 'bold',
-    marginHorizontal: Dimensions.get('window').width * 0.15,
+    marginHorizontal: Dimensions.get('window').width * 0.10,
     
   },
   goals: {

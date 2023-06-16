@@ -42,27 +42,31 @@ const SpecificDiseases = () => {
     },
     {
       id: "option2",
-      label: "Stiff Neck",
+      label: "Diabetes",
     },
     {
       id: "option3",
-      label: "Waking up Restless",
+      label: "Asthma",
     },
     {
       id: "option4",
-      label: "Balance Problems",
+      label: "Hypertension",
     },
     {
       id: "option5",
-      label: "Nerve compression in wrist",
+      label: "Heart disease",
     },
     {
       id: "option6",
-      label: "Nerve compression in elbow",
+      label: "Calcification",
     },
     {
       id: "option7",
-      label: "Elbow Numbness",
+      label: "Fibromyalgia",
+    },
+    {
+      id: "option8",
+      label: "Osteoporosis",
     },
   ];
 

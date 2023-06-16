@@ -23,6 +23,10 @@ import DoYouFeelPain from './src/modules/Stacks/Questionary/Screens/doYouFeelPai
 import Experiencing from './src/modules/Stacks/Questionary/Screens/experiencing/Experiencing';
 import SpecificDiseases from './src/modules/Stacks/Questionary/Screens/specificDiseases/SpecificDiseases';
 import SeatingType from './src/modules/Stacks/Questionary/Screens/seatingType/SeatingType';
+import SleepQuality from './src/modules/Stacks/Questionary/Screens/sleepQuality/SleepQuality';
+import StressLevel from './src/modules/Stacks/Questionary/Screens/stressLevel/StressLevel';
+import Focusing from './src/modules/Stacks/Questionary/Screens/focusing/Focusing';
+import YouWillLove from './src/modules/Stacks/Questionary/Screens/youWillLoveScreen/YouWillLove';
 
 const Stack = createStackNavigator();
 
@@ -74,6 +78,27 @@ const App = () => {
         options={{
           headerShown: false,
         }}/>
+        <Stack.Screen name="SleepQuality" component={SleepQuality}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="StressLevel" component={StressLevel}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="Focusing" component={Focusing}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="YouWillLove" component={YouWillLove}
+        options={{
+          headerShown: false,
+        }}/>
+
+
+
+
 
 
 
