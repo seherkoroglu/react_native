@@ -5,8 +5,6 @@ import { Dimensions } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-   
-    
  
   },
   textStyle: {
@@ -18,6 +16,7 @@ const styles = StyleSheet.create({
   goals: {
     flexWrap: 'wrap',
     justifyContent: 'center',
+    flexDirection: 'row',
    
   },
   options: {

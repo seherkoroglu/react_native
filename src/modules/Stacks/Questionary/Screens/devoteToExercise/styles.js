@@ -12,13 +12,13 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 20,
     textAlign: 'center',
-    marginHorizontal: Dimensions.get('window').width * 0.09,
+    marginHorizontal: Dimensions.get('window').width * 0.1,
     
   },
   options: {
     fontSize: 15,
     textAlign: 'center',
-    paddingTop: Dimensions.get('window').width * 0.05,
+    paddingTop: Dimensions.get('window').width * 0.02,
     paddingBottom: Dimensions.get('window').width * 0.02,
     fontWeight: 'bold',
   

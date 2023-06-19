@@ -14,7 +14,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Dimensions} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import BodyTypeScreen from './src/modules/Stacks/Questionary/Screens/bodyTypeScreen/BodyTypeScreen';
-import PostureType from './src/modules/Stacks/Questionary/Screens/postureType/postureType';
+import PostureType from './src/modules/Stacks/Questionary/Screens/postureType/PostureType';
 import PhysicalActivity from './src/modules/Stacks/Questionary/Screens/physicalActivity/PhysicalActivity';
 import ChooseYourGender from './src/modules/Stacks/Questionary/Screens/chooseYourGender/ChooseYourGender';
 //import BodyParts from './src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts';

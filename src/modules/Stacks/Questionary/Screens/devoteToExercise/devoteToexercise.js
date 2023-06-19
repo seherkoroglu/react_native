@@ -6,6 +6,7 @@ import Back from "../../../../common/components/goBackIcon/Back";
 import styles from "./styles";
 import { Dimensions } from "react-native";
 import DoYouFeelPain from "../doYouFeelPain/DoYouFeelPain";
+import Header from "../../../../common/components/header/Header";
 
 const DevoteToexercise = () => {
   const navigation = useNavigation();
@@ -32,13 +33,12 @@ const DevoteToexercise = () => {
   ];
 
   const renderQuestion = () =>
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>How much time a day can you devote to exercise</Text>
-    </View>;
+    <Header
+    title= "How much time do you devote to exercise?"
+    />
 
   const renderOptions = () =>
-    <View style={[{ paddingBottom: 200 }]}>
+    <View style={[{ paddingVertical: Dimensions.get('window').width*0.06, marginHorizontal: Dimensions.get('window').width*0.06 }]}>
       {data.map(option =>
        <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
@@ -62,14 +62,10 @@ const DevoteToexercise = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
-      <View style = {{paddingTop:Dimensions.get('window').width * 0.60}} />
-      <View style={{ flex: 0.5, paddingHorizontal: 20 }}>
+      
         {renderQuestion()}
-      </View>
-      <View style={{ flex: 4, paddingHorizontal: 20 }}>
         {renderOptions()}
-      </View>
-      <View  />
+     
     </View>
   );
 };
@@ -99,8 +95,6 @@ const Goal = props => {
                 borderRadius: 10,
                 fontSize: 15,
                 lineHeight: 5,
-                borderRadius: 10,
-            
                 textAlign: 'center',
               }
             : null

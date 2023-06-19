@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Goals from "../../../../common/components/goals/Goals";
 import Back from "../../../../common/components/goBackIcon/Back";
@@ -8,6 +8,7 @@ import { Dimensions } from "react-native";
 import DoYouFeelPain from "../doYouFeelPain/DoYouFeelPain";
 import ContinueButton from "../../../../common/components/continueButton/ContinueButton";
 import SpecificDiseases from "../specificDiseases/SpecificDiseases";
+import Header from "../../../../common/components/header/Header";
 
 const Experiencing = () => {
   const navigation = useNavigation();
@@ -17,7 +18,7 @@ const Experiencing = () => {
     if (option === "option1") {
       // "None" seçeneği seçildiğinde diğerlerini devre dışı bırak
       if (selectedGoals.includes("option1")) {
-        setSelectedGoals([]); // Seçiminizi geri alın
+        setSelectedGoals([]); // Seçimi geri al
       } else {
         setSelectedGoals([option]);
       }
@@ -67,19 +68,14 @@ const Experiencing = () => {
     },
   ];
 
-  const renderQuestion = () => (
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, { fontWeight: "bold" }]}>
-        Are you experiencing any of these?
-      </Text>
-    </View>
-  );
+  const renderQuestion = () => 
+    <Header title = "Are you experiencing any of these?" />
+  
 
   const renderOptions = () => (
-    <View style={[{ paddingBottom: 200 }]}>
+    <View style={{ marginTop: Dimensions.get('window').width*0.1 }}>
       {data.map((option) => (
-        <View style={{ flexDirection: "row" }}>
+        <View >
           <TouchableOpacity
             key={option.id}
             onPress={() => handleSelect(option.id)}
@@ -96,24 +92,26 @@ const Experiencing = () => {
         </View>
       ))}
     </View>
+   
   );
 
   const isContinueButtonDisabled = selectedGoals.length === 0;
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
-      <View style={{ paddingTop: Dimensions.get("window").width * 0.30 }} />
-      <View style={{  }}>
+    <View style={{flex:1, backgroundColor: "#edf3fb" }}>
+      <View style={{flex:2.5}}>
         {renderQuestion()}
       </View>
-      <View style={{ flex: 4, paddingHorizontal: 20 }}>
+      <ScrollView showsHorizontalScrollIndicator={false} 
+      style={{ marginHorizontal: Dimensions.get('window').width*0.08 }}>
+      
         {renderOptions()}
-      </View>
+    
+      </ScrollView>
       <ContinueButton
         onPress={() => navigation.navigate("SpecificDiseases")}
         disabled={isContinueButtonDisabled}
       />
-      <View />
     </View>
   );
 };
@@ -138,7 +136,7 @@ const Goal = (props) => {
                 width: Dimensions.get("window").width * 0.80,
                 height: Dimensions.get("window").width * 0.15,
                 marginHorizontal: Dimensions.get("window").width * 0.02,
-                marginVertical: Dimensions.get("window").width * 0.02,
+                marginVertical: Dimensions.get("window").width * 0.09,
                 paddingHorizontal: Dimensions.get("window").width * 0.04,
                 borderRadius: 10,
                 fontSize: 15,

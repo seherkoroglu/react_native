@@ -7,6 +7,7 @@ import styles from './styles';
 import { Dimensions } from 'react-native';
 import LottieView from 'lottie-react-native';
 import ChooseYourGender from '../chooseYourGender/ChooseYourGender';
+import Header from '../../../../common/components/header/Header';
 
 const PhysicalActivity = () => {
   const navigation = useNavigation();
@@ -41,19 +42,15 @@ const PhysicalActivity = () => {
   ];
 
   const renderQuestion = () => (
-    <>
-      <View style={[styles.container, { paddingBottom: '8%' }]}>
-        <Back navigation={navigation} />
-        <Text style={styles.textStyle}>Choose your physical activity status</Text>
-      </View>
-      <View>
-        <Text style={{ fontSize: 19, textAlign: 'center' }}>How active are you?</Text>
-      </View>
-    </>
+    <Header
+      title="Choose your physical activity status"
+      subtitle="How active are you?"
+    />
+
   );
 
   const renderOptions = () => (
-    <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', paddingBottom: 200, justifyContent: 'center' }}>
+    <View style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between', justifyContent: 'center' }}>
       {data.map((option) => (
         <TouchableOpacity key={option.id} onPress={() => handleSelect(option.id)}>
           <View style={styles.optionContainer}>
@@ -70,11 +67,11 @@ const PhysicalActivity = () => {
   );
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#edf3fb' }}>
-      <View style={{ flex: 1}} />
-      <View style={{ flex: 1, paddingHorizontal: 20 }}>{renderQuestion()}</View>
-      <View style={{ flex: 2, paddingHorizontal: 20}}>{renderOptions()}</View>
-      <View style = {{flex: 1}}/>
+    <View style={{flex: 1,  backgroundColor: '#edf3fb' }}>
+      
+     {renderQuestion()}
+     {renderOptions()}
+      
     </View>
   );
 };

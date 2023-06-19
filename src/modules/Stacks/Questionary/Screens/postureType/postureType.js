@@ -5,12 +5,13 @@ import Back from '../../../../common/components/goBackIcon/Back';
 import styles from './styles';
 import BodyTypeScreen from '../bodyTypeScreen/BodyTypeScreen';
 import { useNavigation } from '@react-navigation/native';
+import Header from '../../../../common/components/header/Header';
 
 const PostureType = ({ navigation }) => {
   const [select, setSelect] = React.useState(null);
 
   const data = [
-    { image: require('../../../../../assets/images/healthyPosture.png'), text: 'Kyphosis' },
+    { image: require('../../../../../assets/images/healthyPosture.png'), text: 'Healthy Posture' },
     { image: require('../../../../../assets/images/forwardheadPosture.png'), text: 'Forward Head Posture' },
     { image: require('../../../../../assets/images/swayBackPosture.png'), text: 'Sway Back Posture' },
     { image: require('../../../../../assets/images/kyphosisPosture.png'), text: 'Kyphosis' },
@@ -24,21 +25,19 @@ const PostureType = ({ navigation }) => {
     navigation.navigate('PhysicalActivity');
   };
 
-  const renderQuestion = () => {
-    return (
-      <View style={styles.container}>
-        <Back navigation={navigation} />
-        <Text style={styles.textStyle}>Which posture type do you have?</Text>
-      </View>
-    );
-  };
+  const renderQuestion = () => 
+    <Header
+      title="Which posture type do you have?" 
+      subtitle="Choose what your posture looks like now, to help create a program to correct it." 
+    />
+  
 
   const first = () => {
     return (
-      <View style={{ flexDirection: 'row', flexWrap: 'wrap', margin: '6%'}}>
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap',  justifyContent: 'center'}}>
         {data.map((item, index) => (
-          <View style={{ }}>
-            <Goal style={{ }} key={index}
+          <View>
+            <Goal
               selected={select === item.text}
               onSelect={() => handleSelect(item.text)}>
               <Image style={styles.image} source={item.image} />
@@ -70,7 +69,7 @@ const Goal = (props) => {
             width: Dimensions.get('window').width * 0.25,
             height: Dimensions.get('window').width * 0.50,
             marginHorizontal: Dimensions.get('window').width * 0.05,
-            marginVertical: Dimensions.get('window').width * 0.02,
+            marginVertical: Dimensions.get('window').width * 0.04,
             paddingHorizontal: Dimensions.get('window').width * 0.04,
             borderRadius: 20,
             justifyContent: 'center',
@@ -78,6 +77,7 @@ const Goal = (props) => {
             fontSize: 15,
             lineHeight: 5,
             textAlign: 'center',
+            borderColor: '#1558e6',
             
           } : null
         ]}
@@ -91,12 +91,15 @@ const Goal = (props) => {
 
 
   return (
-    <>
+    <View style={{ flex:1, backgroundColor: '#edf3fb'}}>
       {renderQuestion()}
-      <View style={styles.goals}>
+      <View style={{ flex: 1, backgroundColor: '#edf3fb' }}>
         {first()}
+        </View>
       </View>
-    </>
+    
+      
+    
   );
 };
 

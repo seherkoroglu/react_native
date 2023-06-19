@@ -7,6 +7,7 @@ import Back from '../../../../common/components/goBackIcon/Back';
 import { View, Text, Image } from 'react-native';
 import ChooseYourGoalScreen from '../chooseYourGoalScreen/ChooseYourGoalScreen';
 import {useState} from 'react';
+import Header from '../../../../common/components/header/Header';
 
 
 
@@ -40,27 +41,29 @@ const YouWillLove = () => {
 
             ];
             const renderHeader = () =>
-            <View style={[{flexDirection: 'row', paddingTop: Dimensions.get('window').width*0.1, paddingHorizontal: Dimensions.get('window').width*0.07 }]}>
-              <Back navigation={navigation} />
-              <Text style={[styles.textStyle, {fontWeight: 'bold', paddingLeft:Dimensions.get('window').width*0.09 }]}>You will love the daily short exercises and tips we send</Text>
-            </View>
+            <Header title = "You will love the daily short exercises and tips we send :)" />;
+
 
             const renderImage = () =>
-            <View style={[{ flexDirection: 'row', marginHorizontal: Dimensions.get('window').width*0.03}]}>
+            <View >
                 {data.map(option =>
                 <View >
                 <Image source= {option.body} 
-                style={{ width: Dimensions.get('window').width*0.9,height: Dimensions.get('window').width*0.9, resizeMode: 'contain'}}
+                style={{
+                marginLeft: Dimensions.get('window').width*0.04
+            }}
+
                 />
                 </View>
                 )}
             </View>;
 
             const renderText = () =>
-            <View style={[{  flexDirection: 'row',flexWrap: 'wrap', marginRight:  Dimensions.get('window').width*0.1 }]}>
+            <View style={[{  flexDirection: 'column' }]}>
                 {data.map(option =>
-                <View style={{ flexDirection: 'row', paddingTop: Dimensions.get('window').width*0.05, marginHorizontal:  Dimensions.get('window').width*0.09}}>
-                <Image source= {option.image} style= {{width: Dimensions.get('window').width*0.08,height: Dimensions.get('window').width*0.08, resizeMode: 'contain'}} />
+                <View style={{ flexDirection: 'row',
+                 paddingTop: Dimensions.get('window').width*0.02, marginHorizontal:  Dimensions.get('window').width*0.09}}>
+                <Image source= {option.image} style= {{width: Dimensions.get('window').width*0.08,height: Dimensions.get('window').width*0.05, resizeMode: 'contain'}} />
                 <Text style = {{  fontWeight: '600', fontSize: 17, color: 'gray'}}>
                     {option.label}
                 </Text>
@@ -69,39 +72,38 @@ const YouWillLove = () => {
             </View>;
 
             const renderButton = () =>
-            <View style = {{}}>
+            <View>
                 <ContinueButton 
                     onPress={() => navigation.navigate("ChooseYourGoalScreen")}
                 />
             </View>;
 
             return (
-                <View style={styles.container}>
+                <View style= {[{flex: 1 }, styles.container]}>
+                
                     {renderHeader()}
                     {renderImage()}
-             
                     {renderText()}
                     {renderButton()}
-                
                 </View>
             );
         };
 
         const styles = StyleSheet.create({
             container: {
-                flex: 1,
-                backgroundColor: '#fff',
-                paddingTop: Dimensions.get('window').width*0.1,
-
+                flex:1,
                 textAlign: 'center',
                 backgroundColor: '#edf3fb',
+                justifyContent: 'center',
+               
+                
             },
 
             textStyle: {
                 fontSize: 20,
                 textAlign: 'center',
                 color: '#000',
-                paddingHorizontal: Dimensions.get('window').width*0.05,
+                marginHorizontal: Dimensions.get('window').width*0.04,
             },
         });
 

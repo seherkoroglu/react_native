@@ -4,6 +4,7 @@ import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import Back from '../../../../common/components/goBackIcon/Back';
 import YouWillLove from '../youWillLoveScreen/YouWillLove';
+import Header from '../../../../common/components/header/Header';
 
 const Focusing = () => {
   const navigation = useNavigation();
@@ -28,14 +29,11 @@ const Focusing = () => {
   ];
 
   const renderQuestion = () => (
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, { fontWeight: 'bold' }]}>Are you having trouble focusing?</Text>
-    </View>
+    <Header title="Are you having Trouble focusing" />
   );
 
   const renderOptions = () => (
-    <View style={[{ paddingBottom: 50, flexDirection: 'row', marginLeft: Dimensions.get('window').width * 0.14 }]}>
+    <View style={[{ paddingBottom: Dimensions.get('window').width*0.5, flexDirection: 'row', marginLeft: Dimensions.get('window').width * 0.14 }]}>
       {data.map(option => (
         <View style={{ flexDirection: 'row' }}>
           <TouchableOpacity
@@ -60,7 +58,7 @@ const Focusing = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
       {renderQuestion()}
-      <View style={{ paddingTop: Dimensions.get('window').width * 0.1 }}>
+      <View >
         {renderOptions()}
       </View>
     </View>

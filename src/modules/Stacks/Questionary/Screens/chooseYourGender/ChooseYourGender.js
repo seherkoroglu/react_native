@@ -6,6 +6,7 @@ import Back from "../../../../common/components/goBackIcon/Back";
 import styles from "./styles";
 import { Dimensions } from "react-native";
 import DevoteToexercise from "../devoteToExercise/DevoteToexercise";
+import Header from "../../../../common/components/header/Header";
 
 const ChooseYourGender = () => {
   const navigation = useNavigation();
@@ -35,13 +36,13 @@ const ChooseYourGender = () => {
   ];
 
   const renderQuestion = () =>
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>Choose your gender</Text>
-    </View>;
+   <Header 
+   title = "Choose your gender"
+    />
+
 
   const renderOptions = () =>
-    <View style={[{ paddingBottom: 200 } ]}>
+    <View style={[{ marginHorizontal: Dimensions.get('window').width*0.07 } ]}>
       {data.map(option =>
         
         
@@ -52,7 +53,6 @@ const ChooseYourGender = () => {
             >
              
               <Image style={{marginHorizontal: Dimensions.get('window').width*0.04}}source={option.image} />
-        
             
               <Text style = {{ fontSize: 15, paddingLeft: Dimensions.get('window').width*0.2}}>
                 {option.label}
@@ -68,14 +68,10 @@ const ChooseYourGender = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
-      <View style = {{paddingTop:Dimensions.get('window').width * 0.60}} />
-      <View style={{ flex: 0.5, paddingHorizontal: 20 }}>
+      
         {renderQuestion()}
-      </View>
-      <View style={{ flex: 4, paddingHorizontal: 20 }}>
         {renderOptions()}
-      </View>
-      <View  />
+    
     </View>
   );
 };
@@ -102,7 +98,7 @@ const Goal = (props) => {
               height: Dimensions.get('window').width * 0.15,
             
              marginVertical: Dimensions.get('window').width * 0.02,
-           
+              borderColor: '#8ab1ff',
               borderRadius: 10,
               alignItems: 'center',
               flexDirection: 'row',

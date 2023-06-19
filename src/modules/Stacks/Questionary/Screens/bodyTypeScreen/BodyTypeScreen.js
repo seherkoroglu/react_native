@@ -5,6 +5,7 @@ import Goals from '../../../../common/components/goals/Goals';
 import Back from '../../../../common/components/goBackIcon/Back';
 import styles from './styles';
 import { Dimensions } from 'react-native';
+import Header from '../../../../common/components/header/Header';
 
 const BodyTypeScreen = () => {
   const navigation = useNavigation();
@@ -38,16 +39,16 @@ const BodyTypeScreen = () => {
     },
   ];
 
-  const renderQuestion = () => (
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={styles.textStyle}>Please choose your body type</Text>
-    </View>
-  );
+  const renderQuestion = () => 
+    <Header
+      title="Please choose your body type"
+    />
+    
+  
 
   const renderOptions = () => (
-    <View style={[styles.goals, {paddingBottom: 200}]}>
-      <View style={ {  marginBottom: 10 }}>
+    <View style={[styles.goals, {paddingBottom: Dimensions.get('window').width*0.2}]}>
+      <View style={ {  marginBottom: Dimensions.get('window').width*0.01 }}>
         {data.slice(0, 2).map((option) => (
           <TouchableOpacity key={option.id} onPress={() => handleSelect(option.id)}>
             <Goals selected={selectedGoal === option.id} setSelect={() => setSelectedGoal(option.id)}>
@@ -58,7 +59,7 @@ const BodyTypeScreen = () => {
         ))}
       </View>
 
-      <View style={[styles.goalCard, {  marginBottom: 10 }]}>
+      <View style={[styles.goalCard, {  marginBottom: Dimensions.get('window').width*0.01 }]}>
         {data.slice(2).map((option) => (
           <TouchableOpacity key={option.id} onPress={() => handleSelect(option.id)}>
             <Goals selected={selectedGoal === option.id} setSelect={() => setSelectedGoal(option.id)}>
@@ -72,11 +73,11 @@ const BodyTypeScreen = () => {
   );
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#edf3fb' }}>
-      <View style={{ flex: 2 }} />
-      <View style={{ flex: 2, paddingHorizontal: 20 }}>{renderQuestion()}</View>
-      <View style={{ flex: 2, paddingHorizontal: 20 }}>{renderOptions()}</View>
-      <View style={{ flex: 2 }} />
+    <View style={{ flex: 1,  backgroundColor: '#edf3fb' }}>
+     
+     {renderQuestion()}
+     {renderOptions()}
+     
     </View>
   );
 };

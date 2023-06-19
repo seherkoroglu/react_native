@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import Back from '../../../../common/components/goBackIcon/Back';
 import { useState } from 'react';
 import Experiencing from '../experiencing/Experiencing';
+import Header from '../../../../common/components/header/Header';
 
 const DoYouFeelPain = () => {
     const navigation = useNavigation();
@@ -29,14 +30,11 @@ const DoYouFeelPain = () => {
         ];
 
         const renderQuestion = () =>
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>Do you feel pain?</Text>
-    </View>;
+        <Header title = "Do you feel pain?" />
 
 
 const renderOptions = () =>
-<View style={[{ paddingBottom: 50 , flexDirection: 'row', marginLeft: Dimensions.get('window').width*0.14}]}>
+<View style={[{ flexDirection: 'row', marginLeft: Dimensions.get('window').width*0.14}]}>
   {data.map(option =>
    <View style={{  flexDirection: 'row'}}>
     <TouchableOpacity
@@ -61,11 +59,10 @@ const renderOptions = () =>
 </View>;
 
     return (
-        <View style={{flex: 1, backgroundColor: "#edf3fb"}}>
+        <View style={{flex: 1,backgroundColor: "#edf3fb"}}>
             {renderQuestion()}
-        <View style={{paddingTop: Dimensions.get('window').width*0.1}}>
             {renderOptions()}
-        </View>
+        
         </View>
        
     );

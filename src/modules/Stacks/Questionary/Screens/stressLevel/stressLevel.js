@@ -6,7 +6,7 @@ import Back from "../../../../common/components/goBackIcon/Back";
 import styles from "./styles";
 import { Dimensions } from "react-native";
 import Focusing from "../focusing/Focusing";
-
+import Header from "../../../../common/components/header/Header";
 const StressLevel = () => {
   const navigation = useNavigation();
   const [selectedGoal, setSelectedGoal] = useState(null);
@@ -32,13 +32,12 @@ const StressLevel = () => {
   ];
 
   const renderQuestion = () =>
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, {fontWeight: 'bold'}]}>How do you evaluate your stress level?</Text>
-    </View>;
+    <Header
+    title= "How do you evulate your stress level?"
+    />
 
   const renderOptions = () =>
-    <View style={[{ paddingBottom: 200 }]}>
+    <View style={[{ marginHorizontal :Dimensions.get('window').width*0.07 }]}>
       {data.map(option =>
        <View style={{ flexDirection: "row" }}>
         <TouchableOpacity
@@ -62,14 +61,12 @@ const StressLevel = () => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
-      <View style = {{paddingTop:Dimensions.get('window').width * 0.60}} />
-      <View style={{ flex: 0.5, paddingHorizontal: 20 }}>
+      
         {renderQuestion()}
-      </View>
-      <View style={{ flex: 4, paddingHorizontal: 20 }}>
+      
+      
         {renderOptions()}
-      </View>
-      <View  />
+     
     </View>
   );
 };

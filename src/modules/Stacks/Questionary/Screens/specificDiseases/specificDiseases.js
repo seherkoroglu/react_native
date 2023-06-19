@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Goals from "../../../../common/components/goals/Goals";
 import Back from "../../../../common/components/goBackIcon/Back";
@@ -7,6 +7,7 @@ import styles from "./styles";
 import { Dimensions } from "react-native";
 import ContinueButton from "../../../../common/components/continueButton/ContinueButton";
 import SeatingType from "../seatingType/SeatingType";
+import Header from "../../../../common/components/header/Header";
 
 const SpecificDiseases = () => {
   const navigation = useNavigation();
@@ -68,21 +69,20 @@ const SpecificDiseases = () => {
       id: "option8",
       label: "Osteoporosis",
     },
+    {
+      id: "option9",
+      label: "other",
+    },
   ];
 
-  const renderQuestion = () => (
-    <View style={styles.container}>
-      <Back navigation={navigation} />
-      <Text style={[styles.textStyle, { fontWeight: "bold" }]}>
-        Are you experiencing any of these?
-      </Text>
-    </View>
-  );
+  const renderQuestion = () => 
+    <Header title="Do you have any of these spesific diseases?" />
+  
 
   const renderOptions = () => (
-    <View style={[{ paddingBottom: 200 }]}>
+    <>
       {data.map((option) => (
-        <View style={{ flexDirection: "row" }}>
+        <View>
           <TouchableOpacity
             key={option.id}
             onPress={() => handleSelect(option.id)}
@@ -98,20 +98,23 @@ const SpecificDiseases = () => {
           </TouchableOpacity>
         </View>
       ))}
-    </View>
+    </>
+    
   );
 
   const isContinueButtonDisabled = selectedGoals.length === 0;
 
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
-      <View style={{ paddingTop: Dimensions.get("window").width * 0.30 }} />
-      <View style={{ flex: 0.5, paddingHorizontal: 12 }}>
+ 
         {renderQuestion()}
-      </View>
-      <View style={{ flex: 4, paddingHorizontal: 20 }}>
+      
+      <ScrollView showsVerticalScrollIndicator={false}
+      style={{flex: 1, paddingHorizontal: Dimensions.get('window').width*0.07 }}>
+      <View >
         {renderOptions()}
       </View>
+      </ScrollView>
       <ContinueButton
         onPress={() => navigation.navigate("SeatingType")}
         disabled={isContinueButtonDisabled}
