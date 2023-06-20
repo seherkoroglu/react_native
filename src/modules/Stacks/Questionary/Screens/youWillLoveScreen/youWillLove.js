@@ -49,9 +49,7 @@ const YouWillLove = () => {
                 {data.map(option =>
                 <View >
                 <Image source= {option.body} 
-                style={{
-                marginLeft: Dimensions.get('window').width*0.04
-            }}
+               
 
                 />
                 </View>
@@ -79,9 +77,10 @@ const YouWillLove = () => {
             </View>;
 
             return (
-                <View style= {[{flex: 1 }, styles.container]}>
-                
+                <View style= {[ styles.container]}>
+                <View style={{ flex: 1, }}>
                     {renderHeader()}
+                </View>
                     {renderImage()}
                     {renderText()}
                     {renderButton()}
@@ -92,9 +91,9 @@ const YouWillLove = () => {
         const styles = StyleSheet.create({
             container: {
                 flex:1,
-                textAlign: 'center',
                 backgroundColor: '#edf3fb',
-                justifyContent: 'center',
+                marginHorizontal: Dimensions.get('window').width*0.05
+                
                
                 
             },
@@ -103,7 +102,7 @@ const YouWillLove = () => {
                 fontSize: 20,
                 textAlign: 'center',
                 color: '#000',
-                marginHorizontal: Dimensions.get('window').width*0.04,
+                
             },
         });
 

@@ -111,15 +111,15 @@ const SpecificDiseases = () => {
       
       <ScrollView showsVerticalScrollIndicator={false}
       style={{flex: 1, paddingHorizontal: Dimensions.get('window').width*0.07 }}>
-      <View >
+      
         {renderOptions()}
-      </View>
+     
       </ScrollView>
       <ContinueButton
         onPress={() => navigation.navigate("SeatingType")}
         disabled={isContinueButtonDisabled}
       />
-      <View />
+     
     </View>
   );
 };

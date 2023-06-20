@@ -73,7 +73,7 @@ const Experiencing = () => {
   
 
   const renderOptions = () => (
-    <View style={{ marginTop: Dimensions.get('window').width*0.1 }}>
+    <>
       {data.map((option) => (
         <View >
           <TouchableOpacity
@@ -91,28 +91,26 @@ const Experiencing = () => {
           </TouchableOpacity>
         </View>
       ))}
-    </View>
+    </>
    
   );
 
   const isContinueButtonDisabled = selectedGoals.length === 0;
 
   return (
-    <View style={{flex:1, backgroundColor: "#edf3fb" }}>
-      <View style={{flex:2.5}}>
-        {renderQuestion()}
-      </View>
-      <ScrollView showsHorizontalScrollIndicator={false} 
-      style={{ marginHorizontal: Dimensions.get('window').width*0.08 }}>
-      
-        {renderOptions()}
-    
-      </ScrollView>
-      <ContinueButton
-        onPress={() => navigation.navigate("SpecificDiseases")}
-        disabled={isContinueButtonDisabled}
-      />
-    </View>
+    <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
+ 
+    {renderQuestion()}
+  
+  <ScrollView showsVerticalScrollIndicator={false}
+  style={{flex: 1,paddingHorizontal: Dimensions.get('window').width*0.07 }}>
+    {renderOptions()}
+  </ScrollView>
+  <ContinueButton
+    onPress={() => navigation.navigate("SpecificDiseases")}
+    disabled={isContinueButtonDisabled}
+  />
+</View>
   );
 };
 

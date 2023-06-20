@@ -38,13 +38,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     justifyContent: 'center',
     marginHorizontal: Dimensions.get('window').width * 0.05,
-    
-    
-    
-
-
-   
-   
   },
   subTextStyle: {
     fontSize: 17,

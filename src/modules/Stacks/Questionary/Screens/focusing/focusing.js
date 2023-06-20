@@ -58,9 +58,8 @@ const Focusing = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "#edf3fb" }}>
       {renderQuestion()}
-      <View >
         {renderOptions()}
-      </View>
+     
     </View>
   );
 };
