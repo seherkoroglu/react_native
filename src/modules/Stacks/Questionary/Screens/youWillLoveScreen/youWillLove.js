@@ -49,8 +49,6 @@ const YouWillLove = () => {
                 {data.map(option =>
                 <View >
                 <Image source= {option.body} 
-               
-
                 />
                 </View>
                 )}
@@ -60,9 +58,9 @@ const YouWillLove = () => {
             <View style={[{  flexDirection: 'column' }]}>
                 {data.map(option =>
                 <View style={{ flexDirection: 'row',
-                 paddingTop: Dimensions.get('window').width*0.02, marginHorizontal:  Dimensions.get('window').width*0.09}}>
-                <Image source= {option.image} style= {{width: Dimensions.get('window').width*0.08,height: Dimensions.get('window').width*0.05, resizeMode: 'contain'}} />
-                <Text style = {{  fontWeight: '600', fontSize: 17, color: 'gray'}}>
+                 paddingTop: Dimensions.get('window').width*0.02, marginHorizontal:  Dimensions.get('window').width*0.08}}>
+                <Image source= {option.image} style= {{width: Dimensions.get('window').width*0.1,height: Dimensions.get('window').width*0.07, resizeMode: 'contain'}} />
+                <Text style = {{  fontWeight: '600', fontSize: 20, color: 'gray'}}>
                     {option.label}
                 </Text>
                 </View>
@@ -77,13 +75,19 @@ const YouWillLove = () => {
             </View>;
 
             return (
-                <View style= {[ styles.container]}>
-                <View style={{ flex: 1, }}>
+                <View style= {[ {flex:1}, styles.container]}>
+               
                     {renderHeader()}
-                </View>
+               
+                
                     {renderImage()}
+                
+                <View style={{ flex: 1, }}>
                     {renderText()}
+                </View>
+                <View style={{ flex: 0.5, }}>
                     {renderButton()}
+                </View>
                 </View>
             );
         };

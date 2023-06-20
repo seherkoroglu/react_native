@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#edf3fb',
     flex:0.3,
     textAlign: 'center',
-    marginTop: Dimensions.get('window').width*0.1,
+    marginTop: Dimensions.get('window').width*0.2,
     marginHorizontal: Dimensions.get('window').width * 0.05,
     
    
