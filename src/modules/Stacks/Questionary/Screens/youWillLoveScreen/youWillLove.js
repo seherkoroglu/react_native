@@ -60,7 +60,7 @@ const YouWillLove = () => {
                 <View style={{ flexDirection: 'row',
                  paddingTop: Dimensions.get('window').width*0.02, marginHorizontal:  Dimensions.get('window').width*0.08}}>
                 <Image source= {option.image} style= {{width: Dimensions.get('window').width*0.1,height: Dimensions.get('window').width*0.07, resizeMode: 'contain'}} />
-                <Text style = {{  fontWeight: '600', fontSize: 20, color: 'gray'}}>
+                <Text style = {{  fontWeight: '600', fontSize: Dimensions.get('window').width*0.04, color: 'gray'}}>
                     {option.label}
                 </Text>
                 </View>
@@ -75,19 +75,20 @@ const YouWillLove = () => {
             </View>;
 
             return (
-                <View style= {[ {flex:1}, styles.container]}>
+                <View style= {[ styles.container]}>
                
                     {renderHeader()}
                
-                
+                <View style={{flex:1}}>
                     {renderImage()}
+                </View>
                 
-                <View style={{ flex: 1, }}>
+               
                     {renderText()}
-                </View>
-                <View style={{ flex: 0.5, }}>
+               
+               
                     {renderButton()}
-                </View>
+               
                 </View>
             );
         };
@@ -96,7 +97,8 @@ const YouWillLove = () => {
             container: {
                 flex:1,
                 backgroundColor: '#edf3fb',
-                marginHorizontal: Dimensions.get('window').width*0.05
+                marginHorizontal: Dimensions.get('window').width*0.05,
+                
                 
                
                 
