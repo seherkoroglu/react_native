@@ -14,30 +14,35 @@ const BodyPartsComponent = ({  paramsBodyParts, selectionItems }) => {
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.shoulders}
+              ButtonText={'Shoulders'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.upperBack}
+              ButtonText={'Upper Back'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.lowerBack}
+              ButtonText={'Lower Back'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.hip}
+              ButtonText={'Hip'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.footAnkle}
+              ButtonText={'Foot Ankle'}
               selectionItems={selectionItems}
               isResult={true}
             />
@@ -52,30 +57,35 @@ const BodyPartsComponent = ({  paramsBodyParts, selectionItems }) => {
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.neck}
+              ButtonText={'Neck'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.abdominal}
+              ButtonText={'Abdominal'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.arms}
+              ButtonText={'Arms'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.handWrist}
+              ButtonText={'Hand Wrist'}
               selectionItems={selectionItems}
               isResult={true}
             />
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.knees}
+              ButtonText={'Knees'}
               selectionItems={selectionItems}
               isResult={true}
             />

@@ -17,6 +17,7 @@ const BodyParts = () => {
   const selectionFunction = id => {
     selectionItemsHelper(id, setSelectionItems, selectionItems, 2);
   };
+  const navigation = useNavigation();
 
 
   const renderMiddleBox = () => {
@@ -26,7 +27,7 @@ const BodyParts = () => {
           <View style={{ marginRight: Dimensions.get('window').width*0.1 }}>
             <IconTextComponent
               onlyText={true}
-           
+              ButtonText={'Shoulders'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.shoulders}
               selectionItems={selectionItems}
@@ -34,7 +35,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-             
+              ButtonText={'Upper Back'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.upperBack}
               selectionItems={selectionItems}
@@ -42,7 +43,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-              
+              ButtonText={'Lower Back'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.lowerBack}
               selectionItems={selectionItems}
@@ -50,7 +51,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-             
+              ButtonText={'Hip'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.hip}
               selectionItems={selectionItems}
@@ -58,7 +59,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-              
+              ButtonText={'Foot Ankle'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.footAnkle}
               selectionItems={selectionItems}
@@ -73,7 +74,7 @@ const BodyParts = () => {
           <View style={{ marginLeft: Dimensions.get('window').width*0.05 }}>
             <IconTextComponent
               onlyText={true}
-              
+              ButtonText={'Neck'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.neck}
               selectionItems={selectionItems}
@@ -81,7 +82,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-             
+              ButtonText={'abdonimal'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.abdominal}
               selectionItems={selectionItems}
@@ -89,7 +90,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-              
+              ButtonText={'Arms'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.arms}
               selectionItems={selectionItems}
@@ -97,7 +98,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-              
+              ButtonText={'Hand Wrist'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.handWrist}
               selectionItems={selectionItems}
@@ -105,7 +106,7 @@ const BodyParts = () => {
             />
             <IconTextComponent
               onlyText={true}
-             
+              ButtonText={'Knees'}
               selectionFunction={selectionFunction}
               selectionId={paramsBodyParts.knees}
               selectionItems={selectionItems}
@@ -121,7 +122,7 @@ const BodyParts = () => {
     <SafeAreaView style={styles.wrapper}>
       
       {renderMiddleBox()}
-      <ContinueButton  onPress={() => navigation.navigate("DevoteToexercise")}/>
+      <ContinueButton onPress={() => navigation.navigate("DevoteToexercise")}/>
     </SafeAreaView>
   );
 };
