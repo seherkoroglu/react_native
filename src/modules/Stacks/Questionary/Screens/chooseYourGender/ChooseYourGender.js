@@ -7,6 +7,10 @@ import styles from "./styles";
 import { Dimensions } from "react-native";
 import DevoteToexercise from "../devoteToExercise/DevoteToexercise";
 import Header from "../../../../common/components/header/Header";
+import female from "../../../../../assets/images/female.png";
+import male from "../../../../../assets/images/male.png";
+import nonBinary from "../../../../../assets/images/non-binary.png";
+import BodyParts from "/Users/main/moovbuddy/src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts.js";
 
 const ChooseYourGender = () => {
   const navigation = useNavigation();
@@ -14,23 +18,23 @@ const ChooseYourGender = () => {
 
   const handleSelect = option => {
     setSelectedGoal(option);
-    navigation.navigate("DevoteToexercise");
+    navigation.navigate("BodyParts");
   };
 
   const data = [
     {
       id: "option1",
-      image: require("../../../../../assets/images/female.png"),
+      image: female,
       label: "Female"
     },
     {
       id: "option2",
-      image: require("../../../../../assets/images/male.png"),
+      image: male,
       label: "Male"
     },
     {
       id: "option3",
-      image: require("../../../../../assets/images/non-binary.png"),
+      image: nonBinary,
       label: "Non-binary"
     }
   ];

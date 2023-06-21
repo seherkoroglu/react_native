@@ -6,6 +6,8 @@ import Back from '../../../../common/components/goBackIcon/Back';
 import { useState } from 'react';
 import Experiencing from '../experiencing/Experiencing';
 import Header from '../../../../common/components/header/Header';
+import yes from '../../../../../assets/images/yes.png';
+import no from '../../../../../assets/images/no.png';
 
 const DoYouFeelPain = () => {
     const navigation = useNavigation();
@@ -19,12 +21,12 @@ const DoYouFeelPain = () => {
       const data = [
         {
           id: "option1",
-          image: require("../../../../../assets/images/yes.png"),
+          image: yes,
           label: "Yes",
         },
         {
           id: "option2",
-            image: require("../../../../../assets/images/no.png"),
+            image: no,
           label: "No"
         },
         ];

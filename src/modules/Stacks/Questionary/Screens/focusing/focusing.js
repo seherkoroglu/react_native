@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import Back from '../../../../common/components/goBackIcon/Back';
 import YouWillLove from '../youWillLoveScreen/YouWillLove';
 import Header from '../../../../common/components/header/Header';
+import yes from '../../../../../assets/images/yes.png';
+import no from '../../../../../assets/images/no.png';
 
 const Focusing = () => {
   const navigation = useNavigation();
@@ -18,12 +20,12 @@ const Focusing = () => {
   const data = [
     {
       id: "option1",
-      image: require("../../../../../assets/images/yes.png"),
+      image: yes,
       label: "Yes",
     },
     {
       id: "option2",
-      image: require("../../../../../assets/images/no.png"),
+      image: no,
       label: "No"
     },
   ];

@@ -6,17 +6,24 @@ import styles from './styles';
 import BodyTypeScreen from '../bodyTypeScreen/BodyTypeScreen';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../../../../common/components/header/Header';
+import healthyPosture from '../../../../../assets/images/healthyPosture.png';
+import forwardHeadPosture from '../../../../../assets/images/forwardheadPosture.png';
+import swayBackPosture from '../../../../../assets/images/swayBackPosture.png';
+import kyphosisPosture from '../../../../../assets/images/kyphosisPosture.png';
+import flatBackPosture from '../../../../../assets/images/flatBackPosture.png';
+import lordosisPosture from '../../../../../assets/images/lordosisPosture.png';
+
 
 const PostureType = ({ navigation }) => {
   const [select, setSelect] = React.useState(null);
 
   const data = [
-    { image: require('../../../../../assets/images/healthyPosture.png'), text: 'Healthy Posture' },
-    { image: require('../../../../../assets/images/forwardheadPosture.png'), text: 'Forward Head Posture' },
-    { image: require('../../../../../assets/images/swayBackPosture.png'), text: 'Sway Back Posture' },
-    { image: require('../../../../../assets/images/kyphosisPosture.png'), text: 'Kyphosis' },
-    { image: require('../../../../../assets/images/flatBackPosture.png'), text: 'Flat Back Posture' },
-    { image: require('../../../../../assets/images/lordosisPosture.png'), text: 'Lordosis Posture' },
+    { image: healthyPosture, text: 'Healthy Posture' },
+    { image: forwardHeadPosture, text: 'Forward Head Posture' },
+    { image: swayBackPosture, text: 'Sway Back Posture' },
+    { image: kyphosisPosture, text: 'Kyphosis' },
+    { image: flatBackPosture, text: 'Flat Back Posture' },
+    { image: lordosisPosture, text: 'Lordosis Posture' },
   
   ];
 

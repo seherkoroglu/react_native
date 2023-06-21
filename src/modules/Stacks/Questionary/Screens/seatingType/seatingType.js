@@ -8,6 +8,12 @@ import { Dimensions } from 'react-native';
 import ChooseYourGender from '../chooseYourGender/ChooseYourGender';
 import SleepQuality from '../sleepQuality/SleepQuality';
 import Header from '../../../../common/components/header/Header';
+import yatarak from '../../../../../assets/images/yatarak.png';
+import kambur from '../../../../../assets/images/kambur.png';
+import laptopasagida from '../../../../../assets/images/laptopasagida.png';
+import boyunonde from '../../../../../assets/images/boyunonde.png';
+import duzgun from '../../../../../assets/images/duzgun.png';
+
 
 const SeatingType = () => {
   const navigation = useNavigation();
@@ -21,23 +27,23 @@ const SeatingType = () => {
   const data = [
     {
       id: 'option1',
-      image: require('../../../../../assets/images/yatarak.png'),
+      image: yatarak,
     },
     {
       id: 'option2',
-      image: require('../../../../../assets/images/kambur.png'),
+      image: kambur,
     },
     {
       id: 'option3',
-      image: require('../../../../../assets/images/laptopasagida.png'),
+      image: laptopasagida,
     },
     {
       id: 'option4',
-      image: require('../../../../../assets/images/boyunonde.png'),
+      image: boyunonde,
     },
     {
       id: 'option5',
-      image: require('../../../../../assets/images/duzgun.png'),
+      image: duzgun,
     }
   ];
 

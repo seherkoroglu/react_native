@@ -6,6 +6,11 @@ import Back from '../../../../common/components/goBackIcon/Back';
 import styles from './styles';
 import { Dimensions } from 'react-native';
 import Header from '../../../../common/components/header/Header';
+import thin from '../../../../../assets/images/thin.png';
+import normal from '../../../../../assets/images/normal.png';
+import athletic from '../../../../../assets/images/athletic.png';
+import curvy from '../../../../../assets/images/curvy.png';
+
 
 const BodyTypeScreen = () => {
   const navigation = useNavigation();
@@ -19,22 +24,22 @@ const BodyTypeScreen = () => {
   const data = [
     {
       id: 'option1',
-      image: require('../../../../../assets/images/thin.png'),
+      image: thin,
       label: 'Thin',
     },
     {
       id: 'option2',
-      image: require('../../../../../assets/images/normal.png'),
+      image: normal,
       label: 'Normal',
     },
     {
       id: 'option3',
-      image: require('../../../../../assets/images/athletic.png'),
+      image: athletic,
       label: 'Athletic',
     },
     {
       id: 'option4',
-      image: require('../../../../../assets/images/curvy.png'),
+      image: curvy,
       label: 'Curvy',
     },
   ];

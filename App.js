@@ -17,7 +17,7 @@ import BodyTypeScreen from './src/modules/Stacks/Questionary/Screens/bodyTypeScr
 import PostureType from './src/modules/Stacks/Questionary/Screens/postureType/PostureType';
 import PhysicalActivity from './src/modules/Stacks/Questionary/Screens/physicalActivity/PhysicalActivity';
 import ChooseYourGender from './src/modules/Stacks/Questionary/Screens/chooseYourGender/ChooseYourGender';
-//import BodyParts from './src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts';
+import BodyParts from './src/modules/Stacks/Questionary/Screens/bodyParts/BodyParts';
 import DevoteToexercise from './src/modules/Stacks/Questionary/Screens/devoteToExercise/DevoteToexercise';
 import DoYouFeelPain from './src/modules/Stacks/Questionary/Screens/doYouFeelPain/DoYouFeelPain';
 import Experiencing from './src/modules/Stacks/Questionary/Screens/experiencing/Experiencing';
@@ -51,6 +51,10 @@ const App = () => {
           headerShown: false,
         }}/>
         <Stack.Screen name="ChooseYourGender" component={ChooseYourGender}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="BodyParts" component={BodyParts}
         options={{
           headerShown: false,
         }}/>

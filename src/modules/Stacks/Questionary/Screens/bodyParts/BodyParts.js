@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
-
 import IconTextComponent from '/Users/main/moovbuddy/src/modules/common/components/IconTextComponent/IconTextComponent.js';
 import styles from './styles';
 import Params from '/Users/main/moovbuddy/src/modules/common/params/QuestionaryParams.js';
-
-
 import BodyPartsFigures from '/Users/main/moovbuddy/src/modules/common/components/bodyPartsFigures/BodyPartsFigures.js';
-
 import { useNavigation } from '@react-navigation/native';
+import { Dimensions } from 'react-native';
+import DevoteToexercise from '/Users/main/moovbuddy/src/modules/Stacks/Questionary/Screens/devoteToExercise/DevoteToexercise.js';
+import ContinueButton from '/Users/main/moovbuddy/src/modules/common/components/continueButton/ContinueButton.js';
 
 
 const BodyParts = () => {
@@ -71,7 +70,7 @@ const BodyParts = () => {
             paramsBodyParts={paramsBodyParts}
             selectionItems={selectionItems}
           />
-          <View style={{ marginLeft: -widthPercentage(5) }}>
+          <View style={{ marginLeft: Dimensions.get('window').width*0.05 }}>
             <IconTextComponent
               onlyText={true}
               
@@ -122,7 +121,7 @@ const BodyParts = () => {
     <SafeAreaView style={styles.wrapper}>
       
       {renderMiddleBox()}
-      <ContinueButton navigate={() => onClickFunc()} isActive={selectionItems?.length > 0} />
+      <ContinueButton  onPress={() => navigation.navigate("DevoteToexercise")}/>
     </SafeAreaView>
   );
 };

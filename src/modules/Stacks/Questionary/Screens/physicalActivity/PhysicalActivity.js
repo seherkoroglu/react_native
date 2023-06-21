@@ -8,6 +8,7 @@ import { Dimensions } from 'react-native';
 import LottieView from 'lottie-react-native';
 import ChooseYourGender from '../chooseYourGender/ChooseYourGender';
 import Header from '../../../../common/components/header/Header';
+import rating from '../../../../../assets/animations/rating.json';
 
 const PhysicalActivity = () => {
   const navigation = useNavigation();
@@ -21,22 +22,22 @@ const PhysicalActivity = () => {
   const data = [
     {
       id: 'option1',
-      animation: require('../../../../../assets/animations/rating.json'),
+      animation: rating,
       label: 'rarely',
     },
     {
       id: 'option2',
-      animation: require('../../../../../assets/animations/rating.json'),
+      animation: rating,
       label: 'once or twice a week',
     },
     {
       id: 'option3',
-      animation: require('../../../../../assets/animations/rating.json'),
+      animation: rating,
       label: '3-5 times a week',
     },
     {
       id: 'option4',
-      animation: require('../../../../../assets/animations/rating.json'),
+      animation: rating,
       label: '6-7 times a week',
     },
   ];

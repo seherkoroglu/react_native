@@ -8,6 +8,11 @@ import { View, Text, Image } from 'react-native';
 import ChooseYourGoalScreen from '../chooseYourGoalScreen/ChooseYourGoalScreen';
 import {useState} from 'react';
 import Header from '../../../../common/components/header/Header';
+import styles from './styles';
+import image from '../../../../../assets/images/image.png';
+import egzersiz from '../../../../../assets/images/egzersiz.png';
+import parıltı from '../../../../../assets/images/parıltı.png';
+import alev from '../../../../../assets/images/alev.png';
 
 
 
@@ -19,23 +24,23 @@ const YouWillLove = () => {
         const data = [
             {
             id: "image",
-            body: require("../../../../../assets/images/image.png"),
+            body: image,
             },
 
             {
                 id: "text1",
-                image: require("../../../../../assets/images/egzersiz.png"),
+                image: egzersiz,
                 label: "Get active with daily short exercises and tips",
             },
             {
                 id: "text2",
-                image: require("../../../../../assets/images/parıltı.png"),
+                image: parıltı,
                 label: "Recieve doctor's tips about health and ergonomics",
             },
 
             {
                 id: "text3",
-                image: require("../../../../../assets/images/alev.png"),
+                image: alev,
                 label: "Discover the new challanges and special offers",
             },
 
@@ -92,25 +97,6 @@ const YouWillLove = () => {
                 </View>
             );
         };
-
-        const styles = StyleSheet.create({
-            container: {
-                flex:1,
-                backgroundColor: '#edf3fb',
-                marginHorizontal: Dimensions.get('window').width*0.05,
-                
-                
-               
-                
-            },
-
-            textStyle: {
-                fontSize: 20,
-                textAlign: 'center',
-                color: '#000',
-                
-            },
-        });
 
         export default YouWillLove;
 
