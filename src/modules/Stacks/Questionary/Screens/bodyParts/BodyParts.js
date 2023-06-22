@@ -17,6 +17,19 @@ const BodyParts = () => {
   const selectionFunction = id => {
     selectionItemsHelper(id, setSelectionItems, selectionItems, 2);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const answer = await retrieveData('quizData');
+      const answerJson = JSON.parse(answer).body_parts;
+      if (answerJson !== null && answerJson !== undefined) {
+        setSelectionItems(answerJson);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
   const navigation = useNavigation();
 
 
