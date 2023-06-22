@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Dimensions } from 'react-native';
 import DevoteToexercise from '/Users/main/moovbuddy/src/modules/Stacks/Questionary/Screens/devoteToExercise/DevoteToexercise.js';
 import ContinueButton from '/Users/main/moovbuddy/src/modules/common/components/continueButton/ContinueButton.js';
-
+import { selectionItemsHelper } from '/Users/main/moovbuddy/src/modules/common/helpers/SelectionHelper.js';
 
 const BodyParts = () => {
   const paramsBodyParts = Params.questionaries.survey_values.body_parts;
