@@ -18,7 +18,7 @@ const BodyParts = () => {
     selectionItemsHelper(id, setSelectionItems, selectionItems, 2);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
       const answer = await retrieveData('quizData');
       const answerJson = JSON.parse(answer).body_parts;
@@ -28,7 +28,7 @@ const BodyParts = () => {
     };
   
     fetchData();
-  }, []);
+  }, []);*/
   
   const navigation = useNavigation();
 
