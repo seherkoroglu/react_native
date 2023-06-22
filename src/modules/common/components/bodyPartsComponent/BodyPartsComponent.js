@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import BodyPartsFigures from '../bodyPartsFigures/BodyPartsFigures';
-
 import IconTextComponent from '../iconTextComponent/IconTextComponent';
 import {Dimensions} from 'react-native';
 
@@ -53,7 +52,7 @@ const BodyPartsComponent = ({  paramsBodyParts, selectionItems }) => {
             selectionItems={selectionItems}
             isResult={true}
           />
-          <View style={{ marginLeft: -widthPercentage(4) }}>
+          <View style={{ marginLeft: Dimensions.get('window').width * 0.2 }}>
             <IconTextComponent
               onlyText={true}
               selectionId={paramsBodyParts.neck}
