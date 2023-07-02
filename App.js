@@ -6,246 +6,102 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import {StyleSheet, View, Text, Image, TextInput, ScrollView} from 'react-native';
-import RedButton from './components/redButton';
-
-class Page28 extends React.Component {
-
-  render() {
-    return (
-      <>
-          <View style = {styles.closeContainer}>
-          <Image style = {styles.closeImage} source = {require('./images/close-circle.png')}/>
-        </View>
-          <ScrollView style = {styles.container} >
-        <View >
-        <Image style = {styles.image} source = {require('./images/target.png')}/>
-        <Text style = {styles.text}>
-        Your Personal Kegel Plan is Ready!       
-         </Text>
-         </View>
-          
-            <UIView style = {styles.bolum}>
-             
-              <Text style = {styles.bolumText}>
-              The sexual stamina of people
-               who do kegel exercises
-              improves by  
-              <Text style = {styles.yuzde}> 82%</Text>
-              </Text>
-             <Image style = {styles.chartImage} source = {require('./images/chart1.png')}/>
-             </UIView>
-           <UIView style = {styles.bolum}>  
-            <Text style = {styles.performance}>
-            Performance Score
-            </Text>
-            <Text style = {styles.paragraf}>
-            Kegel egzersizleri için performans, erekiyon ve boşalma için önemli olan kasları güçlendirmeye yardımcı olur. Nefes
-            egzersizleri ise ana odaklanmanıza yardımcı olur. Kegelman, Kegel ve nefes egzersizleri ile anda sağlıklı kalmana 
-            yardımcı olacak.
-            </Text>
-            <Image style = {styles.yesilImage} source = {require('./images/yesil.png')}/>
-            </UIView>
-
-            <UIView style = {styles.bolum}>
-            <Text style = {styles.performance}>
-            Stress Score
-            </Text>
-            <Text style = {styles.paragraf}>
-            Stres seviyenin yüksek olduğunu belirttin. Cinsellikte stresli olman performans düşüklüğüne sebep olacaktır. 
-            Stresini azaltmak için nefes egzersizlerimizle yanındayız.
-            </Text>
-            <Image style = {styles.kirmiziImage} source = {require('./images/stres.png')}/>
-            </UIView>
-
-            <UIView style = {styles.bolum}>
-            <Text style = {styles.performance}>
-            Sleep Score
-            </Text>
-            <Text style = {styles.paragraf}>
-            Uykunun kalitesiz olduğunu belirttin. Günlük düzenli uyku hormonlarının düzenli olarak çalışmasını sağlayacak. Biliyorsun ki cinsel performansın en büyük etkeni hormonlar.
-             Kegelman içerisindeki postlarda hormonlar hakkında daha fazla bilgi bulabilirsin.
-            </Text>
-            <View style = {styles.saatStyle}>
-            <Image source = {require('./images/saatyesil.png')}/>
-            <Image source = {require('./images/saatkirmizi.png')}/>
-            </View>
-            </UIView>
 
 
-            <UIView style = {styles.adambolum}>
-            <Text style = {styles.performance}>
-            General Exercise
-            </Text>
-            <Text style = {styles.paragraf}>
-            Cinsel performansını arttırmak için egzersiz olmazsa olmaz. Egzersiz kan akım hızını artırır. 
-            Bu sebeple penisin daha iyi kanlanmasına ve daha sert ereksiyon sağlamana yardımcı olur. Sana hazırladığım mat egzersizlerini hemen yapmaya başlayabilirsin. 
-            İlerlemeni gün gün takip edebileceksin.
-            </Text>
-            <Image  source = {require('./images/adam.png')}/>
-            </UIView>
-            
-            <RedButton style={styles.redButton}>
-            <Text style = {styles.buttonText}>GET YOUR PROGRAM</Text>
-            </RedButton>
-            
-         
+import * as React from 'react';
+import ChooseYourGoalScreen from './src/modules/Stacks/Questionary/Screens/chooseYourGoalScreen/ChooseYourGoalScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {Dimensions} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import BodyTypeScreen from './src/modules/Stacks/Questionary/Screens/bodyTypeScreen/BodyTypeScreen';
+import PostureType from './src/modules/Stacks/Questionary/Screens/postureType/PostureType';
+import PhysicalActivity from './src/modules/Stacks/Questionary/Screens/physicalActivity/PhysicalActivity';
+import ChooseYourGender from './src/modules/Stacks/Questionary/Screens/chooseYourGender/ChooseYourGender';
+import DevoteToexercise from './src/modules/Stacks/Questionary/Screens/devoteToExercise/DevoteToexercise';
+import DoYouFeelPain from './src/modules/Stacks/Questionary/Screens/doYouFeelPain/DoYouFeelPain';
+import Experiencing from './src/modules/Stacks/Questionary/Screens/experiencing/Experiencing';
+import SpecificDiseases from './src/modules/Stacks/Questionary/Screens/specificDiseases/SpecificDiseases';
+import SeatingType from './src/modules/Stacks/Questionary/Screens/seatingType/SeatingType';
+import SleepQuality from './src/modules/Stacks/Questionary/Screens/sleepQuality/SleepQuality';
+import StressLevel from './src/modules/Stacks/Questionary/Screens/stressLevel/StressLevel';
+import Focusing from './src/modules/Stacks/Questionary/Screens/focusing/Focusing';
+import YouWillLove from './src/modules/Stacks/Questionary/Screens/youWillLoveScreen/YouWillLove';
 
-        </ScrollView>
-        </> 
-    );
-  }
-}
+const Stack = createStackNavigator();
 
-const UIView = ({children}) => {
-  return <View style={styles.bolum}>{children}</View>;
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="ChooseYourGoalScreen" component={ChooseYourGoalScreen} 
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="BodyTypeScreen" component={BodyTypeScreen}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="PostureType" component={PostureType}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="PhysicalActivity" component={PhysicalActivity}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="ChooseYourGender" component={ChooseYourGender}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="DevoteToexercise" component={DevoteToexercise}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="DoYouFeelPain" component={DoYouFeelPain}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="Experiencing" component={Experiencing}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="SpecificDiseases" component={SpecificDiseases}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="SeatingType" component={SeatingType}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="SleepQuality" component={SleepQuality}
+        options={{
+          headerShown: false,
+        }}/>
+
+        <Stack.Screen name="StressLevel" component={StressLevel}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="Focusing" component={Focusing}
+        options={{
+          headerShown: false,
+        }}/>
+        <Stack.Screen name="YouWillLove" component={YouWillLove}
+        options={{
+          headerShown: false,
+        }}/>
+
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
 
 
- 
-const styles = StyleSheet.create({
-  container: {
-   
-    backgroundColor: '#191924',
-    paddingTop: 70,
-    paddingLeft: 40,
-    paddingRight: 40, 
 
-    
-  },
-
-  text: {
-    color: '#fff',
-    fontSize: 23,
-    textAlign: 'center',
-    marginTop: 20,
-    fontWeight: 'bold',
-  },
-  
-  image: {
-    width: 75,
-    height: 90,
-   paddingTop: 60,
-    alignSelf: 'center',
-    
-    
-  },
-  bolum: {
-    backgroundColor: '#191a26',
-    borderRadius: 20,
-    padding: 10,
-    marginTop: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 50,
-  },
-  bolumText: {
-    color: '#fff',
-    fontSize: 20,
-    textAlign: 'center',
-    fontWeight: '500',
-    lineHeight: 30,
-    paddingTop: 20,
-    paddingBottom: 20,
-    
-    
-  },
-  yuzde: {
-    color: '#26d1a3',
-    fontSize: 23,
-    paddingLeft: 199,
-    fontWeight: 'bold',
-    shadowColor: '#4d4f59',
-    shadowOffset: {width: 6, height: 4},
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    elevation: 2,
-   
-    },
-    closeImage: {
-      width: 25,
-      height: 25,
-      alignSelf: 'flex-end',
-      marginTop: 20,
-    },
-    closeContainer: {
-      backgroundColor: '#191924',
-      paddingTop: 60,
-      paddingLeft: 20,
-      paddingRight: 14,
-    },
-    chartImage: {
-      width: 250,
-      height: 150,
-      alignSelf: 'center',
-      paddingBottom: 150,
-      
-      
-    },
-    yazıImage: {
-      width: 250,
-      height: 160,
-      alignSelf: 'center',
-      paddingTop:200,
-     },
-      performance: {
-        color: '#fff',
-        fontSize: 18,
-        textAlign: 'center',
-        marginTop: 20,
-        fontWeight: 'bold',
-      },
-      yesilImage: {
-        width: 200,
-        height: 100,
-        alignSelf: 'center',
-      },
-
-      paragraf: {
-        color: '#fff',
-        fontSize: 15,
-        textAlign: 'center',
-        marginTop: 20,
-        fontWeight: '300',
-        marginBottom: 20,
-      },
-      kirmiziImage: {
-        width: 150,
-        height: 100,
-        alignSelf: 'center',
-      },
-
-      saatStyle: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'space-around',
-         },
-        
-          buttonText: {
-            color: '#fff',
-            fontSize: 20,
-            textAlign: 'center',
-            fontWeight: '400',
-            justifyContent: 'center',
-            alignItems: 'center',
-            paddingTop: 15,
-          },
-
-          redButton: {
-          shadowColor: '#b90005',
-          shadowOffset: {width: 6, height: 4},
-          shadowOpacity: 0.5,
-          shadowRadius: 2,
-          elevation: 2,
-          paddingBottom: 20,
-          paddingTop: 80,
-          },
-          
-          adambolum: {
-            paddingBottom: 200,
-          },
-
-});
-
-export default Page28;
+export default App;
