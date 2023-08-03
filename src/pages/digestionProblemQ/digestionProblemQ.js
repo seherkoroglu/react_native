@@ -15,6 +15,7 @@ import {Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
 import Header from '../../components/header/header';
+import YesNoButton from '../../components/YesNoButton';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -36,17 +37,17 @@ const DigestionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
   </View>
 <View style = {styles.darkButtonContainer}>
 
-<DarkButton isSelected={selectedOption=== 'No'} onPress={
+<YesNoButton isSelected={selectedOption=== 'No'} onPress={
           () => handleOptionSelection('No')}>
   <Text style = {styles.haveYouEverTextStyle}>No</Text>
-</DarkButton>
+</YesNoButton>
 
 <View style = {styles.darkButtonContainer}>
 
-<DarkButton isSelected={selectedOption=== 'Yes'} onPress={
+<YesNoButton isSelected={selectedOption=== 'Yes'} onPress={
           () => handleOptionSelection('Yes')}>
   <Text style = {styles.haveYouEverTextStyle}>Yes</Text>
-</DarkButton>
+</YesNoButton>
 
 </View>
 </View>
@@ -62,25 +63,6 @@ const DigestionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
     </>
   );
 };
-
-
-
-
-const DarkButton = ({  children, isSelected, onPress }) => {
-  return (
-    <View style={styles.darkButton}>
-      <TouchableOpacity
-         style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
-        onPress={onPress}
-      >
-        {children}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-
-
 
 const mapStateToProps = (state) => {
   return {

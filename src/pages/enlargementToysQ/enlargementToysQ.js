@@ -7,6 +7,7 @@ import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
 import Header from '../../components/header/header';
+import YesNoButton from '../../components/YesNoButton';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -24,19 +25,19 @@ const EnlargementToysQ = ({navigation, selectedOption, setSelectedOption}) => {
 
     <View style = {{ backgroundColor: '#191924'}}>
     <Header
-  title="Have you ever used pills for erection"
+  title="Have you ever used enlargement toys?"
   />
 </View>
      
       <View style = {styles.darkButtonContainer}>
-      <DarkButton  isSelected={selectedOption=== 'No'} onPress={
+      <YesNoButton  isSelected={selectedOption=== 'No'} onPress={
           () => handleOptionSelection('No')}>
         <Text style = {styles.haveYouTriedTextStyle}>No</Text>
-      </DarkButton>
-      <DarkButton  isSelected={selectedOption=== 'Yes'} onPress={
+      </YesNoButton>
+      <YesNoButton  isSelected={selectedOption=== 'Yes'} onPress={
           () => handleOptionSelection('yes')}>
         <Text style = {styles.haveYouTriedTextStyle}>Yes</Text>
-      </DarkButton>
+      </YesNoButton>
       </View>
       
     </View>
@@ -50,26 +51,7 @@ const EnlargementToysQ = ({navigation, selectedOption, setSelectedOption}) => {
     {renderOptions()}
     </>
   )
-   
-     
-   
   }
-
-  const DarkButton = ({  children, isSelected, onPress }) => {
-    return (
-      <View style={styles.darkButton}>
-        <TouchableOpacity
-           style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
-          onPress={onPress}
-        >
-          {children}
-        </TouchableOpacity>
-      </View>
-    );
-  };
-
-
-
 
   const mapStateToProps = (state) => {
     return {

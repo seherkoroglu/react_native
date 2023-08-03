@@ -7,6 +7,7 @@ import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
 import Header from '../../components/header/header';
+import DarkButton from '../../components/DarkButton';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -51,22 +52,6 @@ const StressLevelQ = ({navigation, selectedOption, setSelectedOption}) => {
     );
   }
 
-  const DarkButton = ({  children, isSelected, onPress }) => {
-    return (
-      <View style={styles.darkButton}>
-        <TouchableOpacity
-           style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
-          onPress={onPress}
-        >
-          {children}
-        </TouchableOpacity>
-      </View>
-    );
-  };
-  
-  
-  
-  
   const mapStateToProps = (state) => {
     return {
       selectedOption: state.selectedOption,

@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/sleepQualityQ/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
 import Header from '../../components/header/header';
+import DarkButton from '../../components/DarkButton';
 
 import { Dimensions } from 'react-native';
 
@@ -61,24 +62,6 @@ const SleepQualityQ = ({navigation, selectedOption, setSelectedOption}) => {
     </>
   );
 };
-
-
-
-const DarkButton = ({  children, isSelected, onPress }) => {
-  return (
-    <View style={styles.darkButton}>
-      <TouchableOpacity
-         style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
-        onPress={onPress}
-      >
-        {children}
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-
-
 
 const mapStateToProps = (state) => {
   return {

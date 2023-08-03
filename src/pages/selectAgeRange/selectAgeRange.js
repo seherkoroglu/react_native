@@ -7,6 +7,7 @@ import styles from '/Users/main/KMClone/src/pages/selectAgeRange/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedAge } from '../../actions';
 import Header from '../../components/header/header';
+import DarkButton from '../../components/DarkButton';
 
 
 const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
@@ -51,19 +52,6 @@ const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
     </>
   );
 };
-  const DarkButton = ({children, isSelected, onPress }) => {
-  
-    return (
-      <View style={styles.darkButton}>
-        <TouchableOpacity
-         style={[styles.darkButton, isSelected ? { backgroundColor: '#4d4f59' } : null]}
-          onPress={onPress}
-        >
-          {children}
-        </TouchableOpacity>
-      </View>
-    );
-  };
   
   const mapStateToProps = (state) => {
     return {

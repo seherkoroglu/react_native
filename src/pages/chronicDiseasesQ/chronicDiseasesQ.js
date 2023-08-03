@@ -14,6 +14,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/chronicDiseasesQ/styles.js';
 import { Dimensions } from 'react-native';
 import Header from '../../components/header/header';
+import DarkButton from '../../components/DarkButton';
 
 const { width, height } = Dimensions.get('window');
 
@@ -73,24 +74,4 @@ const NameInput  = (props) => {
   );
 };
 
-const DarkButton = ({ navigation, children, select, setSelect }) => {
-  return (
-    <View style={styles.darkButton}>
-    <TouchableOpacity
-      style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',    width: width * 0.9,
-      height: width * 0.12,
-      borderRadius: 8,
-      margin: 5,
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderColor: '#71727a',
-      borderWidth: 1,} : null]}
-      onPress={() => setSelect(!select)}>
-      {children}
-    </TouchableOpacity>
-    </View>
-
- 
-    );
-  };
 export default ChronicDiseasesQ;
