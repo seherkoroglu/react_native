@@ -6,38 +6,18 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/peRate/styles.js';
 import { connect } from 'react-redux';
 import { continueAction } from '../../actions';
+import Header from '../../components/header/header';
 
 const PeRate = ({navigation, continuePressed, continueAction}) => {
   const handleContinue = () => {
     continueAction();
     navigation.navigate('sleepInfo')
   }
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       </View>
-      );
-    };
-
     const  renderContent = () => {
       return (
-      <View style = {styles.contentContainer}>
+ <>
+        <Header/>
+        <View style = {styles.contentContainer}>
         <Image style={styles.imageStyle} source={require('/Users/main/KMClone/src/images/man1.png')} />
         <Text style ={styles.textsStyle}>Overcome PE with …..</Text>
         <Text style ={styles.textStyle}>Premature ejaculation (PE) is likely 
@@ -48,13 +28,13 @@ const PeRate = ({navigation, continuePressed, continueAction}) => {
             </RedButton>
         </TouchableOpacity>
         </View>
+ </>
     );
   };
 
   return(
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
+
     {renderContent()}
   </>
 

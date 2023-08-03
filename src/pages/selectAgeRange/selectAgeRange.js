@@ -6,6 +6,7 @@ import NotificationPermissions from '/Users/main/KMClone/src/pages/notificationP
 import styles from '/Users/main/KMClone/src/pages/selectAgeRange/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedAge } from '../../actions';
+import Header from '../../components/header/header';
 
 
 const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
@@ -14,35 +15,18 @@ const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
     setSelectedAge(age);
     navigation.navigate('notificationPermissions');
     };
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-    
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style = {styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-          navigation.goBack();
-        }}>
-      <Image 
-      style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-      </TouchableOpacity>
-        <Text style ={styles.textStyle}>2/19</Text>
-      </View>
-        );
-      };
+  
 
   const renderOptions = () => {
     return (
-      <View style = {styles.buttonContainer}>
-        <Text style={styles.ageStyle}>Select age range</Text>
+      <>
+        <View style = {{ backgroundColor: '#191924'}}>
+          <Header
+        title="Select age range"
+        />
+      </View>
+      
+        <View style = {styles.buttonContainer}>
         <DarkButton isSelected={selectedAge === '18-30'} onPress={() => handleAgeSelection('18-30')}>
           <Text style={styles.ageTextStyle}>18-30</Text>
         </DarkButton>
@@ -55,14 +39,14 @@ const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
           <Text style={styles.ageTextStyle}>55+</Text>
         </DarkButton>
       </View>
+      </>
+
         
     );
   }
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderOptions()}
     </>
   );

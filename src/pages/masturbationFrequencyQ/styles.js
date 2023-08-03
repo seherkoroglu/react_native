@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     flexDirection: 'column',
     paddingBottom: width * 2,
+    paddingTop: width * 0.07,
   },
   
   darkButton: {

@@ -14,6 +14,7 @@ import styles from '/Users/main/KMClone/src/pages/digestionProblemQ/styles.js';
 import {Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -24,49 +25,15 @@ const DigestionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
     setSelectedOption(option);
     navigation.navigate('steroidUseQ');
     };
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-        <>
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        </>
-    );
-      };
-    
-
-  const renderQuestions = () => {
-
-    return (
-      <View >
-      <Text style={styles.haveYouEverStyle}>Do you experience digestion problems on a regular basis?</Text>
-      </View>
-    );
-  };
-
-
   const renderOptions = () => {
     return (
       <>
    <View >
+   <View style = {{ backgroundColor: '#191924'}}>
+      <Header
+    title="Do you experience digestion problems on a regular basis?"
+    />
+  </View>
 <View style = {styles.darkButtonContainer}>
 
 <DarkButton isSelected={selectedOption=== 'No'} onPress={
@@ -91,9 +58,6 @@ const DigestionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestions()}
     {renderOptions()}
     </>
   );

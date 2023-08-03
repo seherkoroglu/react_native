@@ -5,6 +5,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/masturbationFrequencyQ/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 
 import {  Dimensions } from 'react-native';
@@ -15,41 +16,16 @@ const MasturbationFrequencyQ = ({navigation, selectedOption, setSelectedOption})
     setSelectedOption(option);
     navigation.navigate('orgasmPleasureRateQ');
     };
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <Text style ={styles.textStyle}>4/19</Text>
-       </View>
-        );
-      };
-
-     
-        
-      const renderQuestion = () => {
-          return (
-      <View style = {styles.textContainer}>
-        <Text style={styles.doYouStyle}>How often do you masturbate? </Text>
-        </View>
-          );
-      };
+    
 
         const renderOptions = () =>{
         return(
+          <View>
+          <View>
+          <Header
+           title="How often do you masturbate? " />
+           </View>
+    
           <View style = {styles.buttonContainer}>
           <DarkButton isSelected={selectedOption=== 'Min. once each day'} onPress={
           () => handleOptionSelection('Min. once each day')}>
@@ -75,15 +51,14 @@ const MasturbationFrequencyQ = ({navigation, selectedOption, setSelectedOption})
           </DarkButton>
          
         </View>
+        </View>
 
         )
       };
 
       return (
         <>
-        {renderProgressBar()}
-        {renderBackContainer()}
-        {renderQuestion()}
+     
         {renderOptions()}
         </>
         );

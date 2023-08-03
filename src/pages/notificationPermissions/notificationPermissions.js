@@ -7,6 +7,7 @@ import styles from '/Users/main/KMClone/src/pages/notificationPermissions/styles
 import ErectionProblemQ from '/Users/main/KMClone/src/pages/erectionProblemQ/erectionProblemQ.js';
 import { useDispatch } from 'react-redux';
 import { continueAction } from '../../actions'; 
+import Header from '../../components/header/header';
 
 
 const NotificationPermissions = ({navigation}) => {
@@ -17,16 +18,7 @@ const NotificationPermissions = ({navigation}) => {
   const renderProgressBar = () => {
     return (
       <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-        <View style = {styles.backContainer}>
-        <TouchableOpacity onPress={() => {
-          navigation.goBack();
-        }}>
-        <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-        </TouchableOpacity>
-        </View>
-      </View>
+      <Header/>
       </>
       );
     };

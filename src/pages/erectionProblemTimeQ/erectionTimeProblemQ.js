@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/erectionProblemTimeQ/styles.js
 import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const { width, height } = Dimensions.get('window');
 
@@ -16,41 +17,18 @@ const ErectionTimeProblemQ = ({navigation, selectedOption, setSelectedOption}) =
     navigation.navigate('masturbationFrequencyQ');
     };
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-    
-    <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-      };
-
   const renderOptions = () => {
     return (
-      <>
+    
+          <View style = {{ backgroundColor: '#191924', flex:1}}>
+            <View>
+            <Header
+            title="When do you have erection or ejaculation problem? " />
+            </View>
+ 
+
      
       <View style = {styles.buttonContainer}>
-        <View>
-        <Text style={styles.doYouStyle}>When do you have erection or ejaculation problem? </Text>
-        </View>
-        
         <DarkButton isSelected={selectedOption=== 'Only with a partner'} onPress={
           () => handleOptionSelection('Only with a partner')}>
           <Text style = {styles.doYouTextStyle}>Only with a partner</Text>
@@ -66,15 +44,13 @@ const ErectionTimeProblemQ = ({navigation, selectedOption, setSelectedOption}) =
           <Text style = {styles.doYouTextStyle}>Only when solo</Text>
         </DarkButton>
       </View>
-     </>
+      </View>
         
     );
   };
 
       return(
         <>
-        {renderProgressBar()}
-        {renderBackContainer()}
         {renderOptions()}
         </>
       );

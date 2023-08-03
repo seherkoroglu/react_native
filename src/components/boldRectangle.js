@@ -19,14 +19,13 @@ const styles = StyleSheet.create({
 
     boldRectangle: {
         backgroundColor: '#fa473a',
-        width : width * 0.5,
+        width : width * 0.4,
         height: height * 0.006,
         borderRadius: 5,
-        marginTop: width * 0.02,
         flexDirection: 'row',
         borderColor: '#4d4f59',
-        borderWidth: 0.6,
-        justifyContent: 'flex-start',
+        
+       
       
        
     },

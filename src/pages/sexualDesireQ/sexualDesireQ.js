@@ -5,6 +5,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sexualDesireQ/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 import {Dimensions } from 'react-native';
 
@@ -16,41 +17,14 @@ const SexualDesireQ = ({navigation, selectedOption, setSelectedOption}) => {
     navigation.navigate('erectionPills');
     };
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-    
-     <TouchableOpacity onPress={() => {
-          navigation.goBack();
-        }}>
-        <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-        </TouchableOpacity>
-        <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-        </View>
-        );
-      };
-
-     
-      const renderQuestion = () => {
-        return (
-        <Text style={styles.havingProblemsStyle}>How is your sexual desire? </Text>
-        );
-      };
-
   const renderOptions = () => {
     return (
+      <>
+      <View style = {{ backgroundColor: '#191924'}}>
+      <Header
+    title="How is your sexual desire?"
+    />
+  </View>
       <View style = {styles.buttonContainer}>
         <DarkButton isSelected={selectedOption=== 'Bad'} onPress={
           () => handleOptionSelection('Bad')}>
@@ -72,15 +46,13 @@ const SexualDesireQ = ({navigation, selectedOption, setSelectedOption}) => {
           <Text style = {styles.havingProblemsTextStyle}>Very Good</Text>
         </DarkButton>
       </View>
+      </>
         
     );
   }
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestion()}
     {renderOptions()}
     </>
   );

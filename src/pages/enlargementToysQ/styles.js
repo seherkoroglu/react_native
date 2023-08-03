@@ -38,14 +38,12 @@ const styles = StyleSheet.create({
 
   darkButtonContainer: {
     backgroundColor: '#191924',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    alignContent: 'flex-start',
-
     flexDirection: 'row',
-    paddingBottom: 0.9 * windowWidth,
+    justifyContent: 'space-between',
+    paddingTop: 0.02 * windowWidth,
     paddingLeft: 0.03 * windowWidth,
     paddingRight: 0.02 * windowWidth,
+
   },
   acikButtonContainer: {
     backgroundColor: '#191924',
@@ -82,22 +80,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
-  },
-  backContainer: {
-    backgroundColor: '#191924',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    paddingTop: 0.01 * windowWidth,
-  
-  },
-
-  backImage: {
-    width: 0.07 * windowWidth,
-    height: 0.05 * windowWidth,
-    marginLeft: 0.04 * windowWidth,
-    marginBottom: 0.02 * windowWidth,
-    justifyContent: 'flex-start',
   },
 });
 

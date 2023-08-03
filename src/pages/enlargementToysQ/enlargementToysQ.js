@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/enlargementToysQ/styles.js';
 import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -15,58 +16,23 @@ const EnlargementToysQ = ({navigation, selectedOption, setSelectedOption}) => {
     setSelectedOption(option);
     navigation.navigate('prematureEjaculationQ');
     };
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-        <>
-      <View style={styles.backContainer}>
-    
-    <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        </>
-    );
-  };
-     
-  const renderQuestions = () => {
-    return (
-      <>
-    <View >
-    <Text style={styles.haveYouTriedStyle}>Have you tried to enlarge your penis with a Penis Vacuum Pump and similar tools?   </Text>
-
-  </View>
-  </>
-    );
-  };
      
 
   const renderOptions = () =>{
     return(
-      <View >
+      <View style= {{ backgroundColor: '#191924', flex:1}}>
+
+    <View style = {{ backgroundColor: '#191924'}}>
+    <Header
+  title="Have you ever used pills for erection"
+  />
+</View>
      
       <View style = {styles.darkButtonContainer}>
       <DarkButton  isSelected={selectedOption=== 'No'} onPress={
           () => handleOptionSelection('No')}>
         <Text style = {styles.haveYouTriedTextStyle}>No</Text>
       </DarkButton>
-      
-      <View style = {styles.darkButtonContainer}>
       <DarkButton  isSelected={selectedOption=== 'Yes'} onPress={
           () => handleOptionSelection('yes')}>
         <Text style = {styles.haveYouTriedTextStyle}>Yes</Text>
@@ -74,16 +40,13 @@ const EnlargementToysQ = ({navigation, selectedOption, setSelectedOption}) => {
       </View>
       
     </View>
-    </View>
+
     );
   };
   
 
   return(
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestions()}
     {renderOptions()}
     </>
   )

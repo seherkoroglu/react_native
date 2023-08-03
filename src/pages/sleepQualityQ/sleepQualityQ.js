@@ -5,6 +5,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sleepQualityQ/styles.js';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 import { Dimensions } from 'react-native';
 
@@ -14,42 +15,19 @@ const SleepQualityQ = ({navigation, selectedOption, setSelectedOption}) => {
   const handleOptionSelection = (option) => {
     setSelectedOption(option);
     navigation.navigate('stressLevelQ');
-    };
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-        };
+    }
 
      
      
   const renderOptions = () => {
     return (
+      <>
+      <View>
+      <Header
+       title="How do you evaluate your
+       sleep quality?" />
+       </View>
  <View style = {styles.buttonContainer}>
-        <View>
-        <Text style={styles.doYouStyle}>How do you evaluate your
- sleep quality? </Text>
-        </View>
         <DarkButton isSelected={selectedOption=== 'Bad'} onPress={
           () => handleOptionSelection('Bad')}>
           <Text style = {styles.doYouTextStyle}>Bad</Text>
@@ -73,13 +51,12 @@ const SleepQualityQ = ({navigation, selectedOption, setSelectedOption}) => {
           <Text style = {styles.doYouTextStyle}>Very good</Text>
         </DarkButton>
       </View>
+      </>
     );
   }
 
   return (
     <>
-      {renderProgressBar()}
-      {renderBackContainer()}
       {renderOptions()}
     </>
   );

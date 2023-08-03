@@ -6,6 +6,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sleepInfo/styles.js';
 import { connect } from 'react-redux';
 import { continueAction } from '../../actions';
+import Header from '../../components/header/header';
 
 const SleepInfo = ({navigation, continuePressed, continueAction}) => {
   const handleContinue = () => {
@@ -13,31 +14,10 @@ const SleepInfo = ({navigation, continuePressed, continueAction}) => {
     navigation.navigate('depressionInfo')
   }
 
-    const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       </View>
-      );
-    };
-
-
     const renderContent = () => {
       return (
+     <>
+      <Header/>
       <View style = {styles.contentContainer}>
         <Image style={styles.imageStyle} source={require('/Users/main/KMClone/src/images/Artboard.png')} />
         <Text style ={styles.textsStyle}>There is time to stay awake, but time to sleep as well</Text>
@@ -49,13 +29,12 @@ const SleepInfo = ({navigation, continuePressed, continueAction}) => {
             </RedButton>
             </TouchableOpacity>
         </View>
+     </>
     );
   };
 
   return(
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderContent()}
   </>
   );

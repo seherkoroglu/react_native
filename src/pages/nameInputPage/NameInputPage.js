@@ -7,6 +7,7 @@ import SelectAgeRange from '../selectAgeRange/selectAgeRange';
 import styles from '/Users/main/KMClone/src/pages/nameInputPage/styles.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { setName, continueAction  } from '../../actions';
+import Header from '../../components/header/header';
 
 
 
@@ -23,33 +24,16 @@ const NameInputPage = ({navigation}) => {
     navigation.navigate('selectAgeRange');
   };
 
-    
-    const renderProgressBar = () => {
-    return (
-    <>
-<View style={styles.rectangleContainer}>
-            <BoldRectangle/>
-</View>
+   
 
-    </>
-    );
-    };
-
-    const renderBackContainer = () => {
-    return (
-       <View style={styles.backContainer}>
-    
-     <TouchableOpacity onPress={() => {
-          navigation.goBack();
-        }}>
-        <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-        </TouchableOpacity>
-        </View>
-    );
-    };
 
     const renderContent = () => {
     return (
+      <>
+      <View style = {{ backgroundColor: '#191924'}}>
+          <Header
+        />
+      </View>
         <View style = {styles.container}>
          <Text style ={styles.nameStyle}>Name</Text>
         <NameInput value= {name} onChangeText={(text) => dispatch(setName(text))}/>
@@ -59,13 +43,12 @@ const NameInputPage = ({navigation}) => {
         </RedButton>
         </TouchableOpacity>
      </View>
+     </>
     );
   }
 
     return (    
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderContent()}
     </>
     );

@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/erectionPillsQ/styles.js';
 import {Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -16,47 +17,16 @@ const ErectionPills = ({navigation, selectedOption, setSelectedOption}) => {
     navigation.navigate('enlargementToysQ');
     };
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-          <>
-      <View style={styles.backContainer}>
-    
-    <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        </>
-    );
-      };
-
-  const renderQuestions = () => {
-    return (
-      <> 
-      <View >
-        <Text style={styles.haveYouEverStyle}>Have you ever used pills for erection? </Text>
-      </View>
-      </>
-    );
-  };
 
       const renderOptions = () => {
         return (
           <>
+
+    <View style = {{ backgroundColor: '#191924'}}>
+    <Header
+  title="Have you ever used pills for erection"
+  />
+</View>
       <View >
         <View style = {styles.darkButtonContainer}>
         
@@ -86,9 +56,7 @@ const ErectionPills = ({navigation, selectedOption, setSelectedOption}) => {
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestions()}
+
     {renderOptions()}
     </>
   );

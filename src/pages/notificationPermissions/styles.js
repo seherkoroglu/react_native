@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     paddingLeft: 0.04 * windowWidth,
     backgroundColor: '#191924',
     paddingTop: 0.1 * windowWidth,
+    flex: 1
   },
 
   image: {
@@ -22,6 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 0.06* windowWidth,
+    flex:1
   },
 
   textStyles: {
@@ -78,21 +80,6 @@ const styles = StyleSheet.create({
     paddingBottom: 0.13 * windowWidth,
     paddingTop: 0.05 * windowWidth,
 
-  },
-  backContainer: {
-    backgroundColor: '#191924',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    paddingRight: 0.15 * windowWidth,
-    paddingBottom: 0.1 * windowWidth,
-  },
-
-  backImage: {
-    width: 0.06 * windowWidth,
-    height: 0.06 * windowWidth,
-    marginTop: 0.02 * windowWidth,
-    justifyContent: 'flex-start',
   },
 });
 

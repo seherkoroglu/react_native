@@ -17,11 +17,11 @@ class Rectangle extends React.Component {
 const styles = StyleSheet.create({
     rectangle: {
         backgroundColor: '#fa473a',
-        width : width * 0.93,
-        height: width * 0.05,
+        width : width * 0.89,
+        height: width * 0.015,
         borderRadius: 5,
         borderColor: '#4d4f59',
-        borderWidth: 0.6,
+      
          opacity: 0.2,
     },
 

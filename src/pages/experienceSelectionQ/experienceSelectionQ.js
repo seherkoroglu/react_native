@@ -5,6 +5,7 @@ import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/experienceSelectionQ/styles.js';
 import { Dimensions } from 'react-native';
+import Header from '../../components/header/header';
 
 
 const { width, height } = Dimensions.get('window');
@@ -14,38 +15,19 @@ const { width, height } = Dimensions.get('window');
 
 const ExperienceSelectionQ = ({navigation}) => {
 
-const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
 
-    const renderBackContainer = () => {
-      return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-    );
-    };
 
      
       const renderOptions = () => {
         return (
+          <>
+          <View style = {{ backgroundColor: '#191924'}}>
+          <Header
+        title="Select the ones you experience"
+        />
+      </View>
       <View style = {styles.buttonContainer}>
-        <View>
-        <Text style={styles.doYouStyle}>Select the ones you experience</Text>
-        </View>
+      
       
         <DarkButton>
          <Text style = {styles.doYouTextStyle}>I don't enjoy sex/I am more satisfied when I 
@@ -80,13 +62,12 @@ watch porn</Text>
           </TouchableOpacity>
         </View>
         </View>
+        </>
         );
     };
         
     return (
       <>
-      {renderProgressBar()}
-      {renderBackContainer()}
       {renderOptions()}
       </>
     );

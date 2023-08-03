@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/pornWatchingFrequencyQ/styles.
 import {  Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,37 +15,12 @@ const PornWatchingFrequencyQ = ({navigation, selectedOption, setSelectedOption})
     setSelectedOption(option);
     navigation.navigate('experienceSelectionQ');
     };
-
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-      };
-
   const renderOptions = () => {
     return (
+     
+      <View style = {{backgroundColor: '#191924', flex:1 }}><Header
+      title="How often do you watch porn?"/>
       <View style = {styles.buttonContainer}>
-        <Text style={styles.doYouStyle}>How often do you watch porn?</Text>
         <DarkButton isSelected={selectedOption=== 'Min. once each day'} onPress={
           () => handleOptionSelection('Min. once each day')}>
           <Text style = {styles.doYouTextStyle}>Min. once each day</Text>
@@ -63,14 +39,14 @@ const PornWatchingFrequencyQ = ({navigation, selectedOption, setSelectedOption})
           <Text style = {styles.doYouTextStyle}>Never</Text>
         </DarkButton>     
          </View>
+         </View>
+       
     );
   };
      
         
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderOptions()}
     </>
     );

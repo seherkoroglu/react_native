@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/orgasmPleasureRateQ/styles.js'
 import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -14,42 +15,16 @@ const OrgasmPleasureRateQ = ({navigation, selectedOption, setSelectedOption}) =>
   const handleOptionSelection = (option) => {
     setSelectedOption(option);
     navigation.navigate('sleepQualityQ');
-    };
+    };   
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-      };
-
-      
-  const renderQuestion = () => {
-      return (
-        <Text style={styles.doYouStyle}>How do you rate the pleasure you get from orgasm? </Text>
-      );
-    };
 
   const renderOptions = () => {
     return (
+      <>
+      <View>
+      <Header
+       title="How do you rate the pleasure you get from orgasm? " />
+       </View>
         <View style = {styles.buttonContainer} >
         
         <DarkButton isSelected={selectedOption=== 'No pleasure'} onPress={
@@ -68,14 +43,13 @@ const OrgasmPleasureRateQ = ({navigation, selectedOption, setSelectedOption}) =>
           <Text style = {styles.doYouTextStyle}>Great pleasure</Text>
         </DarkButton>
       </View>
+      </>
     );
   };
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestion()}
+
     {renderOptions()}
     </>
     );

@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/antiDepressantUseQ/styles.js';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 
 
@@ -14,47 +15,15 @@ const AntiDepressantUseQ = ({navigation, selectedOption, setSelectedOption}) => 
     setSelectedOption(option);
     navigation.navigate('urinaryIncontinenceQ');
     };
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-          <>
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        </>
-        );
-      };
-   
-
-  const renderQuestion = () => {
-      return (
-        <>
-        <View >
-        <Text style={styles.doYouUseStyle}>Do you use any anti-depressants? </Text>
-      </View>
-      </>
-      );
-  };
-
 
   const renderOptions = () => {
     return (
+      <>
+      <View style = {{ backgroundColor: '#191924'}}>
+      <Header
+    title="Do you use any anti-depressants? "
+    />
+  </View>
     <View >
     <View style = {styles.darkButtonContainer}>
    
@@ -73,6 +42,7 @@ const AntiDepressantUseQ = ({navigation, selectedOption, setSelectedOption}) => 
     </View>
   </View>
   </View>
+  </>
 
     );
   };
@@ -80,9 +50,6 @@ const AntiDepressantUseQ = ({navigation, selectedOption, setSelectedOption}) => 
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
-    {renderQuestion()}
     {renderOptions()}
     </>
   );

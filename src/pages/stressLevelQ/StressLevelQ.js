@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/stressLevelQ/styles.js';
 import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -14,41 +15,15 @@ const StressLevelQ = ({navigation, selectedOption, setSelectedOption}) => {
     setSelectedOption(option);
     navigation.navigate('pornWatchingFrequencyQ');
     };
-
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-      };
-      
       
        const renderContent = () => {
     return (
+      <>
+      <View><Header
+      title="How do you evulate your stress level?"/></View>
+      
+      
 <View style = {styles.buttonContainer}>
-  <View>
-<Text style={styles.doYouStyle}>How do you evaluate your
-stress level?</Text>
-</View>
       
         <DarkButton isSelected={selectedOption=== 'Low'} onPress={
           () => handleOptionSelection('Low')}>
@@ -66,12 +41,11 @@ stress level?</Text>
         </DarkButton>
        
       </View>
+      </>
     );
   };
    return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderContent()}
     </>
     );

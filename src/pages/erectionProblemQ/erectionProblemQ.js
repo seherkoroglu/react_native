@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/erectionProblemQ/styles.js';
 import {Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 
 const { width, height } = Dimensions.get('window');
@@ -18,42 +19,18 @@ const ErectionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
     };
 
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
 
-      const renderBackContainer = () => {
-        return (
-          <>
-      <View style={styles.backContainer}>
-    
-    <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>3/19</Text>
-      </View>
-       </View>
-        </>
-    );
-       
-      };
 
   const renderOptions = () => {
     return (
       <>
-        <View style = {styles.buttonContainer}>
-          <View>
-        <Text style={styles.havingProblemsStyle}>Having problems getting an erection?</Text>
+      <View style = {{ backgroundColor: '#191924'}}>
+          <Header
+        title="Having problems getting an erection?"
+        />
       </View>
+        <View style = {styles.buttonContainer}>
+     
         <DarkButton isSelected={selectedOption=== 'No'} onPress={
           () => handleOptionSelection('No')
         }>
@@ -86,8 +63,7 @@ const ErectionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
+   
     {renderOptions()}
     </>
   );

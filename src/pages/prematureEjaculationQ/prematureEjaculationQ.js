@@ -6,6 +6,7 @@ import styles from '/Users/main/KMClone/src/pages/prematureEjaculationQ/styles.j
 import { Dimensions } from 'react-native';
 import { connect } from 'react-redux';
 import { setSelectedOption } from '../../actions';
+import Header from '../../components/header/header';
 
 const { width, height } = Dimensions.get('window');
 
@@ -14,42 +15,18 @@ const PrematureEjaculationQ = ({navigation, selectedOption, setSelectedOption}) 
     setSelectedOption(option);
     navigation.navigate('erectionTimeProblemQ');
     };
-
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-      const renderBackContainer = () => {
-        return (
-      <View style={styles.backContainer}>
-    
-    <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        );
-      };
      
      
         
   const renderOptions = () => {
     return (
-        <View style = {styles.buttonContainer}>
-        <View style = {styles.doYouContainer}>
-        <Text style={styles.doYouStyle}>Do you experience premature ejaculation? </Text>
-        </View>
-        
+      <>
+      <View style = {{ backgroundColor: '#191924'}}>
+      <Header
+    title="Do you experience premature ejaculation?"
+    />
+  </View>
+        <View style = {styles.buttonContainer}>  
         <DarkButton isSelected={selectedOption=== 'No'} onPress={
           () => handleOptionSelection('No')}>
           <Text style = {styles.doYouTextStyle} >No</Text>
@@ -74,13 +51,12 @@ const PrematureEjaculationQ = ({navigation, selectedOption, setSelectedOption}) 
         </DarkButton>
 
       </View>
+      </>
     );
   }
 
   return(
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderOptions()}
     </>
   )

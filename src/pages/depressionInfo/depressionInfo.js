@@ -6,41 +6,20 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/depressionInfo/styles.js';
 import { connect } from 'react-redux';
 import { continueAction } from '../../actions';
+import Header from '../../components/header/header';
 
-const DepressionInfo = ({navigation}) => {
+const DepressionInfo = ({navigation, continuePressed, continueAction}) => {
   const handleContinue = () => {
     continueAction();
     navigation.navigate('ejaculationTime')
   }
   
 
-const renderProgressBar = () => {
-  return (
-    <>
-    <View style= {styles.container}>
-      <BoldRectangle />
-    </View>
-    </>
-    );
-  };
-
-  const renderBackContainer = () => {
-    return (
-      <>
-    <View style={styles.backContainer}>
-    <TouchableOpacity onPress={() => {
-       navigation.goBack();
-     }}>
-     <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-     </TouchableOpacity>
-     </View>
-      </>
-  );
-    };
-
     const renderContent = () => {
       return (
-        <View style = {styles.contentContainer}>
+        <>
+            <Header/>
+              <View style = {styles.contentContainer}>
         <Image style={styles.imageStyle} source={require('/Users/main/KMClone/src/images/b.png')} />
         <Text style ={styles.textsStyle}>Your only limit is your mind</Text>
         <Text style ={styles.textStyle}>People with depression have a 39% 
@@ -51,21 +30,17 @@ const renderProgressBar = () => {
             </RedButton>
             </TouchableOpacity>
         </View>
+        </>
       );
     };
 
     return (
       <>
-      {renderProgressBar()}
-      {renderBackContainer()}
+
       {renderContent()}
       </>
     );
   };
-
- 
-
-
   const mapStateToProps = (state) => ({
     continuePressed: state.continuePressed, 
   });

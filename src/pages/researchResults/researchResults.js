@@ -6,6 +6,7 @@ import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/researchResults/styles.js';
 import { connect } from 'react-redux';
 import { continueAction } from '../../actions';
+import Header from '../../components/header/header';
 
 
 const ResearchResults = ({navigation, continuePressed, continueAction}) => {
@@ -14,31 +15,12 @@ const ResearchResults = ({navigation, continuePressed, continueAction}) => {
     continueAction();
     navigation.navigate('peRate')
   }
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       </View>
-    );
-    };
       
     const renderContentContainer = () => {
       return (
-      <View style = {styles.contentContainer}>
+        <>
+        <Header/>
+              <View style = {styles.contentContainer}>
         <Image style={styles.imageStyle} source={require('/Users/main/KMClone/src/images/Group.png')} />
         <Text style ={styles.textsStyle}>Wake up with determination, go to bed with satisfaction</Text>
         <Text style ={styles.textStyle}>In a research published in British Journal of General Practice, 
@@ -51,14 +33,14 @@ const ResearchResults = ({navigation, continuePressed, continueAction}) => {
             </RedButton>
         </TouchableOpacity>
         </View>
+        </>
+
     );
     };
 
 
   return (
     <>
-    {renderProgressBar()}
-    {renderBackContainer()}
     {renderContentContainer()}
     </>
   );

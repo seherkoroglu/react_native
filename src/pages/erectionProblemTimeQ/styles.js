@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     flexDirection: 'column',
-    paddingBottom: 1 * width,
+    marginTop: 0.07 * width,
   },
   darkButton: {
     backgroundColor: '#222331',

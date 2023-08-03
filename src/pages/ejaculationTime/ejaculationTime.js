@@ -8,40 +8,20 @@ import styles from '/Users/main/KMClone/src/pages/ejaculationTime/styles.js';
 import {connect} from 'react-redux'
 import { continueAction } from '../../actions';
 
+import Header from '../../components/header/header';
+
 const EjaculationTime = ({navigation, continuePressed, continueAction}) => {
 
   const handleContinue = () => {
     continueAction();
     navigation.navigate('programCreation');
   }
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
 
-    const renderBackContainer = () => {
-      return (
-        <>
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       </View>
-
-        </>
-    );
-      };
 
       const renderContent = () => {
         return (
           <>
+          <Header/>
       <View style = {styles.contentContainer}>
         <Image style={styles.imageStyle} source={require('/Users/main/KMClone/src/images/yatanadam.png')} />
         <Text style ={styles.textsStyle}>Lasting longer is no longer a dream</Text>
@@ -61,8 +41,6 @@ const EjaculationTime = ({navigation, continuePressed, continueAction}) => {
 
   return(
     <>
-  {renderProgressBar()}
-  {renderBackContainer()}
   {renderContent()}
     
     </>

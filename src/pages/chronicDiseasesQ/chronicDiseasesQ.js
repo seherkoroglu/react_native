@@ -13,6 +13,7 @@ import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/chronicDiseasesQ/styles.js';
 import { Dimensions } from 'react-native';
+import Header from '../../components/header/header';
 
 const { width, height } = Dimensions.get('window');
 
@@ -20,38 +21,16 @@ const ChronicDiseasesQ = ({navigation}) => {
   const [select, setSelect] = useState(false);
   const [selected, setSelected] = useState('');
 
-  const renderProgressBar = () => {
-    return (
-      <>
-      <View style= {styles.container}>
-        <BoldRectangle />
-      </View>
-      </>
-      );
-    };
-
-    const renderBackContainer = () => {
-      return (
-        <>
-      <View style={styles.backContainer}>
-      <TouchableOpacity onPress={() => {
-         navigation.goBack();
-       }}>
-       <Image style={styles.backImage} source={require('/Users/main/KMClone/src/images/back.png')}/>
-       </TouchableOpacity>
-       <View>
-        <Text style ={styles.textStyle}>4/19</Text>
-      </View>
-       </View>
-        </>
-    );
-      };
 
     const renderOptions = () => {
       return (
+        <>
+                 <View style = {{ backgroundColor: '#191924'}}>
+      <Header
+    title="Do you have any chronic diseases?"
+    />
+  </View>
       <View style = {styles.buttonContainer}>
-      <Text style={styles.doYouStyle}>Do you have any chronic diseases?</Text>
-     
       <DarkButton select={selected === 'No'} setSelect={() => setSelected('No')}>
         <Text style = {styles.doYouTextStyle}>No</Text>
       </DarkButton>
@@ -67,13 +46,12 @@ const ChronicDiseasesQ = ({navigation}) => {
       </TouchableOpacity>
       </View>
     </View>
+    </>
       );
     };
 
     return (
       <>
-      {renderProgressBar()}
-      {renderBackContainer()}
       {renderOptions()}
       </>
     );
