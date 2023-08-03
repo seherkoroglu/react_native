@@ -4,12 +4,19 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react'; 
 import styles from '/Users/main/KMClone/src/pages/erectionProblemQ/styles.js';
 import {Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
+
 
 const { width, height } = Dimensions.get('window');
  
-const ErectionProblemQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const ErectionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
+
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('sexualDesireQ');
+    };
+
 
   const renderProgressBar = () => {
     return (
@@ -47,20 +54,28 @@ const ErectionProblemQ = ({navigation}) => {
           <View>
         <Text style={styles.havingProblemsStyle}>Having problems getting an erection?</Text>
       </View>
-        <DarkButton navigation={navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+        <DarkButton isSelected={selectedOption=== 'No'} onPress={
+          () => handleOptionSelection('No')
+        }>
           <Text style = {styles.havingProblemsTextStyle}>No</Text>
         </DarkButton>
      
 
-        <DarkButton navigation={navigation} select={selected === 'Rarely'} setSelect={() => setSelected('Rarely')}>
+        <DarkButton isSelected={selectedOption=== 'Rarely'} onPress={
+          () => handleOptionSelection('Rarely')
+        }>
           <Text style = {styles.havingProblemsTextStyle}>Rarely</Text>
         </DarkButton>
         
-        <DarkButton navigation={navigation}  select={selected === 'Often'} setSelect={() => setSelected('Often')}>
+        <DarkButton isSelected={selectedOption=== 'Often'} onPress={
+          () => handleOptionSelection('Often')
+        }>
           <Text style = {styles.havingProblemsTextStyle}>Often</Text>
         </DarkButton>
      
-        <DarkButton navigation={navigation} select={selected === 'Always'} setSelect={() => setSelected('Always')}>
+        <DarkButton isSelected={selectedOption=== 'Always'} onPress={
+          () => handleOptionSelection('Always')
+        }>
           <Text style = {styles.havingProblemsTextStyle}>Always</Text>
         </DarkButton>
       </View>
@@ -78,30 +93,12 @@ const ErectionProblemQ = ({navigation}) => {
   );
 };
 
-
-
-
-
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-    const handlePress = () => {
-      setSelect(true);
-      setTimeout(() => {
-        navigation.navigate('sexualDesireQ');
-      }, 1500); 
-    };
-  
+  const DarkButton = ({ children, isSelected, onPress }) => {
     return (
       <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
-           width: width * 0.8,
-           height: width * 0.137,
-           borderRadius: width * 0.02,
-           justifyContent: 'center',
-           alignItems: 'center',
-           marginTop: width * 0.03,
-           marginBottom: width * 0.01,} : null]}
-          onPress={handlePress}
+           style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+          onPress={onPress}
         >
           {children}
         </TouchableOpacity>
@@ -112,4 +109,17 @@ const ErectionProblemQ = ({navigation}) => {
 
 
 
-export default ErectionProblemQ;
+  const mapStateToProps = (state) => {
+    return {
+      selectedOption: state.selectedOption,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+    };
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(ErectionProblemQ);
+  

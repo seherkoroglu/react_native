@@ -4,8 +4,14 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/peRate/styles.js';
+import { connect } from 'react-redux';
+import { continueAction } from '../../actions';
 
-const PeRate = ({navigation}) => {
+const PeRate = ({navigation, continuePressed, continueAction}) => {
+  const handleContinue = () => {
+    continueAction();
+    navigation.navigate('sleepInfo')
+  }
 
   const renderProgressBar = () => {
     return (
@@ -55,5 +61,12 @@ const PeRate = ({navigation}) => {
   )
 };
 
+const mapStateToProps = (state) => ({
+  continuePressed: state.continuePressed, 
+});
 
-export default PeRate;
+const mapDispatchToProps = (dispatch) => ({
+  continueAction: () => dispatch(continueAction()), 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PeRate);

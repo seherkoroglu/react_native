@@ -4,12 +4,17 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/stressLevelQ/styles.js';
 import { Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
 
 const windowWidth = Dimensions.get('window').width;
 
-const StressLevelQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const StressLevelQ = ({navigation, selectedOption, setSelectedOption}) => {
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('pornWatchingFrequencyQ');
+    };
+
 
   const renderProgressBar = () => {
     return (
@@ -45,15 +50,18 @@ const StressLevelQ = ({navigation}) => {
 stress level?</Text>
 </View>
       
-        <DarkButton navigation = {navigation} select={selected === 'Low'} setSelect={() => setSelected('Low')}>
+        <DarkButton isSelected={selectedOption=== 'Low'} onPress={
+          () => handleOptionSelection('Low')}>
           <Text style = {styles.doYouTextStyle}>Low</Text>
         </DarkButton>
         
-        <DarkButton navigation = {navigation} select={selected === 'Medium'} setSelect={() => setSelected('Medium')}>
+        <DarkButton isSelected={selectedOption=== 'Medium'} onPress={
+          () => handleOptionSelection('Medium')}>
           <Text style = {styles.doYouTextStyle}>Medium</Text>
         </DarkButton>
         
-        <DarkButton navigation = {navigation} select={selected === 'High'} setSelect={() => setSelected('High')}> 
+        <DarkButton isSelected={selectedOption=== 'High'} onPress={
+          () => handleOptionSelection('High')}>
           <Text style = {styles.doYouTextStyle}>High</Text>
         </DarkButton>
        
@@ -69,34 +77,34 @@ stress level?</Text>
     );
   }
 
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-    const handlePress = () => {
-      setSelect(!select);
-      setTimeout(() => {
-        navigation.navigate('pornWatchingFrequencyQ');
-      }, 1300); 
-    };
+  const DarkButton = ({  children, isSelected, onPress }) => {
     return (
       <View style={styles.darkButton}>
-      <TouchableOpacity
-        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',  width: 0.9 * windowWidth,
-        height: 0.15 * windowWidth,
-        borderRadius: 8,
-        margin: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: '#71727a',
-        borderWidth: 1,} : null]}
-        onPress={handlePress}>
-        {children}
-      </TouchableOpacity>
+        <TouchableOpacity
+           style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+          onPress={onPress}
+        >
+          {children}
+        </TouchableOpacity>
       </View>
+    );
+  };
   
-   
-      );
-    }
-
-
-
-
-export default StressLevelQ;
+  
+  
+  
+  const mapStateToProps = (state) => {
+    return {
+      selectedOption: state.selectedOption,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+    };
+  };
+  
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(StressLevelQ)
+  

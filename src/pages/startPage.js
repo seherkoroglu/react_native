@@ -32,6 +32,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import  {useNavigation} from '@react-navigation/native'; 
 import FirstPage from '/Users/main/KMClone/src/pages/firstPage/firstPage.js';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import store from '/Users/main/KMClone/src/store.js';
 
 
 
@@ -39,9 +42,12 @@ const Stack = createNativeStackNavigator();
 
  const App = () => {
   return (
+    <Provider store={store}>
       <NavigationContainer>
+       
         <Stack.Navigator
        >
+
           <Stack.Screen name="first" component={FirstPage}
             options={{
               headerShown: false,
@@ -182,7 +188,9 @@ const Stack = createNativeStackNavigator();
          }}
          />
         </Stack.Navigator>
+        
       </NavigationContainer>
+      </Provider>
     );
   }
 

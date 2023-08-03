@@ -4,8 +4,14 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/depressionInfo/styles.js';
+import { connect } from 'react-redux';
+import { continueAction } from '../../actions';
 
 const DepressionInfo = ({navigation}) => {
+  const handleContinue = () => {
+    continueAction();
+    navigation.navigate('ejaculationTime')
+  }
   
 
 const renderProgressBar = () => {
@@ -39,7 +45,7 @@ const renderProgressBar = () => {
         <Text style ={styles.textsStyle}>Your only limit is your mind</Text>
         <Text style ={styles.textStyle}>People with depression have a 39% 
         higher chance of developing erectile dysfunction than those without depression.</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('ejaculationTime')}>
+        <TouchableOpacity onPress={handleContinue}>
             <RedButton >
                 <Text style = {styles.buttonText}>CONTINUE</Text>
             </RedButton>
@@ -60,4 +66,12 @@ const renderProgressBar = () => {
  
 
 
-export default DepressionInfo;
+  const mapStateToProps = (state) => ({
+    continuePressed: state.continuePressed, 
+  });
+  
+  const mapDispatchToProps = (dispatch) => ({
+    continueAction: () => dispatch(continueAction()), 
+  });
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(DepressionInfo);

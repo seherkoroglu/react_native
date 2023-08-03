@@ -4,12 +4,16 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/prematureEjaculationQ/styles.js';
 import { Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
 
 const { width, height } = Dimensions.get('window');
 
-const PrematureEjaculationQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const PrematureEjaculationQ = ({navigation, selectedOption, setSelectedOption}) => {
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('erectionTimeProblemQ');
+    };
 
   const renderProgressBar = () => {
     return (
@@ -46,22 +50,26 @@ const PrematureEjaculationQ = ({navigation}) => {
         <Text style={styles.doYouStyle}>Do you experience premature ejaculation? </Text>
         </View>
         
-        <DarkButton navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+        <DarkButton isSelected={selectedOption=== 'No'} onPress={
+          () => handleOptionSelection('No')}>
           <Text style = {styles.doYouTextStyle} >No</Text>
         </DarkButton>
 
         
-        <DarkButton navigation = {navigation} select={selected === 'Rarely'} setSelect={() => setSelected('Rarely')}>
+        <DarkButton isSelected={selectedOption=== 'Rarely'} onPress={
+          () => handleOptionSelection('Rarely')}>
           <Text style = {styles.doYouTextStyle}>Rarely</Text>
         </DarkButton>
 
         
-        <DarkButton navigation = {navigation} select={selected === 'Often'} setSelect={() => setSelected('Often')}>
+        <DarkButton isSelected={selectedOption=== 'Often'} onPress={
+          () => handleOptionSelection('Often')}>
           <Text style = {styles.doYouTextStyle}>Often</Text>
         </DarkButton>
 
         
-        <DarkButton navigation = {navigation} select={selected === 'Always'} setSelect={() => setSelected('Always')}>
+        <DarkButton isSelected={selectedOption=== 'Always'} onPress={
+          () => handleOptionSelection('Always')}>
           <Text style = {styles.doYouTextStyle}>Always</Text>
         </DarkButton>
 
@@ -79,36 +87,33 @@ const PrematureEjaculationQ = ({navigation}) => {
 }
 
 
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-      const handlePress = () => {
-        setSelect(!select);
-        setTimeout(() => {
-          navigation.navigate('erectionTimeProblemQ');
-        }, 1300); 
-      };
-    
-      return (
-        <View style={styles.darkButton}>
-          <TouchableOpacity
-              style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',  width: 0.9 * width,
-              height: 0.13 * width,
-              borderRadius: 8,
-              justifyContent: 'center',
-              alignItems: 'center',
-              margin: 5,
-              borderRadius: 9,
-              justifyContent: 'center',
-              alignItems: 'center',
-              borderColor: '#71727a',
-              borderWidth: 1,} : null]}
-            onPress={handlePress}
-          >
-            {children}
-          </TouchableOpacity>
-        </View>
-      );
-    };
-  
+const DarkButton = ({  children, isSelected, onPress }) => {
+  return (
+    <View style={styles.darkButton}>
+      <TouchableOpacity
+         style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+        onPress={onPress}
+      >
+        {children}
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 
-export default PrematureEjaculationQ;
+
+
+const mapStateToProps = (state) => {
+  return {
+    selectedOption: state.selectedOption,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(PrematureEjaculationQ)

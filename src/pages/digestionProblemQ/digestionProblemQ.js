@@ -12,14 +12,18 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/digestionProblemQ/styles.js';
 import {Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
-const DigestionProblemQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const DigestionProblemQ = ({navigation, selectedOption, setSelectedOption}) => {
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('steroidUseQ');
+    };
 
   const renderProgressBar = () => {
     return (
@@ -65,14 +69,18 @@ const DigestionProblemQ = ({navigation}) => {
    <View >
 <View style = {styles.darkButtonContainer}>
 
-<DarkButton navigation = {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+<DarkButton isSelected={selectedOption=== 'No'} onPress={
+          () => handleOptionSelection('No')}>
   <Text style = {styles.haveYouEverTextStyle}>No</Text>
 </DarkButton>
+
 <View style = {styles.darkButtonContainer}>
 
-<DarkButton navigation = {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+<DarkButton isSelected={selectedOption=== 'Yes'} onPress={
+          () => handleOptionSelection('Yes')}>
   <Text style = {styles.haveYouEverTextStyle}>Yes</Text>
 </DarkButton>
+
 </View>
 </View>
 </View>
@@ -94,34 +102,33 @@ const DigestionProblemQ = ({navigation}) => {
 
 
 
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-       const handlePress = () => {
-      setSelect(!select);
-      setTimeout(() => {
-        navigation.navigate('steroidUseQ');
-      }, 1300); 
-    };
-    return (
-      <View style={styles.darkButton}>
+const DarkButton = ({  children, isSelected, onPress }) => {
+  return (
+    <View style={styles.darkButton}>
       <TouchableOpacity
-        style={[styles.darkButton, select ? { backgroundColor: '#4d4f59', width: windowWidth * 0.46,
-        height: windowHeight * 0.09,
-        borderRadius: windowWidth * 0.02,
-        margin: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderColor: '#71727a',
-        borderWidth: 1,} : null]}
-        onPress={handlePress}>
+         style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+        onPress={onPress}
+      >
         {children}
       </TouchableOpacity>
-      </View>
-  
-   
-      );
-    }
+    </View>
+  );
+};
 
 
 
 
-export default DigestionProblemQ;
+const mapStateToProps = (state) => {
+  return {
+    selectedOption: state.selectedOption,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DigestionProblemQ)

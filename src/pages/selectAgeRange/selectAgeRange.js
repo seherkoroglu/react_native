@@ -4,16 +4,17 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import NotificationPermissions from '/Users/main/KMClone/src/pages/notificationPermissions/notificationPermissions.js';
 import styles from '/Users/main/KMClone/src/pages/selectAgeRange/styles.js';
+import { connect } from 'react-redux';
+import { setSelectedAge } from '../../actions';
 
 
+const SelectAgeRange = ({navigation, selectedAge, setSelectedAge}) => {
 
-
-const SelectAgeRange = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selectedAge, setSelectedAge] = useState('');
-
+  const handleAgeSelection = (age) => {
+    setSelectedAge(age);
+    navigation.navigate('notificationPermissions');
+    };
   const renderProgressBar = () => {
-  
     return (
       <>
       <View style= {styles.container}>
@@ -42,18 +43,17 @@ const SelectAgeRange = ({navigation}) => {
     return (
       <View style = {styles.buttonContainer}>
         <Text style={styles.ageStyle}>Select age range</Text>
-        <DarkButton navigation={navigation} select={selectedAge === '18-30'} setSelect={() => setSelectedAge('18-30')}>
+        <DarkButton isSelected={selectedAge === '18-30'} onPress={() => handleAgeSelection('18-30')}>
           <Text style={styles.ageTextStyle}>18-30</Text>
         </DarkButton>
 
-        <DarkButton navigation={navigation} select={selectedAge === '31-55'} setSelect={() => setSelectedAge('31-55')}>
+        <DarkButton isSelected={selectedAge === '31-55'} onPress={() => handleAgeSelection('31-55')}>
           <Text style={styles.ageTextStyle}>31-55</Text>
         </DarkButton>
 
-        <DarkButton navigation={navigation} select={selectedAge === '55+'} setSelect={() => setSelectedAge('55+')}>
+        <DarkButton isSelected={selectedAge === '55+'} onPress={() => handleAgeSelection('55+')}>
           <Text style={styles.ageTextStyle}>55+</Text>
         </DarkButton>
-      
       </View>
         
     );
@@ -67,20 +67,13 @@ const SelectAgeRange = ({navigation}) => {
     </>
   );
 };
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-
-    const handlePress = () => {
-      setSelect(true);
-      setTimeout(() => {
-        navigation.navigate('notificationPermissions');
-      }, 1500); 
-    };
+  const DarkButton = ({children, isSelected, onPress }) => {
   
     return (
       <View style={styles.darkButton}>
         <TouchableOpacity
-          style={[styles.darkButton, select ? {backgroundColor: '#4d4f59'} : null]}
-          onPress={handlePress}
+         style={[styles.darkButton, isSelected ? { backgroundColor: '#4d4f59' } : null]}
+          onPress={onPress}
         >
           {children}
         </TouchableOpacity>
@@ -88,8 +81,17 @@ const SelectAgeRange = ({navigation}) => {
     );
   };
   
+  const mapStateToProps = (state) => {
+    return {
+      selectedAge: state.selectedAge,
+    };
+  };
   
-
-
-
-export default SelectAgeRange;
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      setSelectedAge: (age) => dispatch(setSelectedAge(age)),
+    };
+  };
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SelectAgeRange);
+  

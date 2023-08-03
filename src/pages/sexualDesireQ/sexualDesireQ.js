@@ -3,14 +3,18 @@ import {StyleSheet, View, Text, Image, TextInput, TouchableOpacity} from 'react-
 import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sexualDesireQ/styles.js';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
 
 import {Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-const SexualDesireQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const SexualDesireQ = ({navigation, selectedOption, setSelectedOption}) => {
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('erectionPills');
+    };
 
   const renderProgressBar = () => {
     return (
@@ -48,19 +52,23 @@ const SexualDesireQ = ({navigation}) => {
   const renderOptions = () => {
     return (
       <View style = {styles.buttonContainer}>
-        <DarkButton navigation={navigation} select={selected === 'Bad'} setSelect={() => setSelected('Bad')}>
+        <DarkButton isSelected={selectedOption=== 'Bad'} onPress={
+          () => handleOptionSelection('Bad')}>
           <Text style = {styles.havingProblemsTextStyle}>Bad</Text>
         </DarkButton>
         
-        <DarkButton navigation={navigation} select={selected === 'Fair'} setSelect={() => setSelected('Fair')}>
+        <DarkButton isSelected={selectedOption=== 'Fair'} onPress={
+          () => handleOptionSelection('Fair')}>
           <Text style = {styles.havingProblemsTextStyle}>Fair</Text>
         </DarkButton>
         
-        <DarkButton navigation={navigation} select={selected === 'Good'} setSelect={() => setSelected('Good')}>
+        <DarkButton isSelected={selectedOption=== 'Good'} onPress={
+          () => handleOptionSelection('Good')}>
           <Text style = {styles.havingProblemsTextStyle}>Good</Text>
         </DarkButton>
         
-        <DarkButton navigation={navigation} select={selected === 'Very Good'} setSelect={() => setSelected('Very Good')}>
+        <DarkButton isSelected={selectedOption=== 'Very Good'} onPress={
+          () => handleOptionSelection('Very Good')}>
           <Text style = {styles.havingProblemsTextStyle}>Very Good</Text>
         </DarkButton>
       </View>
@@ -80,32 +88,30 @@ const SexualDesireQ = ({navigation}) => {
 
 
 
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-  const handlePress = () => {
-      setSelect(!select);
-      setTimeout(() => {
-        navigation.navigate('erectionPills');
-      }, 1500); 
-    };
-  
-    return (
-      <View style={styles.darkButton}>
-        <TouchableOpacity
-           style={[styles.darkButton, select ? {backgroundColor: '#4d4f59',
-           width: 0.8 * width,
-           height: 0.12 * width,
-           borderRadius: 8,
-           justifyContent: 'center',
-           alignItems: 'center',
-           marginTop: 0.03 * width,
-           marginBottom: 0.01 * width,} : null]}
-          onPress={handlePress}
-        >
-          {children}
-        </TouchableOpacity>
-      </View>
-    );
+const DarkButton = ({ children, isSelected, onPress }) => {
+  return (
+    <View style={styles.darkButton}>
+      <TouchableOpacity
+         style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+        onPress={onPress}
+      >
+        {children}
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    selectedOption: state.selectedOption,
   };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+  };
+};
 
 
-export default SexualDesireQ;
+export default connect(mapStateToProps, mapDispatchToProps)(SexualDesireQ)

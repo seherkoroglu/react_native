@@ -4,11 +4,16 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/researchResults/styles.js';
+import { connect } from 'react-redux';
+import { continueAction } from '../../actions';
 
-const ResearchResults = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
 
+const ResearchResults = ({navigation, continuePressed, continueAction}) => {
+
+  const handleContinue = () => {
+    continueAction();
+    navigation.navigate('peRate')
+  }
   const renderProgressBar = () => {
     return (
       <>
@@ -40,7 +45,7 @@ const ResearchResults = ({navigation}) => {
         after 6 months of regular Kegel exercises, 
         40.0% of the participants attained normal function, 34.5% participants had improved erectile function.</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('peRate')}>
+        <TouchableOpacity onPress={handleContinue}>
             <RedButton >
                 <Text style = {styles.buttonText}>CONTINUE</Text>
             </RedButton>
@@ -59,4 +64,12 @@ const ResearchResults = ({navigation}) => {
   );
   };
 
-export default ResearchResults;
+  const mapStateToProps = (state) => ({
+    continuePressed: state.continuePressed, 
+  });
+
+  const mapDispatchToProps = (dispatch) => ({
+    continueAction: () => dispatch(continueAction()), 
+  });
+
+  export default connect(mapStateToProps, mapDispatchToProps)(ResearchResults);

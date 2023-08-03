@@ -4,8 +4,14 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/sleepInfo/styles.js';
+import { connect } from 'react-redux';
+import { continueAction } from '../../actions';
 
-const SleepInfo = ({navigation}) => {
+const SleepInfo = ({navigation, continuePressed, continueAction}) => {
+  const handleContinue = () => {
+    continueAction();
+    navigation.navigate('depressionInfo')
+  }
 
     const renderProgressBar = () => {
     return (
@@ -37,7 +43,7 @@ const SleepInfo = ({navigation}) => {
         <Text style ={styles.textsStyle}>There is time to stay awake, but time to sleep as well</Text>
         <Text style ={styles.textStyle}>Getting less than 8 hours of sound sleep means poorer circulation and
          lower levels of testosterone, leading to erectile dysfunction and relationship issues.</Text>
-         <TouchableOpacity onPress={() => navigation.navigate('depressionInfo')}>
+         <TouchableOpacity onPress={handleContinue}>
            <RedButton >
                 <Text style = {styles.buttonText}>CONTINUE</Text>
             </RedButton>
@@ -55,7 +61,15 @@ const SleepInfo = ({navigation}) => {
   );
   };
 
- 
+  const mapStateToProps = (state) => ({
+    continuePressed: state.continuePressed, 
+  });
+  
+  const mapDispatchToProps = (dispatch) => ({
+    continueAction: () => dispatch(continueAction()), 
+  });
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SleepInfo);
 
 
-export default SleepInfo;
+

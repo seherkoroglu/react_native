@@ -9,9 +9,11 @@ import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import styles from '/Users/main/KMClone/src/pages/firstPage/styles.js';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { choose, goBack, continueAction } from '../../actions';
 
 
-const FirstPage = ({navigation}) => {
+const FirstPage = ({navigation, choose, goNext, goBack}) => {
   const [select, setSelect] = useState(false);
   const [selectedButton, setSelectedButton] = useState(null);
 
@@ -81,7 +83,6 @@ const FirstPage = ({navigation}) => {
   );
 };
 
-
   const GreyButton = (props) => {
     const { selected, onSelect } = props;
   
@@ -114,10 +115,6 @@ const FirstPage = ({navigation}) => {
     );
   }
   
-
-
-  
-
 const SmallButton = (props) => {
   return (
     <>
@@ -128,7 +125,21 @@ const SmallButton = (props) => {
 );
 };
 
-export default FirstPage;
+const mapStateToProps = (state) => {
+  return {
+    selectedButton: state.selectedOption,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    choose: (option) => dispatch(choose(option)),
+    continueAction: () => dispatch(continueAction()),
+    goBack: () => dispatch(goBack()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FirstPage);
 
 
 

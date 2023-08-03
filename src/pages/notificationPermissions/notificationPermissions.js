@@ -5,9 +5,14 @@ import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/notificationPermissions/styles.js';
 import ErectionProblemQ from '/Users/main/KMClone/src/pages/erectionProblemQ/erectionProblemQ.js';
+import { useDispatch } from 'react-redux';
+import { continueAction } from '../../actions'; 
+
 
 const NotificationPermissions = ({navigation}) => {
   const [select, setSelect] = useState(false);
+  const dispatch = useDispatch();
+
 
   const renderProgressBar = () => {
     return (
@@ -49,6 +54,10 @@ const NotificationPermissions = ({navigation}) => {
     };
 
     const renderButtons = () => {
+      const handleMaybeLater = () => {
+        dispatch(continueAction()); 
+        navigation.navigate('erectionProblemQ');
+      };
       return (
       <View style = {styles.buttonAndTextContainer}>
         <TouchableOpacity>
@@ -56,7 +65,7 @@ const NotificationPermissions = ({navigation}) => {
           <Text style = {styles.buttonTextStyle}>Turn On Notifications</Text>
         </RedButton>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('erectionProblemQ')} >
+        <TouchableOpacity onPress={handleMaybeLater} >
         <Text style= {styles.maybeLater}>Maybe later</Text>
         </TouchableOpacity>
       </View>

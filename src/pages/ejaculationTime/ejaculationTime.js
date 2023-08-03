@@ -5,8 +5,15 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import RedButton from '/Users/main/KMClone/src/components/redButton.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/ejaculationTime/styles.js';
+import {connect} from 'react-redux'
+import { continueAction } from '../../actions';
 
-const EjaculationTime = ({navigation}) => {
+const EjaculationTime = ({navigation, continuePressed, continueAction}) => {
+
+  const handleContinue = () => {
+    continueAction();
+    navigation.navigate('programCreation');
+  }
   const renderProgressBar = () => {
     return (
       <>
@@ -40,7 +47,7 @@ const EjaculationTime = ({navigation}) => {
         <Text style ={styles.textsStyle}>Lasting longer is no longer a dream</Text>
         <Text style ={styles.textStyle}>Men who attended a three-month pelvic exercise 
         program improved the ejaculation time to almost 2.5 minutes, a more than fourfold increase.</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('programCreation')}>
+        <TouchableOpacity onPress={handleContinue}>
 
             <RedButton >
                 <Text style = {styles.buttonText}>CONTINUE</Text>
@@ -64,8 +71,13 @@ const EjaculationTime = ({navigation}) => {
 
 };
 
-  
+const mapStateToProps = (state) => ({
+  continuePressed: state.continuePressed,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  continueAction: () => dispatch(continueAction()),
+});
 
   
-
-export default EjaculationTime;
+export default connect(mapStateToProps, mapDispatchToProps)(EjaculationTime);

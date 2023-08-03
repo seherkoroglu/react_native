@@ -4,13 +4,17 @@ import BoldRectangle from '/Users/main/KMClone/src/components/boldRectangle.js';
 import {useState} from 'react';
 import styles from '/Users/main/KMClone/src/pages/enlargementToysQ/styles.js';
 import { Dimensions } from 'react-native';
+import { connect } from 'react-redux';
+import { setSelectedOption } from '../../actions';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const EnlargementToysQ = ({navigation}) => {
-  const [select, setSelect] = useState(false);
-  const [selected, setSelected] = useState('');
+const EnlargementToysQ = ({navigation, selectedOption, setSelectedOption}) => {
+  const handleOptionSelection = (option) => {
+    setSelectedOption(option);
+    navigation.navigate('prematureEjaculationQ');
+    };
 
   const renderProgressBar = () => {
     return (
@@ -57,12 +61,14 @@ const EnlargementToysQ = ({navigation}) => {
       <View >
      
       <View style = {styles.darkButtonContainer}>
-      <DarkButton navigation= {navigation} select={selected === 'No'} setSelect={() => setSelected('No')}>
+      <DarkButton  isSelected={selectedOption=== 'No'} onPress={
+          () => handleOptionSelection('No')}>
         <Text style = {styles.haveYouTriedTextStyle}>No</Text>
       </DarkButton>
       
       <View style = {styles.darkButtonContainer}>
-      <DarkButton  navigation= {navigation} select={selected === 'Yes'} setSelect={() => setSelected('Yes')}>
+      <DarkButton  isSelected={selectedOption=== 'Yes'} onPress={
+          () => handleOptionSelection('yes')}>
         <Text style = {styles.haveYouTriedTextStyle}>Yes</Text>
       </DarkButton>
       </View>
@@ -86,29 +92,12 @@ const EnlargementToysQ = ({navigation}) => {
    
   }
 
-  const DarkButton = ({ navigation, children, select, setSelect }) => {
-    const handlePress = () => {
-      setSelect(!select);
-      setTimeout(() => {
-        navigation.navigate('prematureEjaculationQ');
-      }, 1300); 
-    };
-  
+  const DarkButton = ({  children, isSelected, onPress }) => {
     return (
       <View style={styles.darkButton}>
         <TouchableOpacity
-           style={[styles.darkButton, select ? { backgroundColor: '#4d4f59',
-           alignItems: 'center',
-           justifyContent: 'center',
-           alignContent: 'center',
-           width: 0.45 * windowWidth,
-           height: 0.095 * windowHeight,
-           borderRadius: 9,
-           justifyContent: 'center',
-           alignItems: 'center',
-           borderColor: '#71727a',
-           borderWidth: 1,} : null]}
-          onPress={handlePress}
+           style={[styles.darkButton, isSelected ? {backgroundColor: '#4d4f59'} : null]}
+          onPress={onPress}
         >
           {children}
         </TouchableOpacity>
@@ -117,4 +106,19 @@ const EnlargementToysQ = ({navigation}) => {
   };
 
 
-export default EnlargementToysQ;
+
+
+  const mapStateToProps = (state) => {
+    return {
+      selectedOption: state.selectedOption,
+    };
+  };
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      setSelectedOption: (option) => dispatch(setSelectedOption(option)),
+    };
+  };
+  
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(EnlargementToysQ)
